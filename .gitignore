@@ -1,0 +1,57 @@
+# Make
+build
+/bin
+
+# Visual Studio
+/projects/visualstudio/*.VC.db
+/projects/visualstudio/*.opendb
+/projects/visualstudio/*.sdf
+/projects/visualstudio/*.aps
+/projects/visualstudio/.vs
+/projects/visualstudio/*.log
+/projects/visualstudio/build
+/projects/visualstudio/bin
+/projects/visualstudio/lib
+/projects/visualstudio/packages
+/projects/visualstudio/test/build
+
+# Xcode
+.DS_Store
+/**/*.xcodeproj/*.xcworkspace
+/**/*.xcodeproj/xcuserdata
+/**/*.xcodeproj/xcshareddata
+/**/*.xcworkspace/xcshareddata
+/**/*.xcworkspace/xcuserdata
+/projects/xcode*/Build
+/projects/xcode*/DerivedData
+/projects/xcode*/Pods
+
+# Code::Blocks
+/projects/codeblocks/*.layout
+/projects/codeblocks/*.depend
+/projects/codeblocks/obj
+/projects/codeblocks/bin
+/projects/codeblocks/test/*.layout
+/projects/codeblocks/test/*.depend
+/projects/codeblocks/test/obj
+/projects/codeblocks/test/bin
+
+# CodeLite
+/projects/codelite/.*
+/projects/codelite/Debug
+/projects/codelite/Release
+/projects/codelite/Makefile
+/projects/codelite/*.txt
+/projects/codelite/*.mk
+/projects/codelite/test/.*
+/projects/codelite/test/Debug
+/projects/codelite/test/Release
+/projects/codelite/test/Makefile
+/projects/codelite/test/*.txt
+/projects/codelite/test/*.mk
+
+# NodeJS
+node_modules
+
+# Python
+py_prefix

@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+
+target 'NodeJSEmbedTest-iOS' do
+	platform :ios, '9.0'
+	# Comment the next line if you don't want to use dynamic frameworks
+	use_frameworks!
+
+	# Pods for NodeJSEmbedTest-iOS
+	pod 'NodeMobile', :git => 'https://github.com/janeasystems/nodejs-mobile.git'
+end
+
+target 'NodeJSEmbedTest-macOS' do
+	platform :osx, '10.14'
+	# Comment the next line if you don't want to use dynamic frameworks
+	use_frameworks!
+
+	# Pods for NodeJSEmbedTest-macOS
+
+end

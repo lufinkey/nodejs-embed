@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A567C43A2325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A567C473232579E000BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.m */; };
+		A567C476232579E000BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.m */; };
+		A567C478232579E100BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C477232579E100BB5398 /* Assets.xcassets */; };
+		A567C47B232579E100BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C479232579E100BB5398 /* Main.storyboard */; };
+		A567C47E232579E100BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C47D232579E100BB5398 /* main.m */; };
+		A567C48D23257A2F00BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C48C23257A2F00BB5398 /* AppDelegate.m */; };
+		A567C49023257A2F00BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C48F23257A2F00BB5398 /* ViewController.m */; };
+		A567C49323257A2F00BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C49123257A2F00BB5398 /* Main.storyboard */; };
+		A567C49523257A3000BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C49423257A3000BB5398 /* Assets.xcassets */; };
+		A567C49823257A3000BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C49623257A3000BB5398 /* LaunchScreen.storyboard */; };
+		A567C49B23257A3000BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C49A23257A3000BB5398 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-iOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
+		A567C4382325738B00BB5398 /* NodeJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJS.hpp; sourceTree = "<group>"; };
+		A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C471232579E000BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A567C472232579E000BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A567C474232579E000BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A567C475232579E000BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A567C477232579E100BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A567C47A232579E100BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A567C47C232579E100BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A567C47D232579E100BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A567C47F232579E100BB5398 /* NodeJSEmbedTest_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NodeJSEmbedTest_macOS.entitlements; sourceTree = "<group>"; };
+		A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C48B23257A2F00BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A567C48C23257A2F00BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A567C48E23257A2F00BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A567C48F23257A2F00BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A567C49223257A2F00BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A567C49423257A3000BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A567C49723257A3000BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A567C49923257A3000BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A567C49A23257A3000BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A567C4262325723800BB5398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C42E2325732F00BB5398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C46C232579E000BB5398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C48623257A2F00BB5398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A567C414232571FC00BB5398 = {
+			isa = PBXGroup;
+			children = (
+				A567C4352325734700BB5398 /* src */,
+				A567C41E232571FC00BB5398 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A567C41E232571FC00BB5398 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */,
+				A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */,
+				A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */,
+				A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A567C4352325734700BB5398 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4362325738B00BB5398 /* NodeJSEmbed */,
+				A567C483232579F000BB5398 /* test */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		A567C4362325738B00BB5398 /* NodeJSEmbed */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4382325738B00BB5398 /* NodeJS.hpp */,
+				A567C4372325738B00BB5398 /* NodeJS.cpp */,
+			);
+			path = NodeJSEmbed;
+			sourceTree = "<group>";
+		};
+		A567C470232579E000BB5398 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				A567C471232579E000BB5398 /* AppDelegate.h */,
+				A567C472232579E000BB5398 /* AppDelegate.m */,
+				A567C474232579E000BB5398 /* ViewController.h */,
+				A567C475232579E000BB5398 /* ViewController.m */,
+				A567C477232579E100BB5398 /* Assets.xcassets */,
+				A567C479232579E100BB5398 /* Main.storyboard */,
+				A567C47C232579E100BB5398 /* Info.plist */,
+				A567C47D232579E100BB5398 /* main.m */,
+				A567C47F232579E100BB5398 /* NodeJSEmbedTest_macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		A567C483232579F000BB5398 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				A567C48423257A0700BB5398 /* main */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		A567C48423257A0700BB5398 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				A567C48A23257A2F00BB5398 /* iOS */,
+				A567C470232579E000BB5398 /* macOS */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		A567C48A23257A2F00BB5398 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A567C48B23257A2F00BB5398 /* AppDelegate.h */,
+				A567C48C23257A2F00BB5398 /* AppDelegate.m */,
+				A567C48E23257A2F00BB5398 /* ViewController.h */,
+				A567C48F23257A2F00BB5398 /* ViewController.m */,
+				A567C49123257A2F00BB5398 /* Main.storyboard */,
+				A567C49423257A3000BB5398 /* Assets.xcassets */,
+				A567C49623257A3000BB5398 /* LaunchScreen.storyboard */,
+				A567C49923257A3000BB5398 /* Info.plist */,
+				A567C49A23257A3000BB5398 /* main.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A567C4242325723800BB5398 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C42C2325732F00BB5398 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A567C4272325723800BB5398 /* NodeJSEmbed-macOS-static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A567C4292325723800BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-macOS-static" */;
+			buildPhases = (
+				A567C4242325723800BB5398 /* Headers */,
+				A567C4252325723800BB5398 /* Sources */,
+				A567C4262325723800BB5398 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodeJSEmbed-macOS-static";
+			productName = "NodeJSEmbed-macOS-static";
+			productReference = A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A567C42F2325732F00BB5398 /* NodeJSEmbed-iOS-static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A567C4312325732F00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS-static" */;
+			buildPhases = (
+				A567C42C2325732F00BB5398 /* Headers */,
+				A567C42D2325732F00BB5398 /* Sources */,
+				A567C42E2325732F00BB5398 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodeJSEmbed-iOS-static";
+			productName = "NodeJSEmbed-iOS-static";
+			productReference = A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A567C46E232579E000BB5398 /* NodeJSEmbedTest-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A567C480232579E100BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-macOS" */;
+			buildPhases = (
+				A567C46B232579E000BB5398 /* Sources */,
+				A567C46C232579E000BB5398 /* Frameworks */,
+				A567C46D232579E000BB5398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodeJSEmbedTest-macOS";
+			productName = "NodeJSEmbedTest-macOS";
+			productReference = A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A567C48823257A2F00BB5398 /* NodeJSEmbedTest-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A567C49C23257A3000BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */;
+			buildPhases = (
+				A567C48523257A2F00BB5398 /* Sources */,
+				A567C48623257A2F00BB5398 /* Frameworks */,
+				A567C48723257A2F00BB5398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodeJSEmbedTest-iOS";
+			productName = "NodeJSEmbedTest-iOS";
+			productReference = A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A567C415232571FC00BB5398 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Luis Finke";
+				TargetAttributes = {
+					A567C4272325723800BB5398 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					A567C42F2325732F00BB5398 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					A567C46E232579E000BB5398 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					A567C48823257A2F00BB5398 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = A567C418232571FC00BB5398 /* Build configuration list for PBXProject "NodeJSEmbed" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A567C414232571FC00BB5398;
+			productRefGroup = A567C41E232571FC00BB5398 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A567C4272325723800BB5398 /* NodeJSEmbed-macOS-static */,
+				A567C42F2325732F00BB5398 /* NodeJSEmbed-iOS-static */,
+				A567C46E232579E000BB5398 /* NodeJSEmbedTest-macOS */,
+				A567C48823257A2F00BB5398 /* NodeJSEmbedTest-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A567C46D232579E000BB5398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C478232579E100BB5398 /* Assets.xcassets in Resources */,
+				A567C47B232579E100BB5398 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C48723257A2F00BB5398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C49823257A3000BB5398 /* LaunchScreen.storyboard in Resources */,
+				A567C49523257A3000BB5398 /* Assets.xcassets in Resources */,
+				A567C49323257A2F00BB5398 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A567C4252325723800BB5398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C4392325739000BB5398 /* NodeJS.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C42D2325732F00BB5398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C43A2325739000BB5398 /* NodeJS.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C46B232579E000BB5398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C476232579E000BB5398 /* ViewController.m in Sources */,
+				A567C47E232579E100BB5398 /* main.m in Sources */,
+				A567C473232579E000BB5398 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C48523257A2F00BB5398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C49023257A2F00BB5398 /* ViewController.m in Sources */,
+				A567C49B23257A3000BB5398 /* main.m in Sources */,
+				A567C48D23257A2F00BB5398 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A567C479232579E100BB5398 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A567C47A232579E100BB5398 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A567C49123257A2F00BB5398 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A567C49223257A2F00BB5398 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A567C49623257A3000BB5398 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A567C49723257A3000BB5398 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A567C41F232571FC00BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A567C420232571FC00BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A567C42A2325723800BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A567C42B2325723800BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A567C4322325732F00BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A567C4332325732F00BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A567C481232579E100BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lufinkey.NodeJSEmbedTest-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A567C482232579E100BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lufinkey.NodeJSEmbedTest-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A567C49D23257A3000BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lufinkey.NodeJSEmbedTest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A567C49E23257A3000BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lufinkey.NodeJSEmbedTest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A567C418232571FC00BB5398 /* Build configuration list for PBXProject "NodeJSEmbed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C41F232571FC00BB5398 /* Debug */,
+				A567C420232571FC00BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A567C4292325723800BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-macOS-static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C42A2325723800BB5398 /* Debug */,
+				A567C42B2325723800BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A567C4312325732F00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS-static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C4322325732F00BB5398 /* Debug */,
+				A567C4332325732F00BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A567C480232579E100BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C481232579E100BB5398 /* Debug */,
+				A567C482232579E100BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A567C49C23257A3000BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C49D23257A3000BB5398 /* Debug */,
+				A567C49E23257A3000BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A567C415232571FC00BB5398 /* Project object */;
+}
