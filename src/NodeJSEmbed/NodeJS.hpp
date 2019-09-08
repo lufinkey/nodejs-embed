@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 
-namespace sh {
+namespace embed::nodejs {
 	class NodeJS {
 	public:
 		struct Options {

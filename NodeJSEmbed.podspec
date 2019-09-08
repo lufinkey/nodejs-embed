@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/NodeJSEmbed/**/*'
+	s.source_files = 'src/NodeJSEmbed/**/*', 'external/nodejs/build/Release/*.a'
   
 	# s.resource_bundles = {
 	#   'AsyncCpp' => ['AsyncCpp/Assets/*.png']
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
-	
-	s.ios.script_phase = { :name => 'Build NodeJS Headers', :script => './external/nodejs/build_headers.sh' }
-	s.osx.script_phase = { :name => 'Build NodeJS', :script => './external/nodejs/build.sh' }
+
+	# build NodeJS when project is prepared
+	s.prepare_command = './external/nodejs/build.sh Release'
 end

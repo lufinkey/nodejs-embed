@@ -10,8 +10,7 @@
 #include <nodejs/node.h>
 #include <stdlib.h>
 
-
-namespace sh {
+namespace embed::nodejs {
 	void NodeJS::start(Options options) {
 		// set environment variables
 		if(options.modulePaths.size() > 0) {
@@ -40,5 +39,6 @@ namespace sh {
 			setenv("NODE_PATH", nodePath.c_str(), 1);
 		}
 		
+		// TODO start NodeJS
 	}
 }

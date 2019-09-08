@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AA62954A80AB08A64F0C86E /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
+		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
 		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
 		A567C43A2325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
 		A567C473232579E000BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.m */; };
@@ -23,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141E9FFEBA053E31455F3D83 /* Pods-NodeJSEmbedTest-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.debug.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeJSEmbedTest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D4907D5641CA11E051EC3D2 /* Pods-NodeJSEmbedTest-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-macOS.release.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-macOS/Pods-NodeJSEmbedTest-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		57F212DA5DE87F1EDC8C59C6 /* Pods-NodeJSEmbedTest-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-macOS.debug.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-macOS/Pods-NodeJSEmbedTest-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.release.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeJSEmbedTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-iOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
@@ -47,6 +55,9 @@
 		A567C49723257A3000BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A567C49923257A3000BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A567C49A23257A3000BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A567C4AA2325950900BB5398 /* fetch_node.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch_node.sh; sourceTree = "<group>"; };
+		A567C4AB2325950900BB5398 /* build_headers.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_headers.sh; sourceTree = "<group>"; };
+		A567C4AC2325950900BB5398 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,17 +87,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA62954A80AB08A64F0C86E /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FC62D51937898F20EF09AF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */,
+				98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A567C414232571FC00BB5398 = {
 			isa = PBXGroup;
 			children = (
+				A567C4A523257F1700BB5398 /* external */,
 				A567C4352325734700BB5398 /* src */,
 				A567C41E232571FC00BB5398 /* Products */,
+				AC494E686077356B93D7283B /* Pods */,
+				4FC62D51937898F20EF09AF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +193,44 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		A567C4A523257F1700BB5398 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4A623257F2700BB5398 /* nodejs */,
+			);
+			name = external;
+			path = ../../external;
+			sourceTree = "<group>";
+		};
+		A567C4A623257F2700BB5398 /* nodejs */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4AC2325950900BB5398 /* build.sh */,
+				A567C4AB2325950900BB5398 /* build_headers.sh */,
+				A567C4AA2325950900BB5398 /* fetch_node.sh */,
+				A567C4A723257F3200BB5398 /* build */,
+			);
+			path = nodejs;
+			sourceTree = "<group>";
+		};
+		A567C4A723257F3200BB5398 /* build */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = build;
+			sourceTree = "<group>";
+		};
+		AC494E686077356B93D7283B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				141E9FFEBA053E31455F3D83 /* Pods-NodeJSEmbedTest-iOS.debug.xcconfig */,
+				86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */,
+				57F212DA5DE87F1EDC8C59C6 /* Pods-NodeJSEmbedTest-macOS.debug.xcconfig */,
+				4D4907D5641CA11E051EC3D2 /* Pods-NodeJSEmbedTest-macOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -192,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A567C4292325723800BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-macOS-static" */;
 			buildPhases = (
+				A567C4A323257E3E00BB5398 /* ShellScript */,
 				A567C4242325723800BB5398 /* Headers */,
 				A567C4252325723800BB5398 /* Sources */,
 				A567C4262325723800BB5398 /* Frameworks */,
@@ -209,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A567C4312325732F00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS-static" */;
 			buildPhases = (
+				A567C4A423257E5500BB5398 /* ShellScript */,
 				A567C42C2325732F00BB5398 /* Headers */,
 				A567C42D2325732F00BB5398 /* Sources */,
 				A567C42E2325732F00BB5398 /* Frameworks */,
@@ -226,6 +291,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A567C480232579E100BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-macOS" */;
 			buildPhases = (
+				81AC6815530A2533E74DDB87 /* [CP] Check Pods Manifest.lock */,
 				A567C46B232579E000BB5398 /* Sources */,
 				A567C46C232579E000BB5398 /* Frameworks */,
 				A567C46D232579E000BB5398 /* Resources */,
@@ -243,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A567C49C23257A3000BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */;
 			buildPhases = (
+				C01DF708F0B19E0A037B3407 /* [CP] Check Pods Manifest.lock */,
 				A567C48523257A2F00BB5398 /* Sources */,
 				A567C48623257A2F00BB5398 /* Frameworks */,
 				A567C48723257A2F00BB5398 /* Resources */,
+				F51A86B933C8B15E61A8553D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +389,104 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81AC6815530A2533E74DDB87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodeJSEmbedTest-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A567C4A323257E3E00BB5398 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build.sh \"$(CONFIGURATION)\"\n";
+		};
+		A567C4A423257E5500BB5398 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_headers.sh\n";
+		};
+		C01DF708F0B19E0A037B3407 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodeJSEmbedTest-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F51A86B933C8B15E61A8553D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A567C4252325723800BB5398 /* Sources */ = {
@@ -505,6 +671,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -515,6 +686,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -525,6 +701,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -535,6 +716,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -542,11 +728,16 @@
 		};
 		A567C481232579E100BB5398 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57F212DA5DE87F1EDC8C59C6 /* Pods-NodeJSEmbedTest-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,11 +750,16 @@
 		};
 		A567C482232579E100BB5398 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4907D5641CA11E051EC3D2 /* Pods-NodeJSEmbedTest-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,10 +772,15 @@
 		};
 		A567C49D23257A3000BB5398 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141E9FFEBA053E31455F3D83 /* Pods-NodeJSEmbedTest-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -595,10 +796,15 @@
 		};
 		A567C49E23257A3000BB5398 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
