@@ -37,10 +37,11 @@ Pod::Spec.new do |s|
 	#   'AsyncCpp' => ['AsyncCpp/Assets/*.png']
 	# }
 
+	s.private_header_files = 'external/nodejs/build/include/**/*.h', 'external/nodejs/build/include/**/*.hpp'
 	s.public_header_files = 'src/NodeJSEmbed/**/*.hpp'
 	s.header_mappings_dir = 'src/NodeJSEmbed'
 	s.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src"',
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/include"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
