@@ -8,6 +8,7 @@
 
 #include "NodeJS.hpp"
 #include <nodejs/node.h>
+#include <nodejs/node_api.h>
 #include <stdlib.h>
 
 namespace embed::nodejs {

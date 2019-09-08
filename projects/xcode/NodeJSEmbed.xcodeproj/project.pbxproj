@@ -7,22 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AA62954A80AB08A64F0C86E /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
+		4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
 		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
 		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
-		A567C43A2325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
-		A567C473232579E000BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.m */; };
-		A567C476232579E000BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.m */; };
+		A567C473232579E000BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.mm */; };
+		A567C476232579E000BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.mm */; };
 		A567C478232579E100BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C477232579E100BB5398 /* Assets.xcassets */; };
 		A567C47B232579E100BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C479232579E100BB5398 /* Main.storyboard */; };
-		A567C47E232579E100BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C47D232579E100BB5398 /* main.m */; };
-		A567C48D23257A2F00BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C48C23257A2F00BB5398 /* AppDelegate.m */; };
-		A567C49023257A2F00BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C48F23257A2F00BB5398 /* ViewController.m */; };
-		A567C49323257A2F00BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C49123257A2F00BB5398 /* Main.storyboard */; };
-		A567C49523257A3000BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C49423257A3000BB5398 /* Assets.xcassets */; };
-		A567C49823257A3000BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C49623257A3000BB5398 /* LaunchScreen.storyboard */; };
-		A567C49B23257A3000BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C49A23257A3000BB5398 /* main.m */; };
+		A567C47E232579E100BB5398 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C47D232579E100BB5398 /* main.mm */; };
+		A567C5D72325A48E00BB5398 /* libv8_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5BF2325A48D00BB5398 /* libv8_initializers.a */; };
+		A567C5D82325A48E00BB5398 /* libhistogram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C02325A48D00BB5398 /* libhistogram.a */; };
+		A567C5D92325A48E00BB5398 /* libv8_libsampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C12325A48D00BB5398 /* libv8_libsampler.a */; };
+		A567C5DA2325A48E00BB5398 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C22325A48D00BB5398 /* libuv.a */; };
+		A567C5DB2325A48E00BB5398 /* libhttp_parser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C32325A48D00BB5398 /* libhttp_parser.a */; };
+		A567C5DC2325A48E00BB5398 /* libnode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C42325A48D00BB5398 /* libnode.a */; };
+		A567C5DD2325A48E00BB5398 /* libopenssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C52325A48D00BB5398 /* libopenssl.a */; };
+		A567C5DE2325A48E00BB5398 /* libv8_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C62325A48D00BB5398 /* libv8_compiler.a */; };
+		A567C5DF2325A48E00BB5398 /* libv8_libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C72325A48D00BB5398 /* libv8_libbase.a */; };
+		A567C5E02325A48E00BB5398 /* libbrotli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C82325A48D00BB5398 /* libbrotli.a */; };
+		A567C5E12325A48E00BB5398 /* libicudata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C92325A48D00BB5398 /* libicudata.a */; };
+		A567C5E22325A48E00BB5398 /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CA2325A48D00BB5398 /* libicui18n.a */; };
+		A567C5E32325A48E00BB5398 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CB2325A48D00BB5398 /* libcares.a */; };
+		A567C5E42325A48E00BB5398 /* libtorque_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CC2325A48D00BB5398 /* libtorque_base.a */; };
+		A567C5E52325A48E00BB5398 /* libnghttp2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CD2325A48D00BB5398 /* libnghttp2.a */; };
+		A567C5E62325A48E00BB5398 /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CE2325A48D00BB5398 /* libv8_libplatform.a */; };
+		A567C5E72325A48E00BB5398 /* libv8_base_without_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */; };
+		A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D02325A48E00BB5398 /* libv8_init.a */; };
+		A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
+		A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D22325A48E00BB5398 /* libzlib.a */; };
+		A567C5EB2325A48E00BB5398 /* libllhttp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D32325A48E00BB5398 /* libllhttp.a */; };
+		A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D42325A48E00BB5398 /* libicuucx.a */; };
+		A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */; };
+		A567C5EE2325A48E00BB5398 /* libicustubdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D62325A48E00BB5398 /* libicustubdata.a */; };
+		A567C5F32325AD0400BB5398 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5F22325AD0400BB5398 /* Cocoa.framework */; };
+		A567C5F82325AE8500BB5398 /* libNodeJSEmbed-macOS-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */; };
+		A567C6142325B38300BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6132325B38300BB5398 /* AppDelegate.m */; };
+		A567C6172325B38300BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6162325B38300BB5398 /* ViewController.m */; };
+		A567C61A2325B38300BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C6182325B38300BB5398 /* Main.storyboard */; };
+		A567C61C2325B38400BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C61B2325B38400BB5398 /* Assets.xcassets */; };
+		A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */; };
+		A567C6222325B38400BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6212325B38400BB5398 /* main.m */; };
+		A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A567C5F92325AE8C00BB5398 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A567C415232571FC00BB5398 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A567C4272325723800BB5398;
+			remoteInfo = "NodeJSEmbed-macOS-static";
+		};
+		A567C6362325BA9400BB5398 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A567C415232571FC00BB5398 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A567C6292325B3CA00BB5398;
+			remoteInfo = "NodeJSEmbed-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A567C6282325B3CA00BB5398 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		141E9FFEBA053E31455F3D83 /* Pods-NodeJSEmbedTest-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.debug.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -32,32 +88,81 @@
 		86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.release.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeJSEmbedTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-iOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
 		A567C4382325738B00BB5398 /* NodeJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJS.hpp; sourceTree = "<group>"; };
 		A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C471232579E000BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A567C472232579E000BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A567C472232579E000BB5398 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		A567C474232579E000BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A567C475232579E000BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A567C475232579E000BB5398 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		A567C477232579E100BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A567C47A232579E100BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A567C47C232579E100BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A567C47D232579E100BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A567C47D232579E100BB5398 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		A567C47F232579E100BB5398 /* NodeJSEmbedTest_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NodeJSEmbedTest_macOS.entitlements; sourceTree = "<group>"; };
-		A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A567C48B23257A2F00BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A567C48C23257A2F00BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A567C48E23257A2F00BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A567C48F23257A2F00BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A567C49223257A2F00BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A567C49423257A3000BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A567C49723257A3000BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A567C49923257A3000BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A567C49A23257A3000BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A567C4AA2325950900BB5398 /* fetch_node.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch_node.sh; sourceTree = "<group>"; };
-		A567C4AB2325950900BB5398 /* build_headers.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_headers.sh; sourceTree = "<group>"; };
-		A567C4AC2325950900BB5398 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		A567C58D2325A3B800BB5398 /* libllhttp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libllhttp.a; sourceTree = "<group>"; };
+		A567C58E2325A3B800BB5398 /* libv8_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_initializers.a; sourceTree = "<group>"; };
+		A567C58F2325A3B800BB5398 /* libv8_libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libbase.a; sourceTree = "<group>"; };
+		A567C5902325A3B800BB5398 /* libv8_libplatform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libplatform.a; sourceTree = "<group>"; };
+		A567C5912325A3B800BB5398 /* libv8_nosnapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_nosnapshot.a; sourceTree = "<group>"; };
+		A567C5922325A3B900BB5398 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libuv.a; sourceTree = "<group>"; };
+		A567C5932325A3B900BB5398 /* libzlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzlib.a; sourceTree = "<group>"; };
+		A567C5942325A3B900BB5398 /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicui18n.a; sourceTree = "<group>"; };
+		A567C5952325A3B900BB5398 /* libicuucx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicuucx.a; sourceTree = "<group>"; };
+		A567C5962325A3B900BB5398 /* libopenssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopenssl.a; sourceTree = "<group>"; };
+		A567C5972325A3B900BB5398 /* libv8_libsampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libsampler.a; sourceTree = "<group>"; };
+		A567C5982325A3B900BB5398 /* libicustubdata.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicustubdata.a; sourceTree = "<group>"; };
+		A567C5992325A3B900BB5398 /* libv8_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_snapshot.a; sourceTree = "<group>"; };
+		A567C59A2325A3B900BB5398 /* libv8_base_without_compiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_base_without_compiler.a; sourceTree = "<group>"; };
+		A567C59B2325A3B900BB5398 /* libv8_compiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_compiler.a; sourceTree = "<group>"; };
+		A567C59C2325A3B900BB5398 /* libnghttp2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnghttp2.a; sourceTree = "<group>"; };
+		A567C59D2325A3B900BB5398 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
+		A567C59E2325A3B900BB5398 /* libtorque_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtorque_base.a; sourceTree = "<group>"; };
+		A567C59F2325A3B900BB5398 /* libhistogram.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhistogram.a; sourceTree = "<group>"; };
+		A567C5A02325A3B900BB5398 /* libv8_init.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_init.a; sourceTree = "<group>"; };
+		A567C5A12325A3B900BB5398 /* libnode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnode.a; sourceTree = "<group>"; };
+		A567C5A22325A3B900BB5398 /* libhttp_parser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhttp_parser.a; sourceTree = "<group>"; };
+		A567C5A32325A3BA00BB5398 /* libbrotli.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbrotli.a; sourceTree = "<group>"; };
+		A567C5A42325A3BA00BB5398 /* libicudata.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicudata.a; sourceTree = "<group>"; };
+		A567C5BF2325A48D00BB5398 /* libv8_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_initializers.a; path = Debug/libv8_initializers.a; sourceTree = "<group>"; };
+		A567C5C02325A48D00BB5398 /* libhistogram.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhistogram.a; path = Debug/libhistogram.a; sourceTree = "<group>"; };
+		A567C5C12325A48D00BB5398 /* libv8_libsampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libsampler.a; path = Debug/libv8_libsampler.a; sourceTree = "<group>"; };
+		A567C5C22325A48D00BB5398 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = Debug/libuv.a; sourceTree = "<group>"; };
+		A567C5C32325A48D00BB5398 /* libhttp_parser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhttp_parser.a; path = Debug/libhttp_parser.a; sourceTree = "<group>"; };
+		A567C5C42325A48D00BB5398 /* libnode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnode.a; path = Debug/libnode.a; sourceTree = "<group>"; };
+		A567C5C52325A48D00BB5398 /* libopenssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopenssl.a; path = Debug/libopenssl.a; sourceTree = "<group>"; };
+		A567C5C62325A48D00BB5398 /* libv8_compiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_compiler.a; path = Debug/libv8_compiler.a; sourceTree = "<group>"; };
+		A567C5C72325A48D00BB5398 /* libv8_libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libbase.a; path = Debug/libv8_libbase.a; sourceTree = "<group>"; };
+		A567C5C82325A48D00BB5398 /* libbrotli.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbrotli.a; path = Debug/libbrotli.a; sourceTree = "<group>"; };
+		A567C5C92325A48D00BB5398 /* libicudata.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicudata.a; path = Debug/libicudata.a; sourceTree = "<group>"; };
+		A567C5CA2325A48D00BB5398 /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicui18n.a; path = Debug/libicui18n.a; sourceTree = "<group>"; };
+		A567C5CB2325A48D00BB5398 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcares.a; path = Debug/libcares.a; sourceTree = "<group>"; };
+		A567C5CC2325A48D00BB5398 /* libtorque_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtorque_base.a; path = Debug/libtorque_base.a; sourceTree = "<group>"; };
+		A567C5CD2325A48D00BB5398 /* libnghttp2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnghttp2.a; path = Debug/libnghttp2.a; sourceTree = "<group>"; };
+		A567C5CE2325A48D00BB5398 /* libv8_libplatform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libplatform.a; path = Debug/libv8_libplatform.a; sourceTree = "<group>"; };
+		A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_base_without_compiler.a; path = Debug/libv8_base_without_compiler.a; sourceTree = "<group>"; };
+		A567C5D02325A48E00BB5398 /* libv8_init.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_init.a; path = Debug/libv8_init.a; sourceTree = "<group>"; };
+		A567C5D12325A48E00BB5398 /* libv8_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_snapshot.a; path = Debug/libv8_snapshot.a; sourceTree = "<group>"; };
+		A567C5D22325A48E00BB5398 /* libzlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib.a; path = Debug/libzlib.a; sourceTree = "<group>"; };
+		A567C5D32325A48E00BB5398 /* libllhttp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libllhttp.a; path = Debug/libllhttp.a; sourceTree = "<group>"; };
+		A567C5D42325A48E00BB5398 /* libicuucx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicuucx.a; path = Debug/libicuucx.a; sourceTree = "<group>"; };
+		A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_nosnapshot.a; path = Debug/libv8_nosnapshot.a; sourceTree = "<group>"; };
+		A567C5D62325A48E00BB5398 /* libicustubdata.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicustubdata.a; path = Debug/libicustubdata.a; sourceTree = "<group>"; };
+		A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_mobile_headers.sh; sourceTree = "<group>"; };
+		A567C5F02325A50600BB5398 /* build_desktop.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_desktop.sh; sourceTree = "<group>"; };
+		A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = BuildDesktopOutput.xcfilelist; sourceTree = "<group>"; };
+		A567C5F22325AD0400BB5398 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A567C6102325B38300BB5398 /* NodeJSEmbedTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C6122325B38300BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A567C6132325B38300BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A567C6152325B38300BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A567C6162325B38300BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A567C6192325B38300BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A567C61B2325B38400BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A567C61E2325B38400BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A567C6202325B38400BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A567C6212325B38400BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +170,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A567C42E2325732F00BB5398 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A567C5E52325A48E00BB5398 /* libnghttp2.a in Frameworks */,
+				A567C5DB2325A48E00BB5398 /* libhttp_parser.a in Frameworks */,
+				A567C5DA2325A48E00BB5398 /* libuv.a in Frameworks */,
+				A567C5E42325A48E00BB5398 /* libtorque_base.a in Frameworks */,
+				A567C5E32325A48E00BB5398 /* libcares.a in Frameworks */,
+				A567C5DD2325A48E00BB5398 /* libopenssl.a in Frameworks */,
+				A567C5E02325A48E00BB5398 /* libbrotli.a in Frameworks */,
+				A567C5E22325A48E00BB5398 /* libicui18n.a in Frameworks */,
+				A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */,
+				A567C5E72325A48E00BB5398 /* libv8_base_without_compiler.a in Frameworks */,
+				A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */,
+				A567C5EB2325A48E00BB5398 /* libllhttp.a in Frameworks */,
+				A567C5E12325A48E00BB5398 /* libicudata.a in Frameworks */,
+				A567C5D82325A48E00BB5398 /* libhistogram.a in Frameworks */,
+				A567C5DC2325A48E00BB5398 /* libnode.a in Frameworks */,
+				A567C5DF2325A48E00BB5398 /* libv8_libbase.a in Frameworks */,
+				A567C5E62325A48E00BB5398 /* libv8_libplatform.a in Frameworks */,
+				A567C5EE2325A48E00BB5398 /* libicustubdata.a in Frameworks */,
+				A567C5D72325A48E00BB5398 /* libv8_initializers.a in Frameworks */,
+				A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */,
+				A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */,
+				A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */,
+				A567C5DE2325A48E00BB5398 /* libv8_compiler.a in Frameworks */,
+				A567C5D92325A48E00BB5398 /* libv8_libsampler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,15 +201,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567C5F82325AE8500BB5398 /* libNodeJSEmbed-macOS-static.a in Frameworks */,
+				A567C5F32325AD0400BB5398 /* Cocoa.framework in Frameworks */,
 				790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A567C48623257A2F00BB5398 /* Frameworks */ = {
+		A567C60D2325B38300BB5398 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA62954A80AB08A64F0C86E /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */,
+				A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */,
+				4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C6272325B3CA00BB5398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +229,7 @@
 		4FC62D51937898F20EF09AF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A567C5F22325AD0400BB5398 /* Cocoa.framework */,
 				485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */,
 				98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */,
 			);
@@ -118,9 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */,
-				A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */,
 				A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */,
-				A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */,
+				A567C6102325B38300BB5398 /* NodeJSEmbedTest-iOS.app */,
+				A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,13 +281,13 @@
 			isa = PBXGroup;
 			children = (
 				A567C471232579E000BB5398 /* AppDelegate.h */,
-				A567C472232579E000BB5398 /* AppDelegate.m */,
+				A567C472232579E000BB5398 /* AppDelegate.mm */,
 				A567C474232579E000BB5398 /* ViewController.h */,
-				A567C475232579E000BB5398 /* ViewController.m */,
+				A567C475232579E000BB5398 /* ViewController.mm */,
 				A567C477232579E100BB5398 /* Assets.xcassets */,
 				A567C479232579E100BB5398 /* Main.storyboard */,
 				A567C47C232579E100BB5398 /* Info.plist */,
-				A567C47D232579E100BB5398 /* main.m */,
+				A567C47D232579E100BB5398 /* main.mm */,
 				A567C47F232579E100BB5398 /* NodeJSEmbedTest_macOS.entitlements */,
 			);
 			path = macOS;
@@ -171,26 +304,10 @@
 		A567C48423257A0700BB5398 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				A567C48A23257A2F00BB5398 /* iOS */,
+				A567C6112325B38300BB5398 /* iOS */,
 				A567C470232579E000BB5398 /* macOS */,
 			);
 			path = main;
-			sourceTree = "<group>";
-		};
-		A567C48A23257A2F00BB5398 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				A567C48B23257A2F00BB5398 /* AppDelegate.h */,
-				A567C48C23257A2F00BB5398 /* AppDelegate.m */,
-				A567C48E23257A2F00BB5398 /* ViewController.h */,
-				A567C48F23257A2F00BB5398 /* ViewController.m */,
-				A567C49123257A2F00BB5398 /* Main.storyboard */,
-				A567C49423257A3000BB5398 /* Assets.xcassets */,
-				A567C49623257A3000BB5398 /* LaunchScreen.storyboard */,
-				A567C49923257A3000BB5398 /* Info.plist */,
-				A567C49A23257A3000BB5398 /* main.m */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		A567C4A523257F1700BB5398 /* external */ = {
@@ -205,19 +322,107 @@
 		A567C4A623257F2700BB5398 /* nodejs */ = {
 			isa = PBXGroup;
 			children = (
-				A567C4AC2325950900BB5398 /* build.sh */,
-				A567C4AB2325950900BB5398 /* build_headers.sh */,
-				A567C4AA2325950900BB5398 /* fetch_node.sh */,
-				A567C4A723257F3200BB5398 /* build */,
+				A567C5592325A36700BB5398 /* build */,
+				A567C5F02325A50600BB5398 /* build_desktop.sh */,
+				A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */,
+				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";
 		};
-		A567C4A723257F3200BB5398 /* build */ = {
+		A567C5592325A36700BB5398 /* build */ = {
 			isa = PBXGroup;
 			children = (
+				A567C55A2325A37400BB5398 /* desktop */,
 			);
-			name = build;
+			path = build;
+			sourceTree = "<group>";
+		};
+		A567C55A2325A37400BB5398 /* desktop */ = {
+			isa = PBXGroup;
+			children = (
+				A567C5BE2325A47E00BB5398 /* Debug */,
+				A567C55C2325A38C00BB5398 /* Release */,
+			);
+			path = desktop;
+			sourceTree = "<group>";
+		};
+		A567C55C2325A38C00BB5398 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				A567C5A32325A3BA00BB5398 /* libbrotli.a */,
+				A567C59D2325A3B900BB5398 /* libcares.a */,
+				A567C59F2325A3B900BB5398 /* libhistogram.a */,
+				A567C5A22325A3B900BB5398 /* libhttp_parser.a */,
+				A567C5A42325A3BA00BB5398 /* libicudata.a */,
+				A567C5942325A3B900BB5398 /* libicui18n.a */,
+				A567C5982325A3B900BB5398 /* libicustubdata.a */,
+				A567C5952325A3B900BB5398 /* libicuucx.a */,
+				A567C58D2325A3B800BB5398 /* libllhttp.a */,
+				A567C59C2325A3B900BB5398 /* libnghttp2.a */,
+				A567C5A12325A3B900BB5398 /* libnode.a */,
+				A567C5962325A3B900BB5398 /* libopenssl.a */,
+				A567C59E2325A3B900BB5398 /* libtorque_base.a */,
+				A567C5922325A3B900BB5398 /* libuv.a */,
+				A567C59A2325A3B900BB5398 /* libv8_base_without_compiler.a */,
+				A567C59B2325A3B900BB5398 /* libv8_compiler.a */,
+				A567C5A02325A3B900BB5398 /* libv8_init.a */,
+				A567C58E2325A3B800BB5398 /* libv8_initializers.a */,
+				A567C58F2325A3B800BB5398 /* libv8_libbase.a */,
+				A567C5902325A3B800BB5398 /* libv8_libplatform.a */,
+				A567C5972325A3B900BB5398 /* libv8_libsampler.a */,
+				A567C5912325A3B800BB5398 /* libv8_nosnapshot.a */,
+				A567C5992325A3B900BB5398 /* libv8_snapshot.a */,
+				A567C5932325A3B900BB5398 /* libzlib.a */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		A567C5BE2325A47E00BB5398 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				A567C5C82325A48D00BB5398 /* libbrotli.a */,
+				A567C5CB2325A48D00BB5398 /* libcares.a */,
+				A567C5C02325A48D00BB5398 /* libhistogram.a */,
+				A567C5C32325A48D00BB5398 /* libhttp_parser.a */,
+				A567C5C92325A48D00BB5398 /* libicudata.a */,
+				A567C5CA2325A48D00BB5398 /* libicui18n.a */,
+				A567C5D62325A48E00BB5398 /* libicustubdata.a */,
+				A567C5D42325A48E00BB5398 /* libicuucx.a */,
+				A567C5D32325A48E00BB5398 /* libllhttp.a */,
+				A567C5CD2325A48D00BB5398 /* libnghttp2.a */,
+				A567C5C42325A48D00BB5398 /* libnode.a */,
+				A567C5C52325A48D00BB5398 /* libopenssl.a */,
+				A567C5CC2325A48D00BB5398 /* libtorque_base.a */,
+				A567C5C22325A48D00BB5398 /* libuv.a */,
+				A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */,
+				A567C5C62325A48D00BB5398 /* libv8_compiler.a */,
+				A567C5D02325A48E00BB5398 /* libv8_init.a */,
+				A567C5BF2325A48D00BB5398 /* libv8_initializers.a */,
+				A567C5C72325A48D00BB5398 /* libv8_libbase.a */,
+				A567C5CE2325A48D00BB5398 /* libv8_libplatform.a */,
+				A567C5C12325A48D00BB5398 /* libv8_libsampler.a */,
+				A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */,
+				A567C5D12325A48E00BB5398 /* libv8_snapshot.a */,
+				A567C5D22325A48E00BB5398 /* libzlib.a */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		A567C6112325B38300BB5398 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A567C6122325B38300BB5398 /* AppDelegate.h */,
+				A567C6132325B38300BB5398 /* AppDelegate.m */,
+				A567C6152325B38300BB5398 /* ViewController.h */,
+				A567C6162325B38300BB5398 /* ViewController.m */,
+				A567C6182325B38300BB5398 /* Main.storyboard */,
+				A567C61B2325B38400BB5398 /* Assets.xcassets */,
+				A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */,
+				A567C6202325B38400BB5398 /* Info.plist */,
+				A567C6212325B38400BB5398 /* main.m */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		AC494E686077356B93D7283B /* Pods */ = {
@@ -235,13 +440,6 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		A567C4242325723800BB5398 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A567C42C2325732F00BB5398 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,24 +467,6 @@
 			productReference = A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A567C42F2325732F00BB5398 /* NodeJSEmbed-iOS-static */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A567C4312325732F00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS-static" */;
-			buildPhases = (
-				A567C4A423257E5500BB5398 /* ShellScript */,
-				A567C42C2325732F00BB5398 /* Headers */,
-				A567C42D2325732F00BB5398 /* Sources */,
-				A567C42E2325732F00BB5398 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "NodeJSEmbed-iOS-static";
-			productName = "NodeJSEmbed-iOS-static";
-			productReference = A567C4302325732F00BB5398 /* libNodeJSEmbed-iOS-static.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		A567C46E232579E000BB5398 /* NodeJSEmbedTest-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A567C480232579E100BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-macOS" */;
@@ -299,30 +479,50 @@
 			buildRules = (
 			);
 			dependencies = (
+				A567C5FA2325AE8C00BB5398 /* PBXTargetDependency */,
 			);
 			name = "NodeJSEmbedTest-macOS";
 			productName = "NodeJSEmbedTest-macOS";
 			productReference = A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A567C48823257A2F00BB5398 /* NodeJSEmbedTest-iOS */ = {
+		A567C60F2325B38300BB5398 /* NodeJSEmbedTest-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A567C49C23257A3000BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */;
+			buildConfigurationList = A567C6232325B38400BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */;
 			buildPhases = (
-				C01DF708F0B19E0A037B3407 /* [CP] Check Pods Manifest.lock */,
-				A567C48523257A2F00BB5398 /* Sources */,
-				A567C48623257A2F00BB5398 /* Frameworks */,
-				A567C48723257A2F00BB5398 /* Resources */,
-				F51A86B933C8B15E61A8553D /* [CP] Embed Pods Frameworks */,
+				9EE10654521BBAF1C45061A8 /* [CP] Check Pods Manifest.lock */,
+				A567C60C2325B38300BB5398 /* Sources */,
+				A567C60D2325B38300BB5398 /* Frameworks */,
+				A567C60E2325B38300BB5398 /* Resources */,
+				72D0624AB03A8D973411E2A7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A567C6372325BA9400BB5398 /* PBXTargetDependency */,
+			);
+			name = "NodeJSEmbedTest-iOS";
+			productName = "NodeJSEmbedTest-iOS";
+			productReference = A567C6102325B38300BB5398 /* NodeJSEmbedTest-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A567C6292325B3CA00BB5398 /* NodeJSEmbed-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A567C6302325B3CA00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS" */;
+			buildPhases = (
+				A567C6342325B3E900BB5398 /* ShellScript */,
+				A567C6262325B3CA00BB5398 /* Sources */,
+				A567C6272325B3CA00BB5398 /* Frameworks */,
+				A567C6282325B3CA00BB5398 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "NodeJSEmbedTest-iOS";
-			productName = "NodeJSEmbedTest-iOS";
-			productReference = A567C48923257A2F00BB5398 /* NodeJSEmbedTest-iOS.app */;
-			productType = "com.apple.product-type.application";
+			name = "NodeJSEmbed-iOS";
+			productName = "NodeJSEmbed-iOS";
+			productReference = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -336,13 +536,13 @@
 					A567C4272325723800BB5398 = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					A567C42F2325732F00BB5398 = {
-						CreatedOnToolsVersion = 10.3;
-					};
 					A567C46E232579E000BB5398 = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					A567C48823257A2F00BB5398 = {
+					A567C60F2325B38300BB5398 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					A567C6292325B3CA00BB5398 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
@@ -361,9 +561,9 @@
 			projectRoot = "";
 			targets = (
 				A567C4272325723800BB5398 /* NodeJSEmbed-macOS-static */,
-				A567C42F2325732F00BB5398 /* NodeJSEmbed-iOS-static */,
 				A567C46E232579E000BB5398 /* NodeJSEmbedTest-macOS */,
-				A567C48823257A2F00BB5398 /* NodeJSEmbedTest-iOS */,
+				A567C60F2325B38300BB5398 /* NodeJSEmbedTest-iOS */,
+				A567C6292325B3CA00BB5398 /* NodeJSEmbed-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -378,19 +578,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A567C48723257A2F00BB5398 /* Resources */ = {
+		A567C60E2325B38300BB5398 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C49823257A3000BB5398 /* LaunchScreen.storyboard in Resources */,
-				A567C49523257A3000BB5398 /* Assets.xcassets in Resources */,
-				A567C49323257A2F00BB5398 /* Main.storyboard in Resources */,
+				A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */,
+				A567C61C2325B38400BB5398 /* Assets.xcassets in Resources */,
+				A567C61A2325B38300BB5398 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		72D0624AB03A8D973411E2A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81AC6815530A2533E74DDB87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,41 +630,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A567C4A323257E3E00BB5398 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build.sh \"$(CONFIGURATION)\"\n";
-		};
-		A567C4A423257E5500BB5398 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_headers.sh\n";
-		};
-		C01DF708F0B19E0A037B3407 /* [CP] Check Pods Manifest.lock */ = {
+		9EE10654521BBAF1C45061A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,22 +652,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F51A86B933C8B15E61A8553D /* [CP] Embed Pods Frameworks */ = {
+		A567C4A323257E3E00BB5398 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+			);
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"$(PROJECT_DIR)/../../external/nodejs/BuildDesktopOutput.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_desktop.sh \"Debug\"\n";
+		};
+		A567C6342325B3E900BB5398 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_mobile_headers.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -497,35 +698,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A567C42D2325732F00BB5398 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A567C43A2325739000BB5398 /* NodeJS.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A567C46B232579E000BB5398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C476232579E000BB5398 /* ViewController.m in Sources */,
-				A567C47E232579E100BB5398 /* main.m in Sources */,
-				A567C473232579E000BB5398 /* AppDelegate.m in Sources */,
+				A567C476232579E000BB5398 /* ViewController.mm in Sources */,
+				A567C47E232579E100BB5398 /* main.mm in Sources */,
+				A567C473232579E000BB5398 /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A567C48523257A2F00BB5398 /* Sources */ = {
+		A567C60C2325B38300BB5398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C49023257A2F00BB5398 /* ViewController.m in Sources */,
-				A567C49B23257A3000BB5398 /* main.m in Sources */,
-				A567C48D23257A2F00BB5398 /* AppDelegate.m in Sources */,
+				A567C6172325B38300BB5398 /* ViewController.m in Sources */,
+				A567C6222325B38400BB5398 /* main.m in Sources */,
+				A567C6142325B38300BB5398 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A567C6262325B3CA00BB5398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A567C5FA2325AE8C00BB5398 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A567C4272325723800BB5398 /* NodeJSEmbed-macOS-static */;
+			targetProxy = A567C5F92325AE8C00BB5398 /* PBXContainerItemProxy */;
+		};
+		A567C6372325BA9400BB5398 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A567C6292325B3CA00BB5398 /* NodeJSEmbed-iOS */;
+			targetProxy = A567C6362325BA9400BB5398 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A567C479232579E100BB5398 /* Main.storyboard */ = {
@@ -536,18 +750,18 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A567C49123257A2F00BB5398 /* Main.storyboard */ = {
+		A567C6182325B38300BB5398 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A567C49223257A2F00BB5398 /* Base */,
+				A567C6192325B38300BB5398 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A567C49623257A3000BB5398 /* LaunchScreen.storyboard */ = {
+		A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A567C49723257A3000BB5398 /* Base */,
+				A567C61E2325B38400BB5398 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -561,7 +775,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -620,7 +834,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -669,12 +883,18 @@
 		A567C42A2325723800BB5398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
-					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/$(CONFIGURATION)/",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -684,42 +904,18 @@
 		A567C42B2325723800BB5398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
-					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A567C4322325732F00BB5398 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../../src",
-					"$(PROJECT_DIR)/../../external/nodejs/build/include",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		A567C4332325732F00BB5398 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../src",
-					"$(PROJECT_DIR)/../../external/nodejs/build/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/$(CONFIGURATION)/",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -731,7 +927,8 @@
 			baseConfigurationReference = 57F212DA5DE87F1EDC8C59C6 /* Pods-NodeJSEmbedTest-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/../../src/test/main/macOS/NodeJSEmbedTest_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
@@ -753,7 +950,8 @@
 			baseConfigurationReference = 4D4907D5641CA11E051EC3D2 /* Pods-NodeJSEmbedTest-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "NodeJSEmbedTest-macOS/NodeJSEmbedTest_macOS.entitlements";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/../../src/test/main/macOS/NodeJSEmbedTest_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
@@ -770,17 +968,14 @@
 			};
 			name = Release;
 		};
-		A567C49D23257A3000BB5398 /* Debug */ = {
+		A567C6242325B38400BB5398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 141E9FFEBA053E31455F3D83 /* Pods-NodeJSEmbedTest-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../src",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -794,17 +989,14 @@
 			};
 			name = Debug;
 		};
-		A567C49E23257A3000BB5398 /* Release */ = {
+		A567C6252325B38400BB5398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../src",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -814,6 +1006,51 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lufinkey.NodeJSEmbedTest-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A567C6312325B3CA00BB5398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A567C6322325B3CA00BB5398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -840,15 +1077,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A567C4312325732F00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS-static" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A567C4322325732F00BB5398 /* Debug */,
-				A567C4332325732F00BB5398 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A567C480232579E100BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -858,11 +1086,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A567C49C23257A3000BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */ = {
+		A567C6232325B38400BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbedTest-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A567C49D23257A3000BB5398 /* Debug */,
-				A567C49E23257A3000BB5398 /* Release */,
+				A567C6242325B38400BB5398 /* Debug */,
+				A567C6252325B38400BB5398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A567C6302325B3CA00BB5398 /* Build configuration list for PBXNativeTarget "NodeJSEmbed-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A567C6312325B3CA00BB5398 /* Debug */,
+				A567C6322325B3CA00BB5398 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

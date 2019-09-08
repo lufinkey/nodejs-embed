@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  AppDelegate.mm
 //  NodeJSEmbedTest-macOS
 //
 //  Created by Luis Finke on 9/8/19.

@@ -31,22 +31,29 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/NodeJSEmbed/**/*', 'external/nodejs/build/Release/*.a'
+	s.source_files = 'src/NodeJSEmbed/**/*', 'external/nodejs/build/desktop/Release/*.a'
   
 	# s.resource_bundles = {
-	#   'AsyncCpp' => ['AsyncCpp/Assets/*.png']
+	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
 	# }
 
-	s.private_header_files = 'external/nodejs/build/include/**/*.h', 'external/nodejs/build/include/**/*.hpp'
+	s.ios.private_header_files = 'external/nodejs/build/desktop/include/**/*.h', 'external/nodejs/build/desktop/include/**/*.hpp'
+	s.osx.private_header_files = 'external/nodejs/build/mobile/include/**/*.h', 'external/nodejs/build/mobile/include/**/*.hpp'
 	s.public_header_files = 'src/NodeJSEmbed/**/*.hpp'
 	s.header_mappings_dir = 'src/NodeJSEmbed'
 	s.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/include"',
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
+	}
+	pod.ios.pod_target_xcconfig = {
+		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim"'
+	}
+	pod.osx.pod_target_xcconfig = {
+		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/v8"'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
 
 	# build NodeJS when project is prepared
-	s.prepare_command = './external/nodejs/build.sh Release'
+	s.prepare_command = './external/nodejs/build_desktop.sh Release && ./external/nodejs/build_mobile_headers.sh'
 end

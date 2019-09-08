@@ -1,0 +1,33 @@
+#  BuildDesktopOutput.xcfilelist
+#  NodeJSEmbed
+#
+#  Created by Luis Finke on 9/8/19.
+#  Copyright © 2019 Luis Finke. All rights reserved.
+
+# This file may be set as an input or output file list for a shell script build phase.
+# List file paths below; one per line. These paths will be considered inputs or outputs for the script phase.
+# Build settings will be expanded, e.g. $(SRCROOT)/fileName
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libbrotli.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libcares.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libhistogram.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libhttp_parser.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libicudata.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libicui18n.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libicustubdata.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libicuucx.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libllhttp.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libnghttp2.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libnode.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libopenssl.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libtorque_base.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libuv.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_base_without_compiler.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_compiler.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_init.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_initializers.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_libbase.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_libplatform.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_libsampler.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_nosnapshot.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_snapshot.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libzlib.a

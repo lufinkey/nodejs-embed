@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  ViewController.mm
 //  NodeJSEmbedTest-macOS
 //
 //  Created by Luis Finke on 9/8/19.
@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#include <NodeJSEmbed/NodeJS.hpp>
 
 @implementation ViewController
 
@@ -16,6 +17,11 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear {
+	[super viewDidAppear];
+	
+	embed::nodejs::NodeJS::start();
+}
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
