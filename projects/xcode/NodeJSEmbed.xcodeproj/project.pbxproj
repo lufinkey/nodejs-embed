@@ -51,7 +51,6 @@
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
-		A567C64F2325F91E00BB5398 /* node_native_module_env.h in Headers */ = {isa = PBXBuildFile; fileRef = A567C64E2325F91E00BB5398 /* node_native_module_env.h */; };
 		A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
 		A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
 /* End PBXBuildFile section */
@@ -488,7 +487,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C64F2325F91E00BB5398 /* node_native_module_env.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
