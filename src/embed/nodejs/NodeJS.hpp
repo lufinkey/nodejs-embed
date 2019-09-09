@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <mutex>
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -19,4 +19,5 @@ namespace embed::nodejs {
 	};
 	
 	void start(StartOptions options = {});
+	void queue(std::function<void()> work);
 }

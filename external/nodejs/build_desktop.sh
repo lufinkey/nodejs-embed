@@ -22,6 +22,8 @@ mkdir -p "$build_path" || exit $?
 cd "$build_path"
 if [ ! -d "node/.git" ] && [ ! -f "node/.git" ]; then
 	git clone --recursive "https://github.com/nodejs/node.git" "node" || exit $?
+	cd "node"
+	git checkout "v10.16.0"
 fi
 
 # link include files
@@ -45,6 +47,6 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	cd "$base_dir/$build_path" || exit $?
 	mkdir -p "$build_type" || exit $?
 	cd "$base_dir/$build_path/node/out/$build_type" || exit $?
-	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" \
+	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
 		"$base_dir/$build_path/$build_type" || exit $?
 fi

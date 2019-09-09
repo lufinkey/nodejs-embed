@@ -7,16 +7,34 @@
 //
 
 #include "NodeJS.hpp"
+#include <limits>
+#include <mutex>
+#include <stdexcept>
+#include <thread>
+#include <cstdlib>
+#include <cstring>
 #include <nodejs/node.h>
 #include <nodejs/node_api.h>
 #include "NAPI_Macros.hpp"
-#include <stdlib.h>
+#include "NAPI_Types.hpp"
 
 napi_value NodeJSEmbed_init(napi_env env, napi_value exports);
 napi_value NodeJSEmbed_send(napi_env env, napi_callback_info info);
 
 namespace embed::nodejs {
+	std::thread nodejsThread;
+	std::mutex nodejsThreadMutex;
+	
+	void nodejs_main(int argc, char* argv[]);
+	
 	void start(StartOptions options) {
+		std::lock_guard<std::mutex> lock(nodejsThreadMutex);
+		if(nodejsThread.joinable()) {
+			throw std::logic_error("NodeJS already started");
+		}
+		if(options.args.size() >= (size_t)(std::numeric_limits<int>::max() - (2 + sizeof(int)))) {
+			throw std::out_of_range("Too many arguments for nodejs");
+		}
 		// set environment variables
 		if(options.modulePaths.size() > 0) {
 			const char* prevNodePathStr = getenv("NODE_PATH");
@@ -43,7 +61,37 @@ namespace embed::nodejs {
 			setenv("NODE_PATH", nodePath.c_str(), 1);
 		}
 		
-		// TODO start NodeJS
+		std::vector<std::string> args = {
+			"node",
+			"-e",
+			"\nconsole.log(\"hello\");\n"
+		};
+		args.insert(args.end(), options.args.begin(), options.args.end());
+		
+		size_t argsDataSize = 0;
+		for(auto& arg : args) {
+			argsDataSize += (arg.length() + 1);
+		}
+		auto argsData = std::make_unique<char[]>(argsDataSize);
+		auto argsDataPtr = argsData.get();
+		auto argv = std::make_unique<char*[]>(args.size());
+		size_t argIndex = 0;
+		for(auto& arg : args) {
+			strcpy(argsDataPtr, arg.data());
+			argv[argIndex] = argsDataPtr;
+			argsDataPtr += (arg.length() + 1);
+			argIndex += 1;
+		}
+		int argc = (int)args.size();
+		
+		nodejsThread = std::thread([argsData=std::move(argsData), argv=std::move(argv), argc]() {
+			nodejs_main(argc, argv.get());
+		});
+	}
+	
+	void nodejs_main(int argc, char* argv[]) {
+		int exitCode = node::Start(argc, argv);
+		printf("NodeJS exited with code %i\n", exitCode);
 	}
 }
 
@@ -73,4 +121,4 @@ napi_value NodeJSEmbed_send(napi_env env, napi_callback_info info) {
 	return nullptr;
 }
 
-NAPI_MODULE(cpp_embed, NodeJSEmbed_init)
+NAPI_MODULE(__native_embed, NodeJSEmbed_init)

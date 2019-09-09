@@ -16,26 +16,21 @@
 		A567C47B232579E100BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C479232579E100BB5398 /* Main.storyboard */; };
 		A567C47E232579E100BB5398 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C47D232579E100BB5398 /* main.mm */; };
 		A567C5D72325A48E00BB5398 /* libv8_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5BF2325A48D00BB5398 /* libv8_initializers.a */; };
-		A567C5D82325A48E00BB5398 /* libhistogram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C02325A48D00BB5398 /* libhistogram.a */; };
 		A567C5D92325A48E00BB5398 /* libv8_libsampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C12325A48D00BB5398 /* libv8_libsampler.a */; };
 		A567C5DA2325A48E00BB5398 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C22325A48D00BB5398 /* libuv.a */; };
 		A567C5DB2325A48E00BB5398 /* libhttp_parser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C32325A48D00BB5398 /* libhttp_parser.a */; };
 		A567C5DC2325A48E00BB5398 /* libnode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C42325A48D00BB5398 /* libnode.a */; };
 		A567C5DD2325A48E00BB5398 /* libopenssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C52325A48D00BB5398 /* libopenssl.a */; };
-		A567C5DE2325A48E00BB5398 /* libv8_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C62325A48D00BB5398 /* libv8_compiler.a */; };
 		A567C5DF2325A48E00BB5398 /* libv8_libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C72325A48D00BB5398 /* libv8_libbase.a */; };
 		A567C5E02325A48E00BB5398 /* libbrotli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C82325A48D00BB5398 /* libbrotli.a */; };
 		A567C5E12325A48E00BB5398 /* libicudata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C92325A48D00BB5398 /* libicudata.a */; };
 		A567C5E22325A48E00BB5398 /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CA2325A48D00BB5398 /* libicui18n.a */; };
 		A567C5E32325A48E00BB5398 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CB2325A48D00BB5398 /* libcares.a */; };
-		A567C5E42325A48E00BB5398 /* libtorque_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CC2325A48D00BB5398 /* libtorque_base.a */; };
 		A567C5E52325A48E00BB5398 /* libnghttp2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CD2325A48D00BB5398 /* libnghttp2.a */; };
 		A567C5E62325A48E00BB5398 /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CE2325A48D00BB5398 /* libv8_libplatform.a */; };
-		A567C5E72325A48E00BB5398 /* libv8_base_without_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */; };
 		A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D02325A48E00BB5398 /* libv8_init.a */; };
 		A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
 		A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D22325A48E00BB5398 /* libzlib.a */; };
-		A567C5EB2325A48E00BB5398 /* libllhttp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D32325A48E00BB5398 /* libllhttp.a */; };
 		A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D42325A48E00BB5398 /* libicuucx.a */; };
 		A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */; };
 		A567C5EE2325A48E00BB5398 /* libicustubdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D62325A48E00BB5398 /* libicustubdata.a */; };
@@ -51,8 +46,9 @@
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
-		A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
-		A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
+		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
+		A5983E35232714A500176E74 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5983E34232714A500176E74 /* libgtest.a */; };
+		A5983E3A2327169000176E74 /* libv8_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5983E392327169000176E74 /* libv8_base.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,10 +167,12 @@
 		A567C63A2325DCF500BB5398 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		A567C63C2325DCFB00BB5398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A567C64B2325F8F700BB5398 /* node_code_cache.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_code_cache.cc; path = Debug/node_code_cache.cc; sourceTree = "<group>"; };
-		A567C64E2325F91E00BB5398 /* node_native_module_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_native_module_env.h; sourceTree = "<group>"; };
 		A567C6522325FEFA00BB5398 /* node_snapshot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_snapshot.cc; path = Debug/node_snapshot.cc; sourceTree = "<group>"; };
-		A5983E242325FFDA00176E74 /* node_main_instance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node_main_instance.h; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
+		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
+		A5983E34232714A500176E74 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = Debug/libgtest.a; sourceTree = "<group>"; };
+		A5983E392327169000176E74 /* libv8_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_base.a; path = Debug/libv8_base.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,27 +183,24 @@
 				A567C5E52325A48E00BB5398 /* libnghttp2.a in Frameworks */,
 				A567C5DB2325A48E00BB5398 /* libhttp_parser.a in Frameworks */,
 				A567C5DA2325A48E00BB5398 /* libuv.a in Frameworks */,
-				A567C5E42325A48E00BB5398 /* libtorque_base.a in Frameworks */,
 				A567C5E32325A48E00BB5398 /* libcares.a in Frameworks */,
 				A567C5DD2325A48E00BB5398 /* libopenssl.a in Frameworks */,
 				A567C5E02325A48E00BB5398 /* libbrotli.a in Frameworks */,
 				A567C5E22325A48E00BB5398 /* libicui18n.a in Frameworks */,
 				A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */,
-				A567C5E72325A48E00BB5398 /* libv8_base_without_compiler.a in Frameworks */,
 				A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */,
-				A567C5EB2325A48E00BB5398 /* libllhttp.a in Frameworks */,
 				A567C5E12325A48E00BB5398 /* libicudata.a in Frameworks */,
-				A567C5D82325A48E00BB5398 /* libhistogram.a in Frameworks */,
 				A567C5DC2325A48E00BB5398 /* libnode.a in Frameworks */,
 				A567C5DF2325A48E00BB5398 /* libv8_libbase.a in Frameworks */,
+				A5983E35232714A500176E74 /* libgtest.a in Frameworks */,
 				A567C5E62325A48E00BB5398 /* libv8_libplatform.a in Frameworks */,
 				A567C5EE2325A48E00BB5398 /* libicustubdata.a in Frameworks */,
 				A567C5D72325A48E00BB5398 /* libv8_initializers.a in Frameworks */,
 				A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */,
 				A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */,
 				A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */,
-				A567C5DE2325A48E00BB5398 /* libv8_compiler.a in Frameworks */,
 				A567C5D92325A48E00BB5398 /* libv8_libsampler.a in Frameworks */,
+				A5983E3A2327169000176E74 /* libv8_base.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +335,6 @@
 				A567C5F02325A50600BB5398 /* build_desktop.sh */,
 				A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */,
 				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
-				A567C64D2325F91E00BB5398 /* shim */,
 				A567C5592325A36700BB5398 /* build */,
 			);
 			path = nodejs;
@@ -400,6 +394,7 @@
 			children = (
 				A567C5C82325A48D00BB5398 /* libbrotli.a */,
 				A567C5CB2325A48D00BB5398 /* libcares.a */,
+				A5983E34232714A500176E74 /* libgtest.a */,
 				A567C5C02325A48D00BB5398 /* libhistogram.a */,
 				A567C5C32325A48D00BB5398 /* libhttp_parser.a */,
 				A567C5C92325A48D00BB5398 /* libicudata.a */,
@@ -412,6 +407,7 @@
 				A567C5C52325A48D00BB5398 /* libopenssl.a */,
 				A567C5CC2325A48D00BB5398 /* libtorque_base.a */,
 				A567C5C22325A48D00BB5398 /* libuv.a */,
+				A5983E392327169000176E74 /* libv8_base.a */,
 				A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */,
 				A567C5C62325A48D00BB5398 /* libv8_compiler.a */,
 				A567C5D02325A48E00BB5398 /* libv8_init.a */,
@@ -423,6 +419,7 @@
 				A567C5D12325A48E00BB5398 /* libv8_snapshot.a */,
 				A567C5D22325A48E00BB5398 /* libzlib.a */,
 				A567C64B2325F8F700BB5398 /* node_code_cache.cc */,
+				A5983E2D2326F25500176E74 /* node_javascript.cc */,
 				A567C6522325FEFA00BB5398 /* node_snapshot.cc */,
 			);
 			name = Debug;
@@ -459,15 +456,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		A567C64D2325F91E00BB5398 /* shim */ = {
-			isa = PBXGroup;
-			children = (
-				A567C64E2325F91E00BB5398 /* node_native_module_env.h */,
-				A5983E242325FFDA00176E74 /* node_main_instance.h */,
-			);
-			path = shim;
-			sourceTree = "<group>";
-		};
 		A5983E2A2326B74000176E74 /* nodejs */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +463,7 @@
 				A567C4372325738B00BB5398 /* NodeJS.cpp */,
 				A567C6392325D13300BB5398 /* NAPI_Macros.hpp */,
 				A5983E292326B0AB00176E74 /* NAPI_Types.hpp */,
+				A5983E2C2326CE5200176E74 /* js */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";
@@ -749,8 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A567C4392325739000BB5398 /* NodeJS.cpp in Sources */,
-				A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */,
-				A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */,
+				A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +938,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 				);
@@ -976,6 +965,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 				);
