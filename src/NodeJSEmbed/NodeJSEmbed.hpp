@@ -1,6 +1,6 @@
 //
 //  NodeJSEmbed.hpp
-//  SoundHoleCore
+//  NodeJSEmbed
 //
 //  Created by Luis Finke on 9/6/19.
 //  Copyright © 2019 Luis Finke. All rights reserved.

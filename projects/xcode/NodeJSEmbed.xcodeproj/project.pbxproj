@@ -51,6 +51,9 @@
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
+		A567C64F2325F91E00BB5398 /* node_native_module_env.h in Headers */ = {isa = PBXBuildFile; fileRef = A567C64E2325F91E00BB5398 /* node_native_module_env.h */; };
+		A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
+		A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +171,10 @@
 		A567C6392325D13300BB5398 /* NAPI_Macros.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Macros.hpp; sourceTree = "<group>"; };
 		A567C63A2325DCF500BB5398 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		A567C63C2325DCFB00BB5398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A567C64B2325F8F700BB5398 /* node_code_cache.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_code_cache.cc; path = Debug/node_code_cache.cc; sourceTree = "<group>"; };
+		A567C64E2325F91E00BB5398 /* node_native_module_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_native_module_env.h; sourceTree = "<group>"; };
+		A567C6522325FEFA00BB5398 /* node_snapshot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_snapshot.cc; path = Debug/node_snapshot.cc; sourceTree = "<group>"; };
+		A5983E242325FFDA00176E74 /* node_main_instance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node_main_instance.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,10 +339,11 @@
 		A567C4A623257F2700BB5398 /* nodejs */ = {
 			isa = PBXGroup;
 			children = (
-				A567C5592325A36700BB5398 /* build */,
 				A567C5F02325A50600BB5398 /* build_desktop.sh */,
 				A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */,
 				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
+				A567C64D2325F91E00BB5398 /* shim */,
+				A567C5592325A36700BB5398 /* build */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";
@@ -351,6 +359,7 @@
 		A567C55A2325A37400BB5398 /* desktop */ = {
 			isa = PBXGroup;
 			children = (
+				A567C6422325E5BD00BB5398 /* node */,
 				A567C5BE2325A47E00BB5398 /* Debug */,
 				A567C55C2325A38C00BB5398 /* Release */,
 			);
@@ -415,6 +424,8 @@
 				A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */,
 				A567C5D12325A48E00BB5398 /* libv8_snapshot.a */,
 				A567C5D22325A48E00BB5398 /* libzlib.a */,
+				A567C64B2325F8F700BB5398 /* node_code_cache.cc */,
+				A567C6522325FEFA00BB5398 /* node_snapshot.cc */,
 			);
 			name = Debug;
 			sourceTree = "<group>";
@@ -435,6 +446,30 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		A567C6422325E5BD00BB5398 /* node */ = {
+			isa = PBXGroup;
+			children = (
+				A567C6432325E61200BB5398 /* src */,
+			);
+			path = node;
+			sourceTree = "<group>";
+		};
+		A567C6432325E61200BB5398 /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A567C64D2325F91E00BB5398 /* shim */ = {
+			isa = PBXGroup;
+			children = (
+				A567C64E2325F91E00BB5398 /* node_native_module_env.h */,
+				A5983E242325FFDA00176E74 /* node_main_instance.h */,
+			);
+			path = shim;
+			sourceTree = "<group>";
+		};
 		AC494E686077356B93D7283B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +488,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567C64F2325F91E00BB5398 /* node_native_module_env.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +741,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A567C4392325739000BB5398 /* NodeJSEmbed.cpp in Sources */,
+				A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */,
+				A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,11 +934,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NODE_WANT_INTERNALS=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -917,11 +960,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NODE_WANT_INTERNALS=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -28,9 +28,10 @@ fi
 cd "$base_dir/$build_path" || exit $?
 mkdir -p "include" || exit $?
 cd "include" || exit $?
-rm -rf "nodejs" "v8" || exit $?
+rm -rf "nodejs" "v8" "uv" || exit $?
 cp -r "../node/src" "nodejs" \
 	&& cp -r "../node/deps/v8/include" "v8" \
+	&& cp -r "../node/deps/uv/include" "uv" \
 	|| exit $?
 
 # build nodejs if needed
@@ -44,5 +45,6 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	cd "$base_dir/$build_path" || exit $?
 	mkdir -p "$build_type" || exit $?
 	cd "$base_dir/$build_path/node/out/$build_type" || exit $?
-	cp -f *.a "$base_dir/$build_path/$build_type" || exit $?
+	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" \
+		"$base_dir/$build_path/$build_type" || exit $?
 fi

@@ -20,7 +20,7 @@
 -(void)viewDidAppear {
 	[super viewDidAppear];
 	
-	embed::nodejs::NodeJS::start();
+	embed::nodejs::start();
 }
 
 - (void)setRepresentedObject:(id)representedObject {

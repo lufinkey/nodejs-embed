@@ -31,3 +31,5 @@ $(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_libsampler.a
 $(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_nosnapshot.a
 $(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libv8_snapshot.a
 $(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/libzlib.a
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/node_code_cache.cc
+$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug/node_snapshot.cc
