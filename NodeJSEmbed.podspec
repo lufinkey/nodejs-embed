@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/NodeJSEmbed/**/*', 'external/nodejs/build/desktop/Release/*.a'
+	s.source_files = 'src/embed/**/*', 'external/nodejs/build/desktop/Release/*.a'
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
 
 	s.ios.private_header_files = 'external/nodejs/build/desktop/include/**/*.h', 'external/nodejs/build/desktop/include/**/*.hpp'
 	s.osx.private_header_files = 'external/nodejs/build/mobile/include/**/*.h', 'external/nodejs/build/mobile/include/**/*.hpp'
-	s.public_header_files = 'src/NodeJSEmbed/**/*.hpp'
-	s.header_mappings_dir = 'src/NodeJSEmbed'
+	s.public_header_files = 'src/embed/**/*.hpp'
+	s.header_mappings_dir = 'src/embed'
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'

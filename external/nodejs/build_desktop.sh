@@ -21,7 +21,7 @@ cd "$base_dir" || exit $?
 mkdir -p "$build_path" || exit $?
 cd "$build_path"
 if [ ! -d "node/.git" ] && [ ! -f "node/.git" ]; then
-	git clone --recursive "https://github.com/nodejs/node" || exit $?
+	git clone --recursive "https://github.com/nodejs/node.git" "node" || exit $?
 fi
 
 # link include files
