@@ -64,7 +64,7 @@ namespace embed::nodejs {
 		std::vector<std::string> args = {
 			"node",
 			"-e",
-			"\nconsole.log(\"hello\");\n"
+			"\nconst Module = require(\"module\");\nconsole.log(\"Module: \", Module);\n"
 		};
 		args.insert(args.end(), options.args.begin(), options.args.end());
 		
