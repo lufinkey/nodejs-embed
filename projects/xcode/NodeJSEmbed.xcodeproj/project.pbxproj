@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
 		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
-		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A567C4392325739000BB5398 /* NodeJSEmbed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */; };
 		A567C473232579E000BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.mm */; };
 		A567C476232579E000BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.mm */; };
 		A567C478232579E100BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C477232579E100BB5398 /* Assets.xcassets */; };
@@ -41,14 +41,16 @@
 		A567C5EE2325A48E00BB5398 /* libicustubdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D62325A48E00BB5398 /* libicustubdata.a */; };
 		A567C5F32325AD0400BB5398 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5F22325AD0400BB5398 /* Cocoa.framework */; };
 		A567C5F82325AE8500BB5398 /* libNodeJSEmbed-macOS-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */; };
-		A567C6142325B38300BB5398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6132325B38300BB5398 /* AppDelegate.m */; };
-		A567C6172325B38300BB5398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6162325B38300BB5398 /* ViewController.m */; };
+		A567C6142325B38300BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C6132325B38300BB5398 /* AppDelegate.mm */; };
+		A567C6172325B38300BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C6162325B38300BB5398 /* ViewController.mm */; };
 		A567C61A2325B38300BB5398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C6182325B38300BB5398 /* Main.storyboard */; };
 		A567C61C2325B38400BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C61B2325B38400BB5398 /* Assets.xcassets */; };
 		A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */; };
-		A567C6222325B38400BB5398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A567C6212325B38400BB5398 /* main.m */; };
-		A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A567C6222325B38400BB5398 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C6212325B38400BB5398 /* main.mm */; };
+		A567C6332325B3DA00BB5398 /* NodeJSEmbed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */; };
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
+		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
+		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +90,8 @@
 		86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.release.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeJSEmbedTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
-		A567C4382325738B00BB5398 /* NodeJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJS.hpp; sourceTree = "<group>"; };
+		A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJSEmbed.cpp; sourceTree = "<group>"; };
+		A567C4382325738B00BB5398 /* NodeJSEmbed.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJSEmbed.hpp; sourceTree = "<group>"; };
 		A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C471232579E000BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A567C472232579E000BB5398 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -154,15 +156,18 @@
 		A567C5F22325AD0400BB5398 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A567C6102325B38300BB5398 /* NodeJSEmbedTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C6122325B38300BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A567C6132325B38300BB5398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A567C6132325B38300BB5398 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		A567C6152325B38300BB5398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A567C6162325B38300BB5398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A567C6162325B38300BB5398 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		A567C6192325B38300BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A567C61B2325B38400BB5398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A567C61E2325B38400BB5398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A567C6202325B38400BB5398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A567C6212325B38400BB5398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A567C6212325B38400BB5398 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A567C6392325D13300BB5398 /* NAPI_Macros.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Macros.hpp; sourceTree = "<group>"; };
+		A567C63A2325DCF500BB5398 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A567C63C2325DCFB00BB5398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */,
+				A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */,
 				A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */,
 				4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */,
 			);
@@ -229,6 +236,8 @@
 		4FC62D51937898F20EF09AF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A567C63C2325DCFB00BB5398 /* Foundation.framework */,
+				A567C63A2325DCF500BB5398 /* UIKit.framework */,
 				A567C5F22325AD0400BB5398 /* Cocoa.framework */,
 				485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */,
 				98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */,
@@ -271,8 +280,9 @@
 		A567C4362325738B00BB5398 /* NodeJSEmbed */ = {
 			isa = PBXGroup;
 			children = (
-				A567C4382325738B00BB5398 /* NodeJS.hpp */,
-				A567C4372325738B00BB5398 /* NodeJS.cpp */,
+				A567C6392325D13300BB5398 /* NAPI_Macros.hpp */,
+				A567C4382325738B00BB5398 /* NodeJSEmbed.hpp */,
+				A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */,
 			);
 			path = NodeJSEmbed;
 			sourceTree = "<group>";
@@ -413,14 +423,14 @@
 			isa = PBXGroup;
 			children = (
 				A567C6122325B38300BB5398 /* AppDelegate.h */,
-				A567C6132325B38300BB5398 /* AppDelegate.m */,
+				A567C6132325B38300BB5398 /* AppDelegate.mm */,
 				A567C6152325B38300BB5398 /* ViewController.h */,
-				A567C6162325B38300BB5398 /* ViewController.m */,
+				A567C6162325B38300BB5398 /* ViewController.mm */,
 				A567C6182325B38300BB5398 /* Main.storyboard */,
 				A567C61B2325B38400BB5398 /* Assets.xcassets */,
 				A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */,
 				A567C6202325B38400BB5398 /* Info.plist */,
-				A567C6212325B38400BB5398 /* main.m */,
+				A567C6212325B38400BB5398 /* main.mm */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -694,7 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C4392325739000BB5398 /* NodeJS.cpp in Sources */,
+				A567C4392325739000BB5398 /* NodeJSEmbed.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,9 +722,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C6172325B38300BB5398 /* ViewController.m in Sources */,
-				A567C6222325B38400BB5398 /* main.m in Sources */,
-				A567C6142325B38300BB5398 /* AppDelegate.m in Sources */,
+				A567C6172325B38300BB5398 /* ViewController.mm in Sources */,
+				A567C6222325B38400BB5398 /* main.mm in Sources */,
+				A567C6142325B38300BB5398 /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */,
+				A567C6332325B3DA00BB5398 /* NodeJSEmbed.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +986,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -997,6 +1011,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../src",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (

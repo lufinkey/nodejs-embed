@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  ViewController.mm
 //  NodeJSEmbedTest-iOS
 //
 //  Created by Luis Finke on 9/8/19.
@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#include <NodeJSEmbed/NodeJSEmbed.hpp>
 
 @interface ViewController ()
 
@@ -19,5 +20,10 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	embed::nodejs::start();
+}
 
 @end

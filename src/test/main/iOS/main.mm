@@ -1,5 +1,5 @@
 //
-//  main.m
+//  main.mm
 //  NodeJSEmbedTest-iOS
 //
 //  Created by Luis Finke on 9/8/19.
