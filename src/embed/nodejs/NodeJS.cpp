@@ -1,12 +1,12 @@
 //
-//  NodeJSEmbed.cpp
+//  NodeJS.cpp
 //  NodeJSEmbed
 //
 //  Created by Luis Finke on 9/6/19.
 //  Copyright © 2019 Luis Finke. All rights reserved.
 //
 
-#include "NodeJSEmbed.hpp"
+#include "NodeJS.hpp"
 #include <nodejs/node.h>
 #include <nodejs/node_api.h>
 #include "NAPI_Macros.hpp"

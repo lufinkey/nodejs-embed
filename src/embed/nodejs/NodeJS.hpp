@@ -1,5 +1,5 @@
 //
-//  NodeJSEmbed.hpp
+//  NodeJS.hpp
 //  NodeJSEmbed
 //
 //  Created by Luis Finke on 9/6/19.

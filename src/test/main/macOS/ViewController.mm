@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#include <NodeJSEmbed/NodeJSEmbed.hpp>
+#include <embed/nodejs/NodeJS.hpp>
 
 @implementation ViewController
 

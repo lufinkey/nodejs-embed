@@ -75,4 +75,5 @@
 	size_t stringLengthCopied = 0; \
 	char* stringData = (char*)stringObj.data(); \
 	NAPI_CALL(env, napi_get_value_string_utf8((env), value, stringData, stringLength + 1, &stringLengthCopied)); \
+	NAPI_ASSERT(env, stringLength == stringLengthCopied, "Couldn't fully copy data to string " #stringObj "."); \
 }

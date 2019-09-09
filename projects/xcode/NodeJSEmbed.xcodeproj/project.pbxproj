@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
 		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
-		A567C4392325739000BB5398 /* NodeJSEmbed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */; };
+		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
 		A567C473232579E000BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.mm */; };
 		A567C476232579E000BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.mm */; };
 		A567C478232579E100BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C477232579E100BB5398 /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 		A567C61C2325B38400BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C61B2325B38400BB5398 /* Assets.xcassets */; };
 		A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */; };
 		A567C6222325B38400BB5398 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C6212325B38400BB5398 /* main.mm */; };
-		A567C6332325B3DA00BB5398 /* NodeJSEmbed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */; };
+		A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
@@ -92,8 +92,8 @@
 		86B43609325A5E9DDCD9ADEC /* Pods-NodeJSEmbedTest-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodeJSEmbedTest-iOS.release.xcconfig"; path = "Target Support Files/Pods-NodeJSEmbedTest-iOS/Pods-NodeJSEmbedTest-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodeJSEmbedTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJSEmbed.cpp; sourceTree = "<group>"; };
-		A567C4382325738B00BB5398 /* NodeJSEmbed.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJSEmbed.hpp; sourceTree = "<group>"; };
+		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
+		A567C4382325738B00BB5398 /* NodeJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJS.hpp; sourceTree = "<group>"; };
 		A567C46F232579E000BB5398 /* NodeJSEmbedTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeJSEmbedTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C471232579E000BB5398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A567C472232579E000BB5398 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -174,6 +174,7 @@
 		A567C64E2325F91E00BB5398 /* node_native_module_env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_native_module_env.h; sourceTree = "<group>"; };
 		A567C6522325FEFA00BB5398 /* node_snapshot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_snapshot.cc; path = Debug/node_snapshot.cc; sourceTree = "<group>"; };
 		A5983E242325FFDA00176E74 /* node_main_instance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node_main_instance.h; sourceTree = "<group>"; };
+		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,21 +277,19 @@
 		A567C4352325734700BB5398 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A567C4362325738B00BB5398 /* NodeJSEmbed */,
+				A567C4362325738B00BB5398 /* embed */,
 				A567C483232579F000BB5398 /* test */,
 			);
 			name = src;
 			path = ../../src;
 			sourceTree = "<group>";
 		};
-		A567C4362325738B00BB5398 /* NodeJSEmbed */ = {
+		A567C4362325738B00BB5398 /* embed */ = {
 			isa = PBXGroup;
 			children = (
-				A567C6392325D13300BB5398 /* NAPI_Macros.hpp */,
-				A567C4382325738B00BB5398 /* NodeJSEmbed.hpp */,
-				A567C4372325738B00BB5398 /* NodeJSEmbed.cpp */,
+				A5983E2A2326B74000176E74 /* nodejs */,
 			);
-			path = NodeJSEmbed;
+			path = embed;
 			sourceTree = "<group>";
 		};
 		A567C470232579E000BB5398 /* macOS */ = {
@@ -467,6 +466,17 @@
 				A5983E242325FFDA00176E74 /* node_main_instance.h */,
 			);
 			path = shim;
+			sourceTree = "<group>";
+		};
+		A5983E2A2326B74000176E74 /* nodejs */ = {
+			isa = PBXGroup;
+			children = (
+				A567C4382325738B00BB5398 /* NodeJS.hpp */,
+				A567C4372325738B00BB5398 /* NodeJS.cpp */,
+				A567C6392325D13300BB5398 /* NAPI_Macros.hpp */,
+				A5983E292326B0AB00176E74 /* NAPI_Types.hpp */,
+			);
+			path = nodejs;
 			sourceTree = "<group>";
 		};
 		AC494E686077356B93D7283B /* Pods */ = {
@@ -738,7 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C4392325739000BB5398 /* NodeJSEmbed.cpp in Sources */,
+				A567C4392325739000BB5398 /* NodeJS.cpp in Sources */,
 				A5983E232325FF4200176E74 /* node_code_cache.cc in Sources */,
 				A567C6532325FEFA00BB5398 /* node_snapshot.cc in Sources */,
 			);
@@ -768,7 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567C6332325B3DA00BB5398 /* NodeJSEmbed.cpp in Sources */,
+				A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
