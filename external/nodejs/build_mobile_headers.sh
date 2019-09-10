@@ -22,4 +22,5 @@ rm -rf "nodejs" "chakrashim" "chakracore" || exit $?
 cp -r "../node/src" "nodejs" \
 	&& cp -r "../node/deps/chakrashim/include" "chakrashim" \
 	&& cp -r "../node/deps/chakrashim/core/lib/Jsrt" "chakracore" \
+	&& cp -r "../node/deps/uv/include" "uv" \
 	|| exit $?

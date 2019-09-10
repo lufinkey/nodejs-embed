@@ -1085,8 +1085,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1107,8 +1109,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				OTHER_LDFLAGS = "-ObjC";

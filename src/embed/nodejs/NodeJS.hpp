@@ -19,5 +19,6 @@ namespace embed::nodejs {
 	};
 	
 	void start(StartOptions options = {});
+	
 	void queue(std::function<void()> work);
 }

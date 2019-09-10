@@ -8,6 +8,7 @@
 
 #include "NodeJS.hpp"
 #include <limits>
+#include <list>
 #include <mutex>
 #include <stdexcept>
 #include <thread>
@@ -15,21 +16,31 @@
 #include <cstring>
 #include <nodejs/node.h>
 #include <nodejs/node_api.h>
+#include <uv.h>
 #include "NAPI_Macros.hpp"
 #include "NAPI_Types.hpp"
 
-napi_value NodeJSEmbed_init(napi_env env, napi_value exports);
-napi_value NodeJSEmbed_send(napi_env env, napi_callback_info info);
-
 namespace embed::nodejs {
-	std::thread nodejsThread;
-	std::mutex nodejsThreadMutex;
+	std::thread nodejsMainThread;
+	std::mutex nodejsMainThreadMutex;
+	
+	struct NodeJSThread {
+		uv_loop_t* loop = nullptr;
+		std::thread::id threadId;
+	};
+	std::list<NodeJSThread> nodejsThreads;
+	std::mutex nodejsThreadsMutex;
 	
 	void nodejs_main(int argc, char* argv[]);
 	
+	napi_value NativeModule_init(napi_env env, napi_value exports);
+	napi_value NativeModule_send(napi_env env, napi_callback_info info);
+	napi_value NativeModule_registerFunctions(napi_env env, napi_callback_info info);
+	void NativeModule_main_cleanup(void*);
+	
 	void start(StartOptions options) {
-		std::lock_guard<std::mutex> lock(nodejsThreadMutex);
-		if(nodejsThread.joinable()) {
+		std::unique_lock<std::mutex> lock(nodejsMainThreadMutex);
+		if(nodejsMainThread.joinable()) {
 			throw std::logic_error("NodeJS already started");
 		}
 		if(options.args.size() >= (size_t)(std::numeric_limits<int>::max() - (2 + sizeof(int)))) {
@@ -64,7 +75,7 @@ namespace embed::nodejs {
 		std::vector<std::string> args = {
 			"node",
 			"-e",
-			"\nconst Module = require(\"module\");\nconsole.log(\"Module: \", Module);\n"
+			"\nconst native_embed = process.binding(\"__native_embed\");\nconsole.log(Object.getOwnPropertyDescriptors(native_embed));\n"
 		};
 		args.insert(args.end(), options.args.begin(), options.args.end());
 		
@@ -77,14 +88,14 @@ namespace embed::nodejs {
 		auto argv = std::make_unique<char*[]>(args.size());
 		size_t argIndex = 0;
 		for(auto& arg : args) {
-			strcpy(argsDataPtr, arg.data());
+			std::strcpy(argsDataPtr, arg.data());
 			argv[argIndex] = argsDataPtr;
 			argsDataPtr += (arg.length() + 1);
 			argIndex += 1;
 		}
 		int argc = (int)args.size();
 		
-		nodejsThread = std::thread([argsData=std::move(argsData), argv=std::move(argv), argc]() {
+		nodejsMainThread = std::thread([argsData=std::move(argsData), argv=std::move(argv), argc]() {
 			nodejs_main(argc, argv.get());
 		});
 	}
@@ -93,32 +104,67 @@ namespace embed::nodejs {
 		int exitCode = node::Start(argc, argv);
 		printf("NodeJS exited with code %i\n", exitCode);
 	}
+	
+	
+	
+	napi_value NativeModule_init(napi_env env, napi_value exports) {
+		{
+			// add thread to list
+			std::unique_lock<std::mutex> lock(nodejsThreadsMutex);
+			NodeJSThread nodejsThread;
+			nodejsThread.threadId = std::this_thread::get_id();
+			NAPI_CALL(env, napi_get_uv_event_loop(env, &nodejsThread.loop));
+			NAPI_CALL(env, napi_add_env_cleanup_hook(env, NativeModule_main_cleanup, nodejsThread.loop));
+			nodejsThreads.push_back(nodejsThread);
+			lock.unlock();
+		}
+		napi_property_descriptor properties[] = {
+			NAPI_METHOD_DESCRIPTOR("send", NativeModule_send),
+			NAPI_METHOD_DESCRIPTOR("registerFunctions", NativeModule_registerFunctions)
+		};
+		NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
+		return exports;
+	}
+	
+	napi_value NativeModule_send(napi_env env, napi_callback_info info) {
+		size_t argc = 0;
+		napi_value args[argc];
+		
+		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments.");
+		
+		std::string eventName;
+		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
+		
+		// TODO forward message to listener
+		if(eventName == "response") {
+			// TODO match to corresponding request
+		}
+		else if(eventName == "request") {
+			// TODO look for function to correspond to request
+		}
+		
+		return nullptr;
+	}
+	
+	napi_value NativeModule_registerFunctions(napi_env env, napi_callback_info info) {
+		
+		// TODO register functions
+		
+		return nullptr;
+	}
+	
+	void NativeModule_main_cleanup(uv_loop_t* loop) {
+		// remove thread from list
+		std::unique_lock<std::mutex> lock(nodejsThreadsMutex);
+		auto it = std::find_if(nodejsThreads.begin(), nodejsThreads.end(), [=](NodeJSThread& item) {
+			return (item.loop == loop);
+		});
+		if(it != nodejsThreads.end()) {
+			nodejsThreads.erase(it);
+		}
+		lock.unlock();
+	}
 }
 
-
-
-
-napi_value NodeJSEmbed_init(napi_env env, napi_value exports) {
-	napi_property_descriptor properties[] = {
-		NAPI_METHOD_DESCRIPTOR("send", NodeJSEmbed_send)
-	};
-	NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
-	return exports;
-}
-
-napi_value NodeJSEmbed_send(napi_env env, napi_callback_info info) {
-	size_t argc = 0;
-	napi_value args[argc];
-	
-	NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
-	NAPI_ASSERT(env, argc == 2, "Wrong number of arguments.");
-	
-	std::string eventName;
-	NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
-	
-	// TODO forward message to listener
-	
-	return nullptr;
-}
-
-NAPI_MODULE(__native_embed, NodeJSEmbed_init)
+NAPI_MODULE_X(__native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
