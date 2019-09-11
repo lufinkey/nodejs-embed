@@ -11,14 +11,20 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include "NAPI_Types.hpp"
 
 namespace embed::nodejs {
 	struct StartOptions {
 		std::vector<std::string> args;
 		std::vector<std::string> modulePaths;
 	};
-	
 	void start(StartOptions options = {});
 	
-	void queue(std::function<void()> work);
+	struct EventLoop;
+	
+	std::vector<EventLoop*> getEventLoops();
+	EventLoop* getMainEventLoop();
+	
+	void queueMain(std::function<void(napi_env)> work);
+	void queue(EventLoop* loop, std::function<void(napi_env)> work);
 }

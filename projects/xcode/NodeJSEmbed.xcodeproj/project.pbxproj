@@ -247,6 +247,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A513DB0123287706000DCAC7 /* shim */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = shim;
+			sourceTree = "<group>";
+		};
 		A567C414232571FC00BB5398 = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +343,7 @@
 				A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */,
 				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
 				A567C5592325A36700BB5398 /* build */,
+				A513DB0123287706000DCAC7 /* shim */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";

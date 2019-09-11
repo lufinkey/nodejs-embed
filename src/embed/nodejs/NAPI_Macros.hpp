@@ -8,7 +8,7 @@
 
 #pragma once
 
-#define NAPI_THROW_LAST_ERROR(env, ret_val) { \
+#define NAPI_THROW_LAST_ERROR(env, fail_action) { \
 	const napi_extended_error_info* error_info; \
 	napi_get_last_error_info((env), &error_info); \
 	bool is_pending; \
@@ -19,42 +19,47 @@
 			(error_info->error_message) \
 			: "empty error message"; \
 		napi_throw_error((env), NULL, error_message); \
-		return ret_val; \
+		printf("Error in file %s at line %i: %s\n", __FILE__, __LINE__, error_message); \
+		fail_action; \
 	} \
 }
 
-#define NAPI_ASSERT_BASE(env, assertion, message, ret_val) { \
+#define NAPI_ASSERT_BASE(env, assertion, message, fail_action) { \
 	if (!(assertion)) { \
 		napi_throw_error((env), nullptr, \
 			"assertion (" #assertion ") failed: " message); \
-			return ret_val; \
+			fail_action; \
 	} \
 }
 
 // Returns NULL on failed assertion.
 // This is meant to be used inside napi_callback methods.
 #define NAPI_ASSERT(env, assertion, message) \
-	NAPI_ASSERT_BASE(env, assertion, message, nullptr)
+	NAPI_ASSERT_BASE(env, assertion, message, return nullptr)
 
 // Returns empty on failed assertion.
 // This is meant to be used inside functions with void return type.
 #define NAPI_ASSERT_VOID(env, assertion, message) \
-	NAPI_ASSERT_BASE(env, assertion, message, )
+	NAPI_ASSERT_BASE(env, assertion, message, return)
 
-#define NAPI_CALL_BASE(env, the_call, ret_val) { \
+#define NAPI_CALL_BASE(env, the_call, fail_action) { \
 	if ((the_call) != napi_ok) { \
-		NAPI_THROW_LAST_ERROR((env), ret_val); \
-		return ret_val; \
+		NAPI_THROW_LAST_ERROR((env), fail_action); \
+		fail_action; \
 	} \
 }
 
-// Returns NULL if the_call doesn't return napi_ok.
+// Returns nullptr if the_call doesn't return napi_ok.
 #define NAPI_CALL(env, the_call) \
-	NAPI_CALL_BASE(env, the_call, nullptr)
+	NAPI_CALL_BASE(env, the_call, return nullptr)
 
 // Returns empty if the_call doesn't return napi_ok.
 #define NAPI_CALL_VOID(env, the_call) \
-	NAPI_CALL_BASE(env, the_call, )
+	NAPI_CALL_BASE(env, the_call, return)
+
+// Performs an action and returns nullptr if the_call doesn't return napi_ok
+#define NAPI_CALL_ELSE(env, else_action, the_call) \
+	NAPI_CALL_BASE(env, the_call, else_action; return nullptr)
 
 // Ensures an napi_value is a certain type
 #define NAPI_ASSERT_TYPE(value, expectedType) { \
