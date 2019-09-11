@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include "NAPI_Types.hpp"
+#include "Events.hpp"
 
 namespace embed::nodejs {
 	struct StartOptions {

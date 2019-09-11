@@ -23,6 +23,7 @@
 #include <uv.h>
 #include "NAPI_Macros.hpp"
 #include "NAPI_Types.hpp"
+#include "EventDispatch.hpp"
 
 namespace embed::nodejs {
 	std::thread nodejsMainThread;
@@ -42,13 +43,16 @@ namespace embed::nodejs {
 	
 	std::list<EventLoop*> nodejsEventLoops;
 	std::recursive_mutex nodejsEventLoopsMutex;
+	std::list<EventLoopWork> nodejsMainDeferredWork;
+	bool nodejsExited = false;
 	
 	void nodejs_main(int argc, char* argv[]);
 	
 	napi_value NativeModule_init(napi_env env, napi_value exports);
 	napi_value NativeModule_send(napi_env env, napi_callback_info info);
 	napi_value NativeModule_setReciever(napi_env env, napi_callback_info info);
-	void NativeModule_main_cleanup(void*);
+	void NativeModule_finalize(napi_env env, void* finalize_data, void* finalize_hint);
+	void NativeModule_cleanup(void*);
 	
 	void start(StartOptions options) {
 		std::unique_lock<std::mutex> lock(nodejsMainThreadMutex);
@@ -107,6 +111,9 @@ namespace embed::nodejs {
 		}
 		int argc = (int)args.size();
 		
+		nodejsExited = false;
+		
+		dispatchProcessEvent(ProcessEventType::WILL_START, { (void*)&argc, (void*)argv.get() });
 		nodejsMainThread = std::thread([argsData=std::move(argsData), argv=std::move(argv), argc]() {
 			nodejs_main(argc, argv.get());
 		});
@@ -114,6 +121,8 @@ namespace embed::nodejs {
 	
 	void nodejs_main(int argc, char* argv[]) {
 		int exitCode = node::Start(argc, argv);
+		nodejsExited = true;
+		dispatchProcessEvent(ProcessEventType::DID_END, { (void*)&exitCode });
 		printf("NodeJS exited with code %i\n", exitCode);
 	}
 	
@@ -158,16 +167,22 @@ namespace embed::nodejs {
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
 		EventLoop* mainLoop = getMainEventLoop();
 		if(mainLoop == nullptr) {
-			throw std::runtime_error("Main loop is not running");
+			if(nodejsExited || !nodejsMainThread.joinable()) {
+				throw std::runtime_error("NodeJS event loop is not running");
+			}
+			printf("pushing deferred work\n");
+			nodejsMainDeferredWork.push_back({ .work = work });
+		} else {
+			printf("queueing to main loop\n");
+			queue(mainLoop, work);
 		}
-		queue(mainLoop, work);
 	}
 	
 	void queue(EventLoop* loop, std::function<void(napi_env)> work) {
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
 		if(!checkLoopValid(loop)) {
 			// loop is not valid
-			throw std::runtime_error("Attempting to queue work on invalid NodeJS event loop");
+			throw std::runtime_error("NodeJS event loop is not running");
 		}
 		std::unique_lock<std::mutex> loopLock(loop->queuedWorkMutex);
 		loop->queuedWork.push_back({ .work = work });
@@ -193,29 +208,46 @@ namespace embed::nodejs {
 	
 	
 	napi_value NativeModule_init(napi_env env, napi_value exports) {
+		printf("NativeModule_init\n");
 		// add event loop to list
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
+		
+		bool isMainLoop = (nodejsEventLoops.size() == 0);
 		auto nodeLoop = new EventLoop();
 		// get reference to thread id
 		nodeLoop->threadId = std::this_thread::get_id();
 		// get reference to uv event loop
 		NAPI_CALL_ELSE(env, (delete nodeLoop), napi_get_uv_event_loop(env, &(nodeLoop->uvLoop)));
-		// create thread-safe function to make calls to while the thread is alive
-		napi_value flushQueueFunction;
+		// create a function to make calls on the event loop
+		napi_value flushQueueFunction = nullptr;
 		NAPI_CALL_ELSE(env, delete nodeLoop, napi_create_function(env, "embed::nodejs::handleLoopQueue", NAPI_AUTO_LENGTH, handleLoopQueue, (void*)nodeLoop, &flushQueueFunction));
+		// create "resource name" that the threadsafe function needs for "async hooks" (unused)
 		std::ostringstream funcName;
 		funcName << "NodeJS Thread Queue Function: " << nodeLoop->threadId;
 		auto funcNameStr = funcName.str();
-		napi_value resourceName;
+		napi_value resourceName = nullptr;
 		NAPI_CALL_ELSE(env, delete nodeLoop, napi_create_string_utf8(env, funcNameStr.c_str(), funcNameStr.size(), &resourceName));
-		NAPI_CALL_ELSE(env, delete nodeLoop, napi_create_threadsafe_function(env, flushQueueFunction, nullptr, resourceName, 1, 1, nullptr, nullptr, nullptr, nullptr, &nodeLoop->queueFunction));
+		// if we're on the main thread, create a "finalize" hook
+		napi_finalize finalizeFunction = (isMainLoop) ? NativeModule_finalize : nullptr;
+		// create thread-safe function to queue calls to the event loop
+		NAPI_CALL_ELSE(env, delete nodeLoop, napi_create_threadsafe_function(env, flushQueueFunction, nullptr, resourceName, 20, 1, nullptr, finalizeFunction, nullptr, nullptr, &nodeLoop->queueFunction));
 		// add a cleanup hook to remove the loop from the list when it closes
 		#define RELEASE_AND_DELETE_NODELOOP \
 			napi_release_threadsafe_function(nodeLoop->queueFunction, napi_tsfn_abort); \
 			delete nodeLoop;
-		NAPI_CALL_ELSE(env, RELEASE_AND_DELETE_NODELOOP, napi_add_env_cleanup_hook(env, NativeModule_main_cleanup, nodeLoop->uvLoop));
+		NAPI_CALL_ELSE(env, RELEASE_AND_DELETE_NODELOOP, napi_add_env_cleanup_hook(env, NativeModule_cleanup, nodeLoop->uvLoop));
 		#undef DELETE_NODELOOP_AND_RELEASE
+		if(isMainLoop) {
+			nodeLoop->queuedWork.swap(nodejsMainDeferredWork);
+		}
 		nodejsEventLoops.push_back(nodeLoop);
+		
+		if(isMainLoop) {
+			queueMain([](napi_env env) {
+				dispatchProcessEvent(ProcessEventType::DID_START, { (void*)env });
+			});
+		}
+		
 		lock.unlock();
 		
 		// define module properties
@@ -232,7 +264,7 @@ namespace embed::nodejs {
 		napi_value args[argc];
 		
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
-		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments.");
+		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
 		
 		std::string eventName;
 		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
@@ -255,7 +287,12 @@ namespace embed::nodejs {
 		return nullptr;
 	}
 	
-	void NativeModule_main_cleanup(void* data) {
+	void NativeModule_finalize(napi_env env, void* finalize_data, void* finalize_hint) {
+		dispatchProcessEvent(ProcessEventType::WILL_END, { (void*)env });
+	}
+	
+	void NativeModule_cleanup(void* data) {
+		printf("NativeModule_cleanup\n");
 		uv_loop_t* uvLoop = (uv_loop_t*)data;
 		// remove event loop from list
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
@@ -264,12 +301,10 @@ namespace embed::nodejs {
 		});
 		if(it != nodejsEventLoops.end()) {
 			EventLoop* loop = *it;
-			std::unique_lock<std::mutex> workLock(loop->queuedWorkMutex);
-			workLock.unlock();
+			nodejsEventLoops.erase(it);
 			if(loop->queueFunction != nullptr) {
 				napi_release_threadsafe_function(loop->queueFunction, napi_tsfn_abort);
 			}
-			nodejsEventLoops.erase(it);
 			delete loop;
 		}
 		lock.unlock();

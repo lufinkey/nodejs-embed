@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include <embed/nodejs/NodeJS.hpp>
 
-@interface ViewController : NSViewController
-
+@interface ViewController: NSViewController<NodeJSProcessEventDelegate>
 
 @end
 

@@ -1,0 +1,23 @@
+//
+//  NodeJSProcessEventDelegate.h
+//  NodeJSEmbed
+//
+//  Created by Luis Finke on 9/10/19.
+//  Copyright © 2019 Luis Finke. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#include "NAPI_Types.hpp"
+
+@protocol NodeJSProcessEventDelegate <NSObject>
+
+@optional
+-(void)nodejsProcessWillStart:(NSArray<NSString*>*)args;
+@optional
+-(void)nodejsProcessDidStart:(napi_env)env;
+@optional
+-(void)nodejsProcessWillEnd:(napi_env)env;
+@optional
+-(void)nodejsProcessDidEnd:(int)exitCode;
+
+@end

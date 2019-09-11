@@ -17,13 +17,13 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
 	// Do any additional setup after loading the view.
+	embed::nodejs::start();
 }
 
 -(void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	embed::nodejs::start();
 }
 
 @end
