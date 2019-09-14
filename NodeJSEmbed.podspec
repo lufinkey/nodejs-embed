@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
 	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.cc'
+	s.ios.frameworks = 'NodeMobile'
 	s.osx.vendored_libraries = 'external/nodejs/build/desktop/Release/*.a'
   
 	# s.resource_bundles = {
