@@ -27,6 +27,7 @@
 #include "NAPI_Macros.hpp"
 #include "NAPI_Types.hpp"
 #include "EventDispatch.hpp"
+#include "native_embed_js_bundle.h"
 
 namespace embed::nodejs {
 	std::thread nodejsMainThread;
@@ -72,27 +73,45 @@ namespace embed::nodejs {
 			throw std::out_of_range("Too many arguments for nodejs");
 		}
 		// set environment variables
-		if(options.modulePaths.size() > 0) {
+		if(options.prependPaths.size() > 0 || options.appendPaths.size() > 0) {
 			const char* prevNodePathStr = getenv("NODE_PATH");
 			size_t prevNodePathLen = (prevNodePathStr != nullptr) ? strlen(prevNodePathStr) : 0;
 			std::string nodePath;
 			size_t strLength = (prevNodePathLen > 0) ? (prevNodePathLen + 1) : 0;
-			for(auto& path : options.modulePaths) {
+			for(auto& path : options.prependPaths) {
 				strLength += path.length();
 			}
-			strLength += (options.modulePaths.size() - 1);
+			for(auto& path : options.appendPaths) {
+				strLength += path.length();
+			}
+			strLength += options.prependPaths.size() + options.appendPaths.size();
 			nodePath.reserve(strLength);
 			size_t index = 0;
-			for(auto& path : options.modulePaths) {
+			// prepend paths
+			for(auto& path : options.prependPaths) {
 				nodePath += path;
-				if(index < (options.modulePaths.size()-1)) {
+				if(index < (options.prependPaths.size()-1)) {
 					nodePath += ':';
 				}
 				index++;
 			}
+			// add original paths
 			if(prevNodePathLen > 0) {
 				nodePath += ':';
 				nodePath.append(prevNodePathStr, prevNodePathLen);
+			}
+			// append paths
+			if(options.appendPaths.size() > 0) {
+				if(nodePath.length() > 0) {
+					nodePath += ':';
+				}
+				for(auto& path : options.appendPaths) {
+					nodePath += path;
+					if(index < (options.appendPaths.size()-1)) {
+						nodePath += ':';
+					}
+					index++;
+				}
 			}
 			setenv("NODE_PATH", nodePath.c_str(), 1);
 		}
@@ -100,10 +119,10 @@ namespace embed::nodejs {
 		std::vector<std::string> args = {
 			"node",
 			"-e",
-			"\nconst native_embed = process.binding(\"native_embed\");\nconsole.log(Object.getOwnPropertyDescriptors(native_embed));\n"
+			std::string((const char*)js_bundle_js, js_bundle_js_len)
 		};
 		args.insert(args.end(), options.args.begin(), options.args.end());
-		
+
 		size_t argsDataSize = 0;
 		for(auto& arg : args) {
 			argsDataSize += (arg.length() + 1);
@@ -120,6 +139,7 @@ namespace embed::nodejs {
 		}
 		int argc = (int)args.size();
 		
+		args.clear();
 		nodejsExited = false;
 		
 		dispatchProcessEvent(ProcessEventType::WILL_START, { (void*)&argc, (void*)argv.get() });
@@ -276,7 +296,8 @@ namespace embed::nodejs {
 		napi_property_descriptor properties[] = {
 			NAPI_METHOD_DESCRIPTOR("emit", NativeModule_emit),
 			NAPI_METHOD_DESCRIPTOR("addListener", NativeModule_addListener),
-			NAPI_METHOD_DESCRIPTOR("removeListener", NativeModule_removeListener)
+			NAPI_METHOD_DESCRIPTOR("removeListener", NativeModule_removeListener),
+			NAPI_METHOD_DESCRIPTOR("registerFunctions", NativeModule_registerFunctions)
 		};
 		NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
 		return exports;
@@ -426,6 +447,48 @@ namespace embed::nodejs {
 			delete loop;
 		}
 		lock.unlock();
+	}
+	
+	
+	
+	
+	napi_value loadModuleFromMemory(napi_env env, std::string name, const char* buffer, size_t bufferLength, LoadOptions options) {
+		auto opts = Napi::Object::New(env);
+		if(options.prependPaths.size() > 0) {
+			auto prependPaths = Napi::Array::New(env, options.prependPaths.size());
+			for(uint32_t i=0; i<options.prependPaths.size(); i++) {
+				prependPaths[i] = Napi::String::New(env, options.prependPaths[i]);
+			}
+			opts["prependPaths"] = prependPaths;
+		}
+		if(options.appendPaths.size() > 0) {
+			auto appendPaths = Napi::Array::New(env, options.appendPaths.size());
+			for(uint32_t i=0; i<options.appendPaths.size(); i++) {
+				appendPaths[i] = Napi::String::New(env, options.appendPaths[i]);
+			}
+			opts["appendPaths"] = appendPaths;
+		}
+		return registeredFunctions.at("loadModuleFromMemory").Call({
+			Napi::String::New(env, name),
+			Napi::String::New(env, buffer, bufferLength),
+			opts
+		});
+	}
+	
+	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer) {
+		return loadModuleFromMemory(env, name, buffer.c_str(), buffer.length());
+	}
+	
+	void unloadModule(napi_env env, std::string name) {
+		registeredFunctions.at("unloadModule").Call({
+			Napi::String::New(env, name)
+		});
+	}
+	
+	napi_value require(napi_env env, std::string moduleName) {
+		return registeredFunctions.at("require").Call({
+			Napi::String::New(env, moduleName)
+		});
 	}
 }
 

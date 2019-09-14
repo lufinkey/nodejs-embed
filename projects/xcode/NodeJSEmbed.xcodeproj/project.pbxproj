@@ -11,6 +11,8 @@
 		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
 		A513DB07232891CD000DCAC7 /* Events.mm in Sources */ = {isa = PBXBuildFile; fileRef = A513DB06232891CD000DCAC7 /* Events.mm */; };
 		A513DB0923289211000DCAC7 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A513DB0823289211000DCAC7 /* Events.cpp */; };
+		A513DB0D232C6962000DCAC7 /* Events.mm in Sources */ = {isa = PBXBuildFile; fileRef = A513DB06232891CD000DCAC7 /* Events.mm */; };
+		A513DB0E232C6964000DCAC7 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A513DB0823289211000DCAC7 /* Events.cpp */; };
 		A567C4392325739000BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
 		A567C473232579E000BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.mm */; };
 		A567C476232579E000BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.mm */; };
@@ -256,13 +258,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A513DB0123287706000DCAC7 /* shim */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = shim;
-			sourceTree = "<group>";
-		};
 		A567C414232571FC00BB5398 = {
 			isa = PBXGroup;
 			children = (
@@ -353,7 +348,6 @@
 				A513DB0C232C4D32000DCAC7 /* fetch_addon_api.sh */,
 				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
 				A567C5592325A36700BB5398 /* build */,
-				A513DB0123287706000DCAC7 /* shim */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";
@@ -735,7 +729,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_desktop.sh \"Debug\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_desktop.sh \"Debug\"\n../../src/embed/nodejs/js/build.sh\n";
 		};
 		A567C6342325B3E900BB5398 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -752,7 +746,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_mobile_headers.sh\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../../external/nodejs/build_mobile_headers.sh\n../../src/embed/nodejs/js/build.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -792,6 +786,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A513DB0E232C6964000DCAC7 /* Events.cpp in Sources */,
+				A513DB0D232C6962000DCAC7 /* Events.mm in Sources */,
 				A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +959,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
@@ -991,6 +988,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
@@ -1112,6 +1110,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
@@ -1137,6 +1136,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",

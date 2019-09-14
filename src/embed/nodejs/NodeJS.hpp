@@ -17,7 +17,8 @@
 namespace embed::nodejs {
 	struct StartOptions {
 		std::vector<std::string> args;
-		std::vector<std::string> modulePaths;
+		std::vector<std::string> prependPaths;
+		std::vector<std::string> appendPaths;
 	};
 	void start(StartOptions options = {});
 	
@@ -28,4 +29,14 @@ namespace embed::nodejs {
 	
 	void queueMain(std::function<void(napi_env)> work);
 	void queue(EventLoop* loop, std::function<void(napi_env)> work);
+	
+	struct LoadOptions {
+		std::vector<std::string> prependPaths;
+		std::vector<std::string> appendPaths;
+	};
+	napi_value loadModuleFromMemory(napi_env env, std::string name, const char* buffer, size_t bufferLength, LoadOptions options = {});
+	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer, LoadOptions options = {});
+	void unloadModule(napi_env env, std::string name);
+	
+	napi_value require(napi_env env, std::string moduleName);
 }
