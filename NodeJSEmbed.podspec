@@ -31,26 +31,27 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/embed/**/*.cpp', 'src/embed/**/*.c', 'src/embed/**/*.cc', 'src/embed/**/*.hpp', 'src/embed/**/*.h'
-	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.a', 'external/nodejs/build/desktop/Release/*.cc'
+	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}','external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
+	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.{a,cc}'
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
 	# }
 
-	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.h', 'external/nodejs/build/mobile/include/**/*.hpp', 'external/nodejs/addon-api/**/*.h'
-	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.h', 'external/nodejs/build/desktop/include/**/*.hpp', 'external/nodejs/addon-api/**/*.h'
-	s.public_header_files = 'src/embed/**/*.hpp', 'src/embed/**/*.h'
+	s.public_header_files = 'src/embed/**/*.{h,hpp,inl,impl}'
+	s.private_header_files = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
+	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}'
+	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}'
 	s.header_mappings_dir = 'src/embed'
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
 	}
 	s.ios.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
