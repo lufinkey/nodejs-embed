@@ -48,7 +48,7 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	mkdir -p "$build_type" || exit $?
 	cd "$base_dir/$build_path/node/out/$build_type" || exit $?
 	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
-		"$base_dir/$build_path/$build_type" || exit $?
+		"$base_dir/$build_path/$build_type"
 fi
 
 # clone addon api
