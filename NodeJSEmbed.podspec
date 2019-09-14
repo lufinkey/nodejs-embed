@@ -51,8 +51,7 @@ Pod::Spec.new do |s|
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
-		'GCC_PREPROCESSOR_DEFINITIONS' => 'NODE_WANT_INTERNALS=1',
-		'ONLY_ACTIVE_ARCH' => 'NO'
+		'GCC_PREPROCESSOR_DEFINITIONS' => 'NODE_WANT_INTERNALS=1'
 	}
 	s.ios.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv"',
