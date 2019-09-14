@@ -15,6 +15,7 @@
 #include "Events.hpp"
 
 namespace embed::nodejs {
+	// Initialization / Status
 	struct StartOptions {
 		std::vector<std::string> args;
 		std::vector<std::string> prependPaths;
@@ -23,14 +24,16 @@ namespace embed::nodejs {
 	void start(StartOptions options = {});
 	bool isRunning();
 	
+	// Event Loop
 	struct EventLoop;
-	
 	std::vector<EventLoop*> getEventLoops();
 	EventLoop* getMainEventLoop();
 	
+	// Queue
 	void queueMain(std::function<void(napi_env)> work);
 	void queue(EventLoop* loop, std::function<void(napi_env)> work);
 	
+	// Load / Unload
 	struct LoadOptions {
 		std::vector<std::string> prependPaths;
 		std::vector<std::string> appendPaths;
@@ -39,5 +42,6 @@ namespace embed::nodejs {
 	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer, LoadOptions options = {});
 	void unloadModule(napi_env env, std::string name);
 	
+	// Helper functions
 	napi_value require(napi_env env, std::string moduleName);
 }
