@@ -55,7 +55,8 @@ Pod::Spec.new do |s|
 		'ONLY_ACTIVE_ARCH' => 'NO'
 	}
 	s.ios.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv"',
+		'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/NodeMobile/out_ios/Release-universal"'
 	}
 	s.osx.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv"'
