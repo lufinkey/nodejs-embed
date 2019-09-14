@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/embed/**/*'
+	s.source_files = 'src/embed/**/*.cpp', 'src/embed/**/*.c', 'src/embed/**/*.cc', 'src/embed/**/*.hpp', 'src/embed/**/*.h'
 	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.a', 'external/nodejs/build/desktop/Release/*.cc'
   
 	# s.resource_bundles = {
