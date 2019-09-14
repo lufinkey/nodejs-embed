@@ -33,8 +33,7 @@ Pod::Spec.new do |s|
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
 	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.cc'
-	s.osx.vendored_library = 'external/nodejs/build/desktop/Release/*.a'
-	s.osx.libraries = 'brotli', 'cares', 'gtest', 'http_parser', 'icudata', 'icui18n', 'icustubdata', 'icuucx', 'nghttp2', 'node', 'openssl', 'uv', 'v8_base', 'v8_init', 'v8_initializers', 'v8_libbase', 'v8_libplatform', 'v8_libsampler', 'v8_nosnapshot', 'v8_snapshot', 'zlib'
+	s.osx.vendored_libraries = 'external/nodejs/build/desktop/Release/*.a'
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
@@ -58,8 +57,7 @@ Pod::Spec.new do |s|
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv"'
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv"',
-		'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/Release"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv"'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
