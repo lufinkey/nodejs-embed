@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}','external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
+	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
 	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.{a,cc}'
   
 	# s.resource_bundles = {
