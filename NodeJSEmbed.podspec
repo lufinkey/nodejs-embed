@@ -44,14 +44,14 @@ Pod::Spec.new do |s|
 	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}'
 	s.header_mappings_dir = 'src/embed'
 	s.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build"',
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
 	}
 	s.ios.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv"'
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
+		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/build/desktop/include/uv"'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
