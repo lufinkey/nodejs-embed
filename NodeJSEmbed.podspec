@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
-	s.source_files = 'src/embed/**/*', 'external/nodejs/build/desktop/Release/*.a'
+	s.source_files = 'src/embed/**/*', 'external/nodejs/build/desktop/Release/*.a', 'external/nodejs/build/desktop/Release/*.cc'
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
