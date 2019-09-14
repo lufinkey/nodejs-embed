@@ -50,3 +50,7 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
 		"$base_dir/$build_path/$build_type" || exit $?
 fi
+
+# clone addon api
+cd "$base_dir"
+./fetch_addon_api.sh || exit $?

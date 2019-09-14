@@ -20,6 +20,10 @@ namespace embed::nodejs {
 	NSMutableArray<id<NodeJSProcessEventDelegate>>* processEventDelegates = [NSMutableArray new];
 	std::mutex processEventDelegatesMutex;
 	
+	void emit(NSString* eventName, napi_value data) {
+		emit(std::string(eventName.UTF8String), data);
+	}
+	
 	void addProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate) {
 		std::unique_lock<std::mutex> lock(processEventDelegatesMutex);
 		[processEventDelegates addObject:delegate];
@@ -66,6 +70,15 @@ namespace embed::nodejs {
 					if([delegate respondsToSelector:@selector(nodejsProcessDidEnd:)]) {
 						int exitCode = *((int*)args.at(0));
 						[delegate nodejsProcessDidEnd:exitCode];
+					}
+				} break;
+				
+				case ProcessEventType::EMIT_EVENT: {
+					if([delegate respondsToSelector:@selector(nodejsProcessDidEmitEvent:data:env:)]) {
+						napi_env env = (napi_env)args.at(0);
+						NSString* eventName = [NSString stringWithUTF8String:(const char*)args.at(1)];
+						napi_value data = (napi_value)args.at(1);
+						[delegate nodejsProcessDidEmitEvent:eventName data:data env:env];
 					}
 				} break;
 			}

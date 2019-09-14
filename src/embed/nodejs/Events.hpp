@@ -14,10 +14,12 @@
 #endif
 
 namespace embed::nodejs {
+	void emit(std::string eventName, napi_value data);
 	void addProcessEventListener(ProcessEventListener* listener);
 	void removeProcessEventListener(ProcessEventListener* listener);
 	
 	#ifdef __OBJC__
+	void emit(NSString* eventName, napi_value data);
 	void addProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate);
 	void removeProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate);
 	#endif

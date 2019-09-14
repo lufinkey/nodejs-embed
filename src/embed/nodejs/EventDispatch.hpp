@@ -15,7 +15,8 @@ namespace embed::nodejs {
 		WILL_START,
 		DID_START,
 		WILL_END,
-		DID_END
+		DID_END,
+		EMIT_EVENT
 	};
 	
 	void dispatchProcessEvent(ProcessEventType eventType, std::vector<void*> args);

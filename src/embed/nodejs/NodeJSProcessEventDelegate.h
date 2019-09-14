@@ -20,4 +20,7 @@
 @optional
 -(void)nodejsProcessDidEnd:(int)exitCode;
 
+@optional
+-(void)nodejsProcessDidEmitEvent:(NSString*)eventName data:(napi_value)data env:(napi_env)env;
+
 @end

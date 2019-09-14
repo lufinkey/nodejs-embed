@@ -21,5 +21,7 @@ namespace embed::nodejs {
 		virtual void onNodeJSProcessDidStart(napi_env env) {}
 		virtual void onNodeJSProcessWillEnd(napi_env env) {}
 		virtual void onNodeJSProcessDidEnd(int exitCode) {}
+		
+		virtual void onNodeJSProcessDidEmitEvent(napi_env env, std::string eventName, napi_value data) {};
 	};
 }

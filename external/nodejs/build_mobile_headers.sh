@@ -24,3 +24,7 @@ cp -r "../node/src" "nodejs" \
 	&& cp -r "../node/deps/chakrashim/core/lib/Jsrt" "chakracore" \
 	&& cp -r "../node/deps/uv/include" "uv" \
 	|| exit $?
+
+# clone addon api
+cd "$base_dir"
+./fetch_addon_api.sh || exit $?

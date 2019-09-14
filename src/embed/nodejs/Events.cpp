@@ -65,7 +65,14 @@ namespace embed::nodejs {
 				case ProcessEventType::DID_END: {
 					int exitCode = *((int*)args.at(0));
 					listener->onNodeJSProcessDidEnd(exitCode);
-				}
+				} break;
+				
+				case ProcessEventType::EMIT_EVENT: {
+					napi_env env = (napi_env)args.at(0);
+					std::string eventName = (const char*)args.at(1);
+					napi_value data = (napi_value)args.at(1);
+					listener->onNodeJSProcessDidEmitEvent(env, eventName, data);
+				} break;
 			}
 		}
 	}

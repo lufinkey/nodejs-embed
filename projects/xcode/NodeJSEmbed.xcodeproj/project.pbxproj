@@ -95,6 +95,7 @@
 		A513DB06232891CD000DCAC7 /* Events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Events.mm; sourceTree = "<group>"; };
 		A513DB0823289211000DCAC7 /* Events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		A513DB0A2328941E000DCAC7 /* Events.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Events.hpp; sourceTree = "<group>"; };
+		A513DB0C232C4D32000DCAC7 /* fetch_addon_api.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch_addon_api.sh; sourceTree = "<group>"; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
 		A567C4382325738B00BB5398 /* NodeJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeJS.hpp; sourceTree = "<group>"; };
@@ -349,6 +350,7 @@
 			children = (
 				A567C5F02325A50600BB5398 /* build_desktop.sh */,
 				A567C5EF2325A50600BB5398 /* build_mobile_headers.sh */,
+				A513DB0C232C4D32000DCAC7 /* fetch_addon_api.sh */,
 				A567C5F12325AA8900BB5398 /* BuildDesktopOutput.xcfilelist */,
 				A567C5592325A36700BB5398 /* build */,
 				A513DB0123287706000DCAC7 /* shim */,
@@ -965,6 +967,7 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -992,6 +995,7 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1113,6 +1117,7 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1137,6 +1142,7 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				OTHER_LDFLAGS = "-ObjC";

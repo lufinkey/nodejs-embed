@@ -12,15 +12,18 @@
 #include <iostream>
 #include <limits>
 #include <list>
+#include <map>
 #include <mutex>
 #include <sstream>
 #include <stdexcept>
 #include <thread>
+#include <utility>
 #include <cstdlib>
 #include <cstring>
 #include <nodejs/node_api.h>
 #include <nodejs/node.h>
 #include <uv.h>
+#include <napi.h>
 #include "NAPI_Macros.hpp"
 #include "NAPI_Types.hpp"
 #include "EventDispatch.hpp"
@@ -46,11 +49,17 @@ namespace embed::nodejs {
 	std::list<EventLoopWork> nodejsMainDeferredWork;
 	bool nodejsExited = false;
 	
+	std::map<std::string,std::list<Napi::FunctionReference>> jsListeners;
+	std::map<std::string,Napi::FunctionReference> registeredFunctions;
+	std::mutex functionsMutex;
+	
 	void nodejs_main(int argc, char* argv[]);
 	
 	napi_value NativeModule_init(napi_env env, napi_value exports);
-	napi_value NativeModule_send(napi_env env, napi_callback_info info);
-	napi_value NativeModule_setReciever(napi_env env, napi_callback_info info);
+	napi_value NativeModule_emit(napi_env env, napi_callback_info info);
+	napi_value NativeModule_addListener(napi_env env, napi_callback_info info);
+	napi_value NativeModule_removeListener(napi_env env, napi_callback_info info);
+	napi_value NativeModule_registerFunctions(napi_env env, napi_callback_info info);
 	void NativeModule_finalize(napi_env env, void* finalize_data, void* finalize_hint);
 	void NativeModule_cleanup(void*);
 	
@@ -91,7 +100,7 @@ namespace embed::nodejs {
 		std::vector<std::string> args = {
 			"node",
 			"-e",
-			"\nconst native_embed = process.binding(\"__native_embed\");\nconsole.log(Object.getOwnPropertyDescriptors(native_embed));\n"
+			"\nconst native_embed = process.binding(\"native_embed\");\nconsole.log(Object.getOwnPropertyDescriptors(native_embed));\n"
 		};
 		args.insert(args.end(), options.args.begin(), options.args.end());
 		
@@ -123,7 +132,6 @@ namespace embed::nodejs {
 		int exitCode = node::Start(argc, argv);
 		nodejsExited = true;
 		dispatchProcessEvent(ProcessEventType::DID_END, { (void*)&exitCode });
-		printf("NodeJS exited with code %i\n", exitCode);
 	}
 	
 	
@@ -170,10 +178,8 @@ namespace embed::nodejs {
 			if(nodejsExited || !nodejsMainThread.joinable()) {
 				throw std::runtime_error("NodeJS event loop is not running");
 			}
-			printf("pushing deferred work\n");
 			nodejsMainDeferredWork.push_back({ .work = work });
 		} else {
-			printf("queueing to main loop\n");
 			queue(mainLoop, work);
 		}
 	}
@@ -207,8 +213,24 @@ namespace embed::nodejs {
 	
 	
 	
+	void emit(std::string eventName, napi_value data) {
+		std::list<Napi::Function> funcs;
+		std::unique_lock<std::mutex> lock(functionsMutex);
+		auto it = jsListeners.find(eventName);
+		if(it != jsListeners.end()) {
+			for(auto& funcRef : it->second) {
+				funcs.push_back(funcRef.Value().As<Napi::Function>());
+			}
+		}
+		lock.unlock();
+		for(auto func : funcs) {
+			func.Call({ data });
+		}
+	}
+	
+	
+	
 	napi_value NativeModule_init(napi_env env, napi_value exports) {
-		printf("NativeModule_init\n");
 		// add event loop to list
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
 		
@@ -252,47 +274,143 @@ namespace embed::nodejs {
 		
 		// define module properties
 		napi_property_descriptor properties[] = {
-			NAPI_METHOD_DESCRIPTOR("send", NativeModule_send),
-			NAPI_METHOD_DESCRIPTOR("setReciever", NativeModule_setReciever)
+			NAPI_METHOD_DESCRIPTOR("emit", NativeModule_emit),
+			NAPI_METHOD_DESCRIPTOR("addListener", NativeModule_addListener),
+			NAPI_METHOD_DESCRIPTOR("removeListener", NativeModule_removeListener)
 		};
 		NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
 		return exports;
 	}
 	
-	napi_value NativeModule_send(napi_env env, napi_callback_info info) {
+	napi_value NativeModule_emit(napi_env env, napi_callback_info info) {
+		// get arguments
 		size_t argc = 0;
 		napi_value args[argc];
-		
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
-		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
+		NAPI_ASSERT(env, argc == 1 || argc == 2, "Wrong number of arguments");
 		
+		// get event name
 		std::string eventName;
 		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
 		
-		// TODO forward message to listener
-		if(eventName == "response") {
-			// TODO match to corresponding request
+		// get event data
+		napi_value data = nullptr;
+		if(argc >= 2) {
+			data = args[1];
 		}
-		else if(eventName == "request") {
-			// TODO look for function to correspond to request
-		}
+		
+		// forward message to listeners
+		dispatchProcessEvent(ProcessEventType::EMIT_EVENT, { (void*)env, (void*)eventName.c_str(), (void*)data });
 		
 		return nullptr;
 	}
 	
-	napi_value NativeModule_setReciever(napi_env env, napi_callback_info info) {
+	napi_value NativeModule_addListener(napi_env env, napi_callback_info info) {
+		// get arguments
+		size_t argc = 0;
+		napi_value args[argc];
+		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
 		
-		// TODO register functions
+		// get event name
+		std::string eventName;
+		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
+		
+		// get receiver function
+		napi_value func = args[0];
+		NAPI_ASSERT_TYPE(func, napi_function);
+		napi_ref funcRef = nullptr;
+		NAPI_CALL(env, napi_create_reference(env, func, 1, &funcRef));
+		
+		// save listener
+		std::unique_lock<std::mutex> lock(functionsMutex);
+		auto it = jsListeners.find(eventName);
+		if(it == jsListeners.end()) {
+			std::list<Napi::FunctionReference> funcRefs;
+			funcRefs.push_back(Napi::FunctionReference(env, funcRef));
+			jsListeners.emplace(eventName, std::move(funcRefs));
+		} else {
+			it->second.push_back(Napi::FunctionReference(env, funcRef));
+		}
+		lock.unlock();
+		
+		return nullptr;
+	}
+	
+	napi_value NativeModule_removeListener(napi_env env, napi_callback_info info) {
+		// get arguments
+		size_t argc = 0;
+		napi_value args[argc];
+		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
+		
+		// get event name
+		std::string eventName;
+		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
+		
+		// get receiver function
+		napi_value func = args[0];
+		NAPI_ASSERT_TYPE(func, napi_function);
+		
+		// remove matching function for event
+		std::unique_lock<std::mutex> lock(functionsMutex);
+		auto it = jsListeners.find(eventName);
+		if(it != jsListeners.end()) {
+			std::remove_if(it->second.begin(), it->second.end(), [&](auto& cmpFunc) {
+				return cmpFunc.Value().StrictEquals(Napi::Value(env, func));
+			});
+		}
+		lock.unlock();
+		
+		return nullptr;
+	}
+	
+	napi_value NativeModule_registerFunctions(napi_env env, napi_callback_info info) {
+		// get arguments
+		size_t argc = 0;
+		napi_value args[argc];
+		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+		NAPI_ASSERT(env, argc == 1, "Wrong number of arguments");
+		
+		// save functions
+		napi_value funcs = args[0];
+		NAPI_ASSERT_TYPE(funcs, napi_object);
+		Napi::Object funcsObject(env, funcs);
+		auto propertyNames = funcsObject.GetPropertyNames();
+		std::unique_lock<std::mutex> lock(functionsMutex);
+		for(uint32_t i=0; i<propertyNames.Length(); i++) {
+			auto propertyName = (Napi::Value)propertyNames[i];
+			auto func = funcsObject.Get(propertyName);
+			napi_ref funcRef = nullptr;
+			NAPI_CALL(env, napi_create_reference(env, func, 1, &funcRef));
+			auto it = registeredFunctions.find(propertyName.ToString());
+			if(it != registeredFunctions.end()) {
+				it->second.Unref();
+			}
+			registeredFunctions[propertyName.ToString()] = Napi::FunctionReference(env, funcRef);
+		}
 		
 		return nullptr;
 	}
 	
 	void NativeModule_finalize(napi_env env, void* finalize_data, void* finalize_hint) {
+		std::unique_lock<std::mutex> lock(functionsMutex);
+		for(auto& pair : jsListeners) {
+			for(auto& funcRef : pair.second) {
+				funcRef.Unref();
+			}
+		}
+		jsListeners.clear();
+		for(auto& pair : registeredFunctions) {
+			pair.second.Unref();
+		}
+		registeredFunctions.clear();
+		lock.unlock();
+		
 		dispatchProcessEvent(ProcessEventType::WILL_END, { (void*)env });
 	}
 	
 	void NativeModule_cleanup(void* data) {
-		printf("NativeModule_cleanup\n");
 		uv_loop_t* uvLoop = (uv_loop_t*)data;
 		// remove event loop from list
 		std::unique_lock<std::recursive_mutex> lock(nodejsEventLoopsMutex);
@@ -311,4 +429,4 @@ namespace embed::nodejs {
 	}
 }
 
-NAPI_MODULE_X(__native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
+NAPI_MODULE_X(native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
