@@ -4,7 +4,7 @@
 	"description": "The main script for running an embeddable NodeJS instance",
 	"main": "index.js",
 	"scripts": {
-		"build": "npm install && npm run bundle",
+		"build": "npm install && npm run make-header",
 		"clean": "rm -rf node_modules build",
 		"bundle": "mkdir -p build && browserify --node --standalone _ index.js -o build/js_bundle.js",
 		"make-header": "npm run bundle && cd build && xxd -i js_bundle.js > native_embed_js_bundle.h",
