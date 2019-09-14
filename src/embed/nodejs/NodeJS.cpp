@@ -154,6 +154,10 @@ namespace embed::nodejs {
 		dispatchProcessEvent(ProcessEventType::DID_END, { (void*)&exitCode });
 	}
 	
+	bool isRunning() {
+		return (nodejsMainThread.joinable() && !nodejsExited);
+	}
+	
 	
 	
 	std::vector<EventLoop*> getEventLoops() {

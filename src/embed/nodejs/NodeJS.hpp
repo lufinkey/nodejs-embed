@@ -21,6 +21,7 @@ namespace embed::nodejs {
 		std::vector<std::string> appendPaths;
 	};
 	void start(StartOptions options = {});
+	bool isRunning();
 	
 	struct EventLoop;
 	
