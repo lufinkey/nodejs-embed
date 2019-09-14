@@ -45,10 +45,10 @@ Pod::Spec.new do |s|
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src"',
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
 	}
-	pod.ios.pod_target_xcconfig = {
+	s.ios.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/src" "$(PODS_ROOT)/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
 	}
-	pod.osx.pod_target_xcconfig = {
+	s.osx.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(inherited)" "$(PODS_ROOT)/src" "$(PODS_ROOT)/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/build/mobile/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/build/addon-api"'
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
