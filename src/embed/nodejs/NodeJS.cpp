@@ -118,7 +118,7 @@ namespace embed::nodejs {
 		
 		std::vector<std::string> args = {
 			"node",
-			"-e",
+			"--eval",
 			std::string((const char*)js_bundle_js, js_bundle_js_len)
 		};
 		args.insert(args.end(), options.args.begin(), options.args.end());
