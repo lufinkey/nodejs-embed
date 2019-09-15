@@ -1,10 +1,7 @@
-console.log("loading embed bootstrap");
+
 const native_embed = process.binding('native_embed');
-console.log("loading \"module\" module");
 const Module = require('module');
-console.log("loading \"path\" module");
 const path = require('path');
-console.log("loading remainder of bootstrap");
 
 // credit to https://github.com/metacall/core for this bootstrap code
 
@@ -40,10 +37,8 @@ function unloadModule(name) {
 	}
 }
 
-console.log("registering bootstrap functions");
 native_embed.registerFunctions({
 	loadModuleFromMemory,
 	unloadModule,
 	require
 });
-console.log("done registering bootstrap functions");
