@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 	s.private_header_files = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
 	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}'
 	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}'
-	s.preserve_paths = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
+	s.preserve_paths = 'external/nodejs/build/addon-api/**/*'
 	s.ios.preserve_paths = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/**/*'
 	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/**/*'
 	s.header_mappings_dir = 'src/embed'
