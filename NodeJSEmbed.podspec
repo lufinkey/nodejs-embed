@@ -44,9 +44,9 @@ Pod::Spec.new do |s|
 	s.private_header_files = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
 	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}'
 	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}'
-	s.preserve_paths = 'external/nodejs/build/addon-api/**/*'
-	s.ios.preserve_paths = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/**/*'
-	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/**/*'
+	s.preserve_paths = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl,c,cpp,cc,m,mm}'
+	s.ios.preserve_paths = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/src/**/*', 'external/nodejs/build/mobile/node/deps/**/*'
+	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/src/**/*', 'external/nodejs/build/desktop/node/deps/**/*'
 	s.header_mappings_dir = 'src/embed'
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api"',
