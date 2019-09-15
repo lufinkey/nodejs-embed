@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
 	s.osx.deployment_target = '10.14'
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
-	s.osx.source_files = 'external/nodejs/build/desktop/Release/*.cc'
+	s.osx.source_files = 'external/nodejs/build/desktop/Debug/*.cc'
 	s.ios.frameworks = 'NodeMobile'
-	s.osx.vendored_libraries = 'external/nodejs/build/desktop/Release/*.a'
+	s.osx.vendored_libraries = 'external/nodejs/build/desktop/Debug/*.a'
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
@@ -64,5 +64,5 @@ Pod::Spec.new do |s|
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
 
 	# build NodeJS when project is prepared
-	s.prepare_command = './external/nodejs/build_desktop.sh Release && ./external/nodejs/build_mobile_headers.sh && ./src/embed/nodejs/js/build.sh'
+	s.prepare_command = './external/nodejs/build_desktop.sh Debug && ./external/nodejs/build_mobile_headers.sh && ./src/embed/nodejs/js/build.sh'
 end
