@@ -26,9 +26,8 @@
 
 #define NAPI_ASSERT_BASE(env, assertion, message, fail_action) { \
 	if (!(assertion)) { \
-		napi_throw_error((env), nullptr, \
-			"assertion (" #assertion ") failed: " message); \
-			fail_action; \
+		napi_throw_error((env), "ASSERTION_FAILED", "assertion (" #assertion ") failed: " message); \
+		fail_action; \
 	} \
 }
 
@@ -65,7 +64,7 @@
 #define NAPI_ASSERT_TYPE(value, expectedType) { \
 	napi_valuetype valueType; \
 	NAPI_CALL(env, napi_typeof(env, value, &valueType)); \
-	NAPI_ASSERT(env, valueType == expectedType, "Expected a " #expectedType " for value " #value "."); \
+	NAPI_ASSERT(env, valueType == expectedType, "Expected a " #expectedType " for value " #value); \
 }
 
 #define NAPI_METHOD_DESCRIPTOR(name, func) \

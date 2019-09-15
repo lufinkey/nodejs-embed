@@ -309,7 +309,7 @@ namespace embed::nodejs {
 	
 	napi_value NativeModule_emit(napi_env env, napi_callback_info info) {
 		// get arguments
-		size_t argc = 0;
+		size_t argc = 2;
 		napi_value args[argc];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 1 || argc == 2, "Wrong number of arguments");
@@ -332,7 +332,7 @@ namespace embed::nodejs {
 	
 	napi_value NativeModule_addListener(napi_env env, napi_callback_info info) {
 		// get arguments
-		size_t argc = 0;
+		size_t argc = 2;
 		napi_value args[argc];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
@@ -364,7 +364,7 @@ namespace embed::nodejs {
 	
 	napi_value NativeModule_removeListener(napi_env env, napi_callback_info info) {
 		// get arguments
-		size_t argc = 0;
+		size_t argc = 2;
 		napi_value args[argc];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
@@ -392,7 +392,7 @@ namespace embed::nodejs {
 	
 	napi_value NativeModule_registerFunctions(napi_env env, napi_callback_info info) {
 		// get arguments
-		size_t argc = 0;
+		size_t argc = 1;
 		napi_value args[argc];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 1, "Wrong number of arguments");
