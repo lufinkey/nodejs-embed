@@ -33,6 +33,8 @@ Pod::Spec.new do |s|
 	s.ios.deployment_target = '9.0'
 	s.osx.deployment_target = '10.14'
 
+	s.static_framework = true
+
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
 	s.osx.source_files = "external/nodejs/build/desktop/#{BUILD_TYPE}/*.cc"
 	s.ios.frameworks = 'NodeMobile'
