@@ -6,6 +6,8 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
+BUILD_TYPE="Debug"
+
 Pod::Spec.new do |s|
 	s.name             = 'NodeJSEmbed'
 	s.version          = '0.1.0'
@@ -32,9 +34,9 @@ Pod::Spec.new do |s|
 	s.osx.deployment_target = '10.14'
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
-	s.osx.source_files = 'external/nodejs/build/desktop/Debug/*.cc'
+	s.osx.source_files = "external/nodejs/build/desktop/#{BUILD_TYPE}/*.cc"
 	s.ios.frameworks = 'NodeMobile'
-	s.osx.vendored_libraries = 'external/nodejs/build/desktop/Debug/*.a'
+	s.osx.vendored_libraries = "external/nodejs/build/desktop/#{BUILD_TYPE}/*.a"
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
@@ -42,27 +44,27 @@ Pod::Spec.new do |s|
 
 	s.public_header_files = 'src/embed/**/*.{h,hpp,inl,impl}'
 	s.private_header_files = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
-	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}'
-	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}'
+	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/deps/**/*.{h,hpp,inl,impl}'
+	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/deps/**/*.{h,hpp,inl,impl}'
 	s.preserve_paths = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl,c,cpp,cc,m,mm}'
 	s.ios.preserve_paths = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/src/**/*', 'external/nodejs/build/mobile/node/deps/**/*'
-	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/src/**/*', 'external/nodejs/build/desktop/node/deps/**/*'
+	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/src/**/*', 'external/nodejs/build/desktop/node/deps/**/*', "external/nodejs/build/desktop/#{BUILD_TYPE}/**/*"
 	s.header_mappings_dir = 'src/embed'
 	s.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api"',
+		'HEADER_SEARCH_PATHS' => "$(PODS_ROOT)/NodeJSEmbed/src" "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api",
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
 		'GCC_PREPROCESSOR_DEFINITIONS' => 'NODE_WANT_INTERNALS=1'
 	}
 	s.ios.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv"',
-		'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/NodeMobile/out_ios/Release-universal"'
+		'HEADER_SEARCH_PATHS' => "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv",
+		'FRAMEWORK_SEARCH_PATHS' => "${PODS_ROOT}/NodeMobile/out_ios/Release-universal"
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv"'
+		'HEADER_SEARCH_PATHS' => "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/node/deps/v8" "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/#{BUILD_TYPE}"
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
 
 	# build NodeJS when project is prepared
-	s.prepare_command = './external/nodejs/build_desktop.sh Debug && ./external/nodejs/build_mobile_headers.sh && ./src/embed/nodejs/js/build.sh'
+	s.prepare_command = "./external/nodejs/build_desktop.sh #{BUILD_TYPE} && ./external/nodejs/build_mobile_headers.sh && ./src/embed/nodejs/js/build.sh"
 end

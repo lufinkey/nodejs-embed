@@ -50,6 +50,10 @@
 		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
+		A571E103232EA18700603E14 /* experimental-extras-libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E0FF232EA18700603E14 /* experimental-extras-libraries.cc */; };
+		A571E104232EA18700603E14 /* debug-support.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E100232EA18700603E14 /* debug-support.cc */; };
+		A571E105232EA18700603E14 /* libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E101232EA18700603E14 /* libraries.cc */; };
+		A571E106232EA18700603E14 /* extras-libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E102232EA18700603E14 /* extras-libraries.cc */; };
 		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
 		A5983E35232714A500176E74 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5983E34232714A500176E74 /* libgtest.a */; };
 		A5983E3A2327169000176E74 /* libv8_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5983E392327169000176E74 /* libv8_base.a */; };
@@ -179,6 +183,10 @@
 		A567C63C2325DCFB00BB5398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A567C64B2325F8F700BB5398 /* node_code_cache.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_code_cache.cc; path = Debug/node_code_cache.cc; sourceTree = "<group>"; };
 		A567C6522325FEFA00BB5398 /* node_snapshot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_snapshot.cc; path = Debug/node_snapshot.cc; sourceTree = "<group>"; };
+		A571E0FF232EA18700603E14 /* experimental-extras-libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "experimental-extras-libraries.cc"; path = "Debug/experimental-extras-libraries.cc"; sourceTree = "<group>"; };
+		A571E100232EA18700603E14 /* debug-support.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "debug-support.cc"; path = "Debug/debug-support.cc"; sourceTree = "<group>"; };
+		A571E101232EA18700603E14 /* libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = libraries.cc; path = Debug/libraries.cc; sourceTree = "<group>"; };
+		A571E102232EA18700603E14 /* extras-libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "extras-libraries.cc"; path = "Debug/extras-libraries.cc"; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
 		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
@@ -430,6 +438,10 @@
 				A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */,
 				A567C5D12325A48E00BB5398 /* libv8_snapshot.a */,
 				A567C5D22325A48E00BB5398 /* libzlib.a */,
+				A571E100232EA18700603E14 /* debug-support.cc */,
+				A571E0FF232EA18700603E14 /* experimental-extras-libraries.cc */,
+				A571E102232EA18700603E14 /* extras-libraries.cc */,
+				A571E101232EA18700603E14 /* libraries.cc */,
 				A567C64B2325F8F700BB5398 /* node_code_cache.cc */,
 				A5983E2D2326F25500176E74 /* node_javascript.cc */,
 				A567C6522325FEFA00BB5398 /* node_snapshot.cc */,
@@ -755,9 +767,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A571E106232EA18700603E14 /* extras-libraries.cc in Sources */,
 				A513DB0923289211000DCAC7 /* Events.cpp in Sources */,
+				A571E104232EA18700603E14 /* debug-support.cc in Sources */,
 				A567C4392325739000BB5398 /* NodeJS.cpp in Sources */,
 				A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */,
+				A571E103232EA18700603E14 /* experimental-extras-libraries.cc in Sources */,
+				A571E105232EA18700603E14 /* libraries.cc in Sources */,
 				A513DB07232891CD000DCAC7 /* Events.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +979,8 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/node/deps/v8",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -991,6 +1009,8 @@
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/node/deps/v8",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/Debug",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
 				LIBRARY_SEARCH_PATHS = (
