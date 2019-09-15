@@ -48,7 +48,7 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	mkdir -p "$build_type" || exit $?
 	cd "$base_dir/$build_path/node/out/$build_type" || exit $?
 	rm -rf "torque-generated"
-	cp -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
+	cp -r -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
 		"obj/gen/libraries.cc" "obj/gen/node_provider.h" "obj/gen/extras-libraries.cc" \
 		"obj/gen/experimental-extras-libraries.cc" "obj/gen/debug-support.cc" "obj/gen/torque-generated" \
 		"$base_dir/$build_path/$build_type"
