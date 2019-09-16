@@ -6,7 +6,7 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-BUILD_TYPE="Release"
+BUILD_TYPE="Debug"
 
 Pod::Spec.new do |s|
 	s.name             = 'NodeJSEmbed'
