@@ -1,9 +1,9 @@
 
 let native_embed = null;
 try {
-	native_embed = process._linkedBinding('native_embed');
+	native_embed = process._linkedBinding('__native_embed');
 } catch(error) {
-	native_embed = process.binding('native_embed');
+	native_embed = process.binding('__native_embed');
 }
 const Module = require('module');
 const path = require('path');

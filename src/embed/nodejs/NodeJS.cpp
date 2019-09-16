@@ -496,4 +496,4 @@ namespace embed::nodejs {
 	}
 }
 
-NAPI_MODULE_X(native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
+NAPI_MODULE_X(__native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
