@@ -27,8 +27,3 @@ fi
 # build node for android
 cd "$base_dir/$build_path/node" || exit $?
 ./tools/android_build.sh "$NDK_DIR" || exit $?
-
-# copy built library to output dir
-cd "$base_dir/$build_path" || exit $?
-mkdir -p "android" || exit $?
-cp -f "node/out/Release/lib.target/libnode.so" "android/libnode.so" || exit $?
