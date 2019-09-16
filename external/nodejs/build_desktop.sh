@@ -23,7 +23,7 @@ cd "$build_path"
 if [ ! -d "node/.git" ] && [ ! -f "node/.git" ]; then
 	git clone --recursive "https://github.com/nodejs/node.git" "node" || exit $?
 	cd "node"
-	git checkout "v10.16.0"
+	git checkout "v12.10.0"
 fi
 
 # link include files
@@ -50,7 +50,9 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	rm -rf "torque-generated"
 	cp -r -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
 		"obj/gen/libraries.cc" "obj/gen/node_provider.h" "obj/gen/extras-libraries.cc" \
-		"obj/gen/experimental-extras-libraries.cc" "obj/gen/debug-support.cc" "obj/gen/torque-generated" \
+		"obj/gen/experimental-extras-libraries.cc" "obj/gen/debug-support.cc" \
+		"obj/gen/torque-generated" "obj/gen/torque-output-root/torque-generated" \
+		"obj/gen/generate-bytecode-output-root/builtins-generated" \
 		"$base_dir/$build_path/$build_type"
 fi
 

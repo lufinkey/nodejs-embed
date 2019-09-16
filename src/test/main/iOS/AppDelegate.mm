@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#include <embed/nodejs/NodeJS.hpp>
 
-@interface AppDelegate ()
+@interface AppDelegate()<NodeJSProcessEventDelegate>
 
 @end
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	embed::nodejs::addProcessEventDelegate(self);
+	embed::nodejs::start();
 	return YES;
 }
 
@@ -47,5 +50,22 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+
+-(void)nodejsProcessWillStart:(NSArray<NSString*>*)args {
+	NSLog(@"nodejsProcessWillStart: %@", args);
+}
+
+-(void)nodejsProcessDidStart:(napi_env)env {
+	NSLog(@"nodejsProcessDidStart");
+}
+
+-(void)nodejsProcessWillEnd:(napi_env)env {
+	NSLog(@"nodejsProcessWillEnd");
+}
+
+-(void)nodejsProcessDidEnd:(int)exitCode {
+	NSLog(@"nodejsProcessDidEnd %i", exitCode);
+}
 
 @end

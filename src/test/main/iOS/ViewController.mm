@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#include <embed/nodejs/NodeJS.hpp>
 
 @interface ViewController ()
 
@@ -19,7 +18,6 @@
 	[super viewDidLoad];
 	
 	// Do any additional setup after loading the view.
-	embed::nodejs::start();
 }
 
 -(void)viewDidAppear:(BOOL)animated {
