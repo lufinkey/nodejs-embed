@@ -34,13 +34,18 @@ namespace embed::nodejs {
 	}
 
 	ScopedJNIEnv::~ScopedJNIEnv() {
-		if (attachedToThread) {
-			vm->DetachCurrentThread();
-		}
+		detach();
 	}
 
 	JNIEnv* ScopedJNIEnv::getEnv() const {
 		return env;
+	}
+	
+	void ScopedJNIEnv::detach() {
+		if (attachedToThread) {
+			vm->DetachCurrentThread();
+			attachedToThread = false;
+		}
 	}
 
 
@@ -138,6 +143,8 @@ namespace embed::nodejs {
 		}
 	}
 }
+
+
 
 extern "C" JNIEXPORT void JNICALL
 Java_com_lufinkey_embed_NodeJS_init(JNIEnv* env, jclass) {

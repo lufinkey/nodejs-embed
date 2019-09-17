@@ -19,6 +19,7 @@ namespace embed::nodejs {
 		~ScopedJNIEnv();
 
 		JNIEnv* getEnv() const;
+		void detach();
 
 	private:
 		JavaVM* vm;
