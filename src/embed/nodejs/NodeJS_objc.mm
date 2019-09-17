@@ -83,7 +83,7 @@ namespace embed::nodejs {
 			case ProcessEventType::EMIT_EVENT: {
 				napi_env env = (napi_env)args.at(0);
 				NSString* eventName = [NSString stringWithUTF8String:(const char*)args.at(1)];
-				napi_value data = (napi_value)args.at(1);
+				napi_value data = (napi_value)args.at(2);
 				for(id<NodeJSProcessEventDelegate> delegate in delegates) {
 					if([delegate respondsToSelector:@selector(nodejsProcessDidEmitEvent:data:env:)]) {
 						[delegate nodejsProcessDidEmitEvent:eventName data:data env:env];
