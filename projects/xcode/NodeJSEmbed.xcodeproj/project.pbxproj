@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485A34DF3EB5BC25AC54B289 /* Pods_NodeJSEmbedTest_iOS.framework */; };
 		790BDF2B79BFEE68476E05CD /* Pods_NodeJSEmbedTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98277E4A547CDE4F0EFAA7E7 /* Pods_NodeJSEmbedTest_macOS.framework */; };
-		A513DB07232891CD000DCAC7 /* Events.mm in Sources */ = {isa = PBXBuildFile; fileRef = A513DB06232891CD000DCAC7 /* Events.mm */; };
-		A513DB0923289211000DCAC7 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A513DB0823289211000DCAC7 /* Events.cpp */; };
-		A513DB0D232C6962000DCAC7 /* Events.mm in Sources */ = {isa = PBXBuildFile; fileRef = A513DB06232891CD000DCAC7 /* Events.mm */; };
-		A513DB0E232C6964000DCAC7 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A513DB0823289211000DCAC7 /* Events.cpp */; };
 		A567C473232579E000BB5398 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C472232579E000BB5398 /* AppDelegate.mm */; };
 		A567C476232579E000BB5398 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C475232579E000BB5398 /* ViewController.mm */; };
 		A567C478232579E100BB5398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A567C477232579E100BB5398 /* Assets.xcassets */; };
@@ -58,6 +54,11 @@
 		A571E116232F397300603E14 /* libv8_base_without_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CF2325A48D00BB5398 /* libv8_base_without_compiler.a */; };
 		A571E117232F397500603E14 /* libv8_compiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C62325A48D00BB5398 /* libv8_compiler.a */; };
 		A571E119232F3B7600603E14 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
+		A571E11B23309FAC00603E14 /* NodeJS_jni.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A571E11A23309FAC00603E14 /* NodeJS_jni.cpp */; };
+		A571E11C23309FAC00603E14 /* NodeJS_jni.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A571E11A23309FAC00603E14 /* NodeJS_jni.cpp */; };
+		A571E11E23309FBB00603E14 /* NodeJS_jni.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */; };
+		A571E12023309FC700603E14 /* NodeJS_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = A571E11F23309FC700603E14 /* NodeJS_objc.mm */; };
+		A571E12123309FC700603E14 /* NodeJS_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = A571E11F23309FC700603E14 /* NodeJS_objc.mm */; };
 		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
 /* End PBXBuildFile section */
 
@@ -100,9 +101,6 @@
 		A513DB022328819C000DCAC7 /* ProcessEventListener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ProcessEventListener.hpp; sourceTree = "<group>"; };
 		A513DB0323288D6F000DCAC7 /* NodeJSProcessEventDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeJSProcessEventDelegate.h; sourceTree = "<group>"; };
 		A513DB052328914C000DCAC7 /* EventDispatch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventDispatch.hpp; sourceTree = "<group>"; };
-		A513DB06232891CD000DCAC7 /* Events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Events.mm; sourceTree = "<group>"; };
-		A513DB0823289211000DCAC7 /* Events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
-		A513DB0A2328941E000DCAC7 /* Events.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Events.hpp; sourceTree = "<group>"; };
 		A513DB0C232C4D32000DCAC7 /* fetch_addon_api.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch_addon_api.sh; sourceTree = "<group>"; };
 		A567C4282325723800BB5398 /* libNodeJSEmbed-macOS-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNodeJSEmbed-macOS-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567C4372325738B00BB5398 /* NodeJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS.cpp; sourceTree = "<group>"; };
@@ -189,6 +187,9 @@
 		A571E100232EA18700603E14 /* debug-support.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "debug-support.cc"; path = "Debug/debug-support.cc"; sourceTree = "<group>"; };
 		A571E101232EA18700603E14 /* libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = libraries.cc; path = Debug/libraries.cc; sourceTree = "<group>"; };
 		A571E102232EA18700603E14 /* extras-libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "extras-libraries.cc"; path = "Debug/extras-libraries.cc"; sourceTree = "<group>"; };
+		A571E11A23309FAC00603E14 /* NodeJS_jni.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS_jni.cpp; sourceTree = "<group>"; };
+		A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeJS_jni.hpp; sourceTree = "<group>"; };
+		A571E11F23309FC700603E14 /* NodeJS_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeJS_objc.mm; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
 		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
@@ -490,12 +491,12 @@
 			children = (
 				A567C4382325738B00BB5398 /* NodeJS.hpp */,
 				A567C4372325738B00BB5398 /* NodeJS.cpp */,
+				A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */,
+				A571E11A23309FAC00603E14 /* NodeJS_jni.cpp */,
+				A571E11F23309FC700603E14 /* NodeJS_objc.mm */,
 				A567C6392325D13300BB5398 /* NAPI_Macros.hpp */,
 				A5983E292326B0AB00176E74 /* NAPI_Types.hpp */,
-				A513DB0A2328941E000DCAC7 /* Events.hpp */,
 				A513DB052328914C000DCAC7 /* EventDispatch.hpp */,
-				A513DB0823289211000DCAC7 /* Events.cpp */,
-				A513DB06232891CD000DCAC7 /* Events.mm */,
 				A513DB022328819C000DCAC7 /* ProcessEventListener.hpp */,
 				A513DB0323288D6F000DCAC7 /* NodeJSProcessEventDelegate.h */,
 				A5983E2C2326CE5200176E74 /* js */,
@@ -521,6 +522,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A571E11E23309FBB00603E14 /* NodeJS_jni.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,13 +774,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A513DB0923289211000DCAC7 /* Events.cpp in Sources */,
 				A571E119232F3B7600603E14 /* NodeJS.cpp in Sources */,
+				A571E12023309FC700603E14 /* NodeJS_objc.mm in Sources */,
 				A571E111232F391200603E14 /* node_code_cache.cc in Sources */,
+				A571E11B23309FAC00603E14 /* NodeJS_jni.cpp in Sources */,
 				A571E112232F393600603E14 /* node_snapshot.cc in Sources */,
 				A571E104232EA18700603E14 /* debug-support.cc in Sources */,
 				A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */,
-				A513DB07232891CD000DCAC7 /* Events.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,9 +808,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A513DB0E232C6964000DCAC7 /* Events.cpp in Sources */,
-				A513DB0D232C6962000DCAC7 /* Events.mm in Sources */,
+				A571E11C23309FAC00603E14 /* NodeJS_jni.cpp in Sources */,
 				A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */,
+				A571E12123309FC700603E14 /* NodeJS_objc.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

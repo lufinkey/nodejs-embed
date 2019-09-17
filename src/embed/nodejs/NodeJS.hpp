@@ -12,7 +12,13 @@
 #include <string>
 #include <vector>
 #include "NAPI_Types.hpp"
-#include "Events.hpp"
+#include "ProcessEventListener.hpp"
+#ifdef __OBJC__
+#import "NodeJSProcessEventDelegate.h"
+#endif
+#if defined(NODEJSEMBED_JNI_ENABLED)
+#include <jni.h>
+#endif
 
 namespace embed::nodejs {
 	// Initialization / Status
@@ -41,7 +47,21 @@ namespace embed::nodejs {
 	napi_value loadModuleFromMemory(napi_env env, std::string name, const char* buffer, size_t bufferLength, LoadOptions options = {});
 	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer, LoadOptions options = {});
 	void unloadModule(napi_env env, std::string name);
-	
-	// Helper functions
 	napi_value require(napi_env env, std::string moduleName);
+
+	// Events
+	void emit(std::string eventName, napi_value data);
+	void addProcessEventListener(ProcessEventListener* listener);
+	void removeProcessEventListener(ProcessEventListener* listener);
+
+	#ifdef __OBJC__
+	void emit(NSString* eventName, napi_value data);
+	void addProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate);
+	void removeProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate);
+	#endif
+
+	#ifdef NODEJSEMBED_JNI_ENABLED
+	void addJavaProcessEventListener(JNIEnv* env, jobject listener);
+	void removeJavaProcessEventListener(JNIEnv* env, jobject listener);
+	#endif
 }

@@ -18,10 +18,13 @@ namespace embed::nodejs {
 		DID_END,
 		EMIT_EVENT
 	};
-	
+
 	void dispatchProcessEvent(ProcessEventType eventType, std::vector<void*> args);
 	void _dispatchProcessListenerEvent(ProcessEventType eventType, std::vector<void*> args);
 	#ifdef __APPLE__
 	void _dispatchProcessDelegateEvent(ProcessEventType eventType, std::vector<void*> args);
+	#endif
+	#ifdef __ANDROID__
+	void _dispatchJavaProcessListenerEvent(ProcessEventType eventType, std::vector<void*> args);
 	#endif
 }

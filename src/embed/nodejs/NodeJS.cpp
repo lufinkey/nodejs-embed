@@ -494,6 +494,85 @@ namespace embed::nodejs {
 			Napi::String::New(env, moduleName)
 		});
 	}
+
+
+
+
+	std::list<ProcessEventListener*> processEventListeners;
+	std::mutex processEventListenersMutex;
+
+	void addProcessEventListener(ProcessEventListener* listener) {
+		std::unique_lock<std::mutex> lock(processEventListenersMutex);
+		processEventListeners.push_back(listener);
+	}
+
+	void removeProcessEventListener(ProcessEventListener* listener) {
+		std::unique_lock<std::mutex> lock(processEventListenersMutex);
+		auto it = std::find(processEventListeners.begin(), processEventListeners.end(), listener);
+		if(it != processEventListeners.end()) {
+			processEventListeners.erase(it);
+		}
+	}
+
+	void dispatchProcessEvent(ProcessEventType eventType, std::vector<void*> args) {
+		_dispatchProcessListenerEvent(eventType, args);
+		#ifdef __APPLE__
+			_dispatchProcessDelegateEvent(eventType, args);
+		#endif
+		#ifdef __ANDROID__
+			_dispatchJavaProcessListenerEvent(eventType, args);
+		#endif
+	}
+
+	void _dispatchProcessListenerEvent(ProcessEventType eventType, std::vector<void*> args) {
+		std::unique_lock<std::mutex> lock(processEventListenersMutex);
+		std::list<ProcessEventListener*> listeners = processEventListeners;
+		lock.unlock();
+		switch(eventType) {
+			case ProcessEventType::WILL_START: {
+				std::vector<std::string> procArgs;
+				int argc = *((int*)args.at(0));
+				char** argv = (char**)args.at(1);
+				procArgs.reserve((size_t)argc);
+				for(int i=0; i<argc; i++) {
+					procArgs.push_back(argv[i]);
+				}
+				for(auto listener : listeners) {
+					listener->onNodeJSProcessWillStart(procArgs);
+				}
+			} break;
+
+			case ProcessEventType::DID_START: {
+				napi_env env = (napi_env)args.at(0);
+				for(auto listener : listeners) {
+					listener->onNodeJSProcessDidStart(env);
+				}
+			} break;
+
+			case ProcessEventType::WILL_END: {
+				napi_env env = (napi_env)args.at(0);
+				for(auto listener : listeners) {
+					listener->onNodeJSProcessWillEnd(env);
+				}
+			} break;
+
+			case ProcessEventType::DID_END: {
+				int exitCode = *((int*)args.at(0));
+				for(auto listener : listeners) {
+					listener->onNodeJSProcessDidEnd(exitCode);
+				}
+			} break;
+
+			case ProcessEventType::EMIT_EVENT: {
+				napi_env env = (napi_env)args.at(0);
+				std::string eventName = (const char*)args.at(1);
+				napi_value data = (napi_value)args.at(1);
+				for(auto listener : listeners) {
+					listener->onNodeJSProcessDidEmitEvent(env, eventName, data);
+				}
+			} break;
+		}
+	}
 }
 
 NAPI_MODULE_X(__native_embed, embed::nodejs::NativeModule_init, nullptr, 0x1)
