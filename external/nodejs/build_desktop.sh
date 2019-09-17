@@ -40,7 +40,7 @@ cp -r "../node/src" "nodejs" \
 if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	# build nodejs
 	cd "$base_dir/$build_path/node" || exit $?
-	./configure --fully-static --enable-static "${configure_args[@]}" || exit $?
+	./configure --fully-static --enable-static --without-snapshot --without-node-snapshot "${configure_args[@]}" || exit $?
 	make -j4 || exit $?
 
 	# copy output files
