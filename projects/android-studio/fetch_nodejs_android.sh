@@ -9,7 +9,7 @@ source_path="libnodejsembed/src/main"
 
 # ensure we don't rebuild if we don't need to
 if [ ! -f "$base_dir/$build_path/libnode/bin/x86/libnode.so" ]; then
-	cd "libnodejsembed/build" || exit $?
+	mkdir -p "$build_path" && cd "$build_path" || exit $?
 	rm -rf "libnode" && mkdir "libnode" && cd "libnode" || exit $?
 	nodejs_mobile_url="https://github.com/JaneaSystems/nodejs-mobile/releases/download/nodejs-mobile-v0.2.1/nodejs-mobile-v0.2.1-android.zip"
 	if [ -n "$(which curl)" ]; then
