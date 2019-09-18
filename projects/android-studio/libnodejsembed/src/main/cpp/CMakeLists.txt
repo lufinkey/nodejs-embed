@@ -8,6 +8,7 @@ set( CMAKE_CXX_STANDARD 17 )
 
 execute_process(COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/../../../../fetch_nodejs_android.sh")
 execute_process(COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../external/nodejs/build_mobile_headers.sh")
+execute_process(COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../src/embed/nodejs/js/build.sh")
 
 include_directories(
 		"${CMAKE_CURRENT_SOURCE_DIR}"
