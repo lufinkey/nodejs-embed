@@ -28,7 +28,6 @@
 		A567C5E52325A48E00BB5398 /* libnghttp2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CD2325A48D00BB5398 /* libnghttp2.a */; };
 		A567C5E62325A48E00BB5398 /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CE2325A48D00BB5398 /* libv8_libplatform.a */; };
 		A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D02325A48E00BB5398 /* libv8_init.a */; };
-		A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
 		A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D22325A48E00BB5398 /* libzlib.a */; };
 		A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D42325A48E00BB5398 /* libicuucx.a */; };
 		A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D52325A48E00BB5398 /* libv8_nosnapshot.a */; };
@@ -46,8 +45,6 @@
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
 		A571E104232EA18700603E14 /* debug-support.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E100232EA18700603E14 /* debug-support.cc */; };
-		A571E111232F391200603E14 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
-		A571E112232F393600603E14 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
 		A571E113232F395300603E14 /* libhistogram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5C02325A48D00BB5398 /* libhistogram.a */; };
 		A571E114232F395600603E14 /* libllhttp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D32325A48E00BB5398 /* libllhttp.a */; };
 		A571E115232F396900603E14 /* libtorque_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5CC2325A48D00BB5398 /* libtorque_base.a */; };
@@ -59,6 +56,9 @@
 		A571E11E23309FBB00603E14 /* NodeJS_jni.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */; };
 		A571E12023309FC700603E14 /* NodeJS_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = A571E11F23309FC700603E14 /* NodeJS_objc.mm */; };
 		A571E12123309FC700603E14 /* NodeJS_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = A571E11F23309FC700603E14 /* NodeJS_objc.mm */; };
+		A571E1242331BAFF00603E14 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
+		A571E1252331BB0D00603E14 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
+		A571E1262331BB1300603E14 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
 		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +190,7 @@
 		A571E11A23309FAC00603E14 /* NodeJS_jni.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeJS_jni.cpp; sourceTree = "<group>"; };
 		A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeJS_jni.hpp; sourceTree = "<group>"; };
 		A571E11F23309FC700603E14 /* NodeJS_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeJS_objc.mm; sourceTree = "<group>"; };
+		A571E1222331BAC900603E14 /* node_snapshot_stub.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_snapshot_stub.cc; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
 		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
@@ -211,7 +212,6 @@
 				A571E113232F395300603E14 /* libhistogram.a in Frameworks */,
 				A567C5E22325A48E00BB5398 /* libicui18n.a in Frameworks */,
 				A567C5EA2325A48E00BB5398 /* libzlib.a in Frameworks */,
-				A567C5E92325A48E00BB5398 /* libv8_snapshot.a in Frameworks */,
 				A567C5E12325A48E00BB5398 /* libicudata.a in Frameworks */,
 				A567C5DC2325A48E00BB5398 /* libnode.a in Frameworks */,
 				A571E115232F396900603E14 /* libtorque_base.a in Frameworks */,
@@ -222,6 +222,7 @@
 				A567C5D72325A48E00BB5398 /* libv8_initializers.a in Frameworks */,
 				A571E114232F395600603E14 /* libllhttp.a in Frameworks */,
 				A567C5E82325A48E00BB5398 /* libv8_init.a in Frameworks */,
+				A571E1262331BB1300603E14 /* libv8_snapshot.a in Frameworks */,
 				A567C5EC2325A48E00BB5398 /* libicuucx.a in Frameworks */,
 				A567C5ED2325A48E00BB5398 /* libv8_nosnapshot.a in Frameworks */,
 				A571E117232F397500603E14 /* libv8_compiler.a in Frameworks */,
@@ -482,6 +483,7 @@
 		A567C6432325E61200BB5398 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A571E1222331BAC900603E14 /* node_snapshot_stub.cc */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -775,10 +777,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A571E119232F3B7600603E14 /* NodeJS.cpp in Sources */,
+				A571E1252331BB0D00603E14 /* node_code_cache.cc in Sources */,
+				A571E1242331BAFF00603E14 /* node_snapshot.cc in Sources */,
 				A571E12023309FC700603E14 /* NodeJS_objc.mm in Sources */,
-				A571E111232F391200603E14 /* node_code_cache.cc in Sources */,
 				A571E11B23309FAC00603E14 /* NodeJS_jni.cpp in Sources */,
-				A571E112232F393600603E14 /* node_snapshot.cc in Sources */,
 				A571E104232EA18700603E14 /* debug-support.cc in Sources */,
 				A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */,
 			);

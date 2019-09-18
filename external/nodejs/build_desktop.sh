@@ -40,7 +40,7 @@ cp -r "../node/src" "nodejs" \
 if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	# build nodejs
 	cd "$base_dir/$build_path/node" || exit $?
-	./configure --fully-static --enable-static --without-snapshot --without-node-snapshot "${configure_args[@]}" || exit $?
+	./configure --fully-static --enable-static "${configure_args[@]}" || exit $?
 	make -j4 || exit $?
 
 	# copy output files
@@ -48,9 +48,7 @@ if [ ! -f "$base_dir/$build_path/$build_type/libnode.a" ]; then
 	mkdir -p "$build_type" || exit $?
 	cd "$base_dir/$build_path/node/out/$build_type" || exit $?
 	rm -rf "torque-generated"
-	cp -r -f *.a "obj/gen/node_code_cache.cc" "obj/gen/node_snapshot.cc" "obj/gen/node_javascript.cc" \
-		"obj/gen/libraries.cc" "obj/gen/node_provider.h" "obj/gen/extras-libraries.cc" \
-		"obj/gen/experimental-extras-libraries.cc" "obj/gen/debug-support.cc" \
+	cp -r -f *.a obj/gen/*.cc obj/gen/*.h \
 		"obj/gen/torque-generated" "obj/gen/torque-output-root/torque-generated" \
 		"obj/gen/generate-bytecode-output-root/builtins-generated" \
 		"$base_dir/$build_path/$build_type"
