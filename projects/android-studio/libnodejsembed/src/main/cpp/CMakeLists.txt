@@ -19,7 +19,7 @@ include_directories(
 		"${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../external/nodejs/build/mobile/include/uv"
 		"${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../external/nodejs/build/addon-api")
 
-file(GLOB_RECURSE NODEJS_SOURCES ../../../../../../src/*.cpp)
+file(GLOB_RECURSE NODEJS_SOURCES ../../../../../../src/embed/*.cpp)
 
 add_library(NodeJSEmbed STATIC
 		NodeJSEmbed_android.cpp
