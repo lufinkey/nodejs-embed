@@ -60,6 +60,7 @@
 		A571E1262331BB1300603E14 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
 		A571E1782333DC8000603E14 /* testmodule.js in Resources */ = {isa = PBXBuildFile; fileRef = A571E1772333DC2A00603E14 /* testmodule.js */; };
 		A571E1792333E03F00603E14 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
+		A571E1822333E32E00603E14 /* native_embed_js_bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = A571E1802333E32200603E14 /* native_embed_js_bundle.h */; };
 		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
 /* End PBXBuildFile section */
 
@@ -193,8 +194,13 @@
 		A571E11F23309FC700603E14 /* NodeJS_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeJS_objc.mm; sourceTree = "<group>"; };
 		A571E1222331BAC900603E14 /* node_snapshot_stub.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_snapshot_stub.cc; sourceTree = "<group>"; };
 		A571E1772333DC2A00603E14 /* testmodule.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = testmodule.js; sourceTree = "<group>"; };
+		A571E17B2333E2EC00603E14 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		A571E17C2333E2F400603E14 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		A571E17D2333E2F900603E14 /* package-lock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "package-lock.json"; sourceTree = "<group>"; };
+		A571E17E2333E30000603E14 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		A571E1802333E32200603E14 /* native_embed_js_bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = native_embed_js_bundle.h; sourceTree = "<group>"; };
+		A571E1832333E34100603E14 /* BuildOutput.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = BuildOutput.xcfilelist; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
-		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
 		A5983E34232714A500176E74 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = Debug/libgtest.a; sourceTree = "<group>"; };
 		A5983E392327169000176E74 /* libv8_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_base.a; path = Debug/libv8_base.a; sourceTree = "<group>"; };
@@ -491,6 +497,27 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		A571E17A2333E2D000603E14 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				A571E17F2333E30800603E14 /* build */,
+				A571E17B2333E2EC00603E14 /* build.sh */,
+				A571E1832333E34100603E14 /* BuildOutput.xcfilelist */,
+				A571E17C2333E2F400603E14 /* package.json */,
+				A571E17D2333E2F900603E14 /* package-lock.json */,
+				A571E17E2333E30000603E14 /* index.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		A571E17F2333E30800603E14 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				A571E1802333E32200603E14 /* native_embed_js_bundle.h */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
 		A5983E2A2326B74000176E74 /* nodejs */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,7 +531,7 @@
 				A513DB052328914C000DCAC7 /* EventDispatch.hpp */,
 				A513DB022328819C000DCAC7 /* ProcessEventListener.hpp */,
 				A513DB0323288D6F000DCAC7 /* NodeJSProcessEventDelegate.h */,
-				A5983E2C2326CE5200176E74 /* js */,
+				A571E17A2333E2D000603E14 /* js */,
 			);
 			path = nodejs;
 			sourceTree = "<group>";
@@ -527,6 +554,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A571E1822333E32E00603E14 /* native_embed_js_bundle.h in Headers */,
 				A571E11E23309FBB00603E14 /* NodeJS_jni.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +777,7 @@
 			);
 			outputFileListPaths = (
 				"$(PROJECT_DIR)/../../external/nodejs/BuildDesktopOutput.xcfilelist",
+				"$(PROJECT_DIR)/../../src/embed/nodejs/js/BuildOutput.xcfilelist",
 			);
 			outputPaths = (
 			);
@@ -766,6 +795,7 @@
 			inputPaths = (
 			);
 			outputFileListPaths = (
+				"$(PROJECT_DIR)/../../src/embed/nodejs/js/BuildOutput.xcfilelist",
 			);
 			outputPaths = (
 			);
