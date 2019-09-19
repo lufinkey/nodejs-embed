@@ -41,7 +41,6 @@
 		A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */; };
 		A567C6222325B38400BB5398 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A567C6212325B38400BB5398 /* main.mm */; };
 		A567C6332325B3DA00BB5398 /* NodeJS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A567C4372325738B00BB5398 /* NodeJS.cpp */; };
-		A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63A2325DCF500BB5398 /* UIKit.framework */; };
 		A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C63C2325DCFB00BB5398 /* Foundation.framework */; };
 		A571E104232EA18700603E14 /* debug-support.cc in Sources */ = {isa = PBXBuildFile; fileRef = A571E100232EA18700603E14 /* debug-support.cc */; };
@@ -59,6 +58,8 @@
 		A571E1242331BAFF00603E14 /* node_snapshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C6522325FEFA00BB5398 /* node_snapshot.cc */; };
 		A571E1252331BB0D00603E14 /* node_code_cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = A567C64B2325F8F700BB5398 /* node_code_cache.cc */; };
 		A571E1262331BB1300603E14 /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C5D12325A48E00BB5398 /* libv8_snapshot.a */; };
+		A571E1782333DC8000603E14 /* testmodule.js in Resources */ = {isa = PBXBuildFile; fileRef = A571E1772333DC2A00603E14 /* testmodule.js */; };
+		A571E1792333E03F00603E14 /* libNodeJSEmbed-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A567C62A2325B3CA00BB5398 /* libNodeJSEmbed-iOS.a */; };
 		A5983E2E2326F25500176E74 /* node_javascript.cc in Sources */ = {isa = PBXBuildFile; fileRef = A5983E2D2326F25500176E74 /* node_javascript.cc */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +192,7 @@
 		A571E11D23309FBB00603E14 /* NodeJS_jni.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeJS_jni.hpp; sourceTree = "<group>"; };
 		A571E11F23309FC700603E14 /* NodeJS_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeJS_objc.mm; sourceTree = "<group>"; };
 		A571E1222331BAC900603E14 /* node_snapshot_stub.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_snapshot_stub.cc; sourceTree = "<group>"; };
+		A571E1772333DC2A00603E14 /* testmodule.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = testmodule.js; sourceTree = "<group>"; };
 		A5983E292326B0AB00176E74 /* NAPI_Types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NAPI_Types.hpp; sourceTree = "<group>"; };
 		A5983E2C2326CE5200176E74 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		A5983E2D2326F25500176E74 /* node_javascript.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_javascript.cc; path = Debug/node_javascript.cc; sourceTree = "<group>"; };
@@ -246,7 +248,7 @@
 			files = (
 				A567C63D2325DCFB00BB5398 /* Foundation.framework in Frameworks */,
 				A567C63B2325DCF500BB5398 /* UIKit.framework in Frameworks */,
-				A567C6352325B40E00BB5398 /* libNodeJSEmbed-iOS.a in Frameworks */,
+				A571E1792333E03F00603E14 /* libNodeJSEmbed-iOS.a in Frameworks */,
 				4DF3FDB683707A2C0F9FD533 /* Pods_NodeJSEmbedTest_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +470,7 @@
 				A567C61D2325B38400BB5398 /* LaunchScreen.storyboard */,
 				A567C6202325B38400BB5398 /* Info.plist */,
 				A567C6212325B38400BB5398 /* main.mm */,
+				A571E1772333DC2A00603E14 /* testmodule.js */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 			files = (
 				A567C61F2325B38400BB5398 /* LaunchScreen.storyboard in Resources */,
 				A567C61C2325B38400BB5398 /* Assets.xcassets in Resources */,
+				A571E1782333DC8000603E14 /* testmodule.js in Resources */,
 				A567C61A2325B38300BB5398 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1087,6 +1091,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1112,6 +1118,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1131,6 +1139,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
@@ -1157,6 +1166,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Luis Finke. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController

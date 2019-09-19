@@ -479,8 +479,8 @@ namespace embed::nodejs {
 		});
 	}
 	
-	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer) {
-		return loadModuleFromMemory(env, name, buffer.c_str(), buffer.length());
+	napi_value loadModuleFromMemory(napi_env env, std::string name, std::string buffer, LoadOptions options) {
+		return loadModuleFromMemory(env, name, buffer.c_str(), buffer.length(), options);
 	}
 	
 	void unloadModule(napi_env env, std::string name) {

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #include <embed/nodejs/NodeJS.hpp>
+#include <napi.h>
 
 @interface AppDelegate()<NodeJSProcessEventDelegate>
 
@@ -15,11 +16,24 @@
 
 @implementation AppDelegate
 
+void testNodeJS() {
+	embed::nodejs::start();
+	NSString* modulePath = [NSBundle.mainBundle pathForResource:@"testmodule" ofType:@"js"];
+	NSError* error = nil;
+	NSString* moduleContent = [[NSString alloc] initWithContentsOfFile:modulePath encoding:NSUTF8StringEncoding error:&error];
+	if(error != nil) {
+		NSLog(@"Error getting module content from path: %@", error);
+		return;
+	}
+	embed::nodejs::queueMain([=](napi_env env) {
+		embed::nodejs::loadModuleFromMemory(env, "[eval]/test", moduleContent.UTF8String);
+	});
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	embed::nodejs::addProcessEventDelegate(self);
-	embed::nodejs::start();
+	testNodeJS();
 	return YES;
 }
 
