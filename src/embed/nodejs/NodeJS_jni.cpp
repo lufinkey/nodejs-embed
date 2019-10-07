@@ -21,6 +21,9 @@
 
 namespace embed::nodejs {
 	ScopedJNIEnv::ScopedJNIEnv(JavaVM* vm): vm(vm), env(nullptr), attachedToThread(false) {
+		if(vm == nullptr) {
+			throw std::runtime_error("given VM is null");
+		}
 		auto envResult = vm->GetEnv((void**)&env, JNI_VERSION_1_6);
 		if (envResult == JNI_EDETACHED) {
 			if (vm->AttachCurrentThread(&env, NULL) == JNI_OK) {
