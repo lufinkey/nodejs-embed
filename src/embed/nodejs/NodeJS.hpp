@@ -60,7 +60,7 @@ namespace embed::nodejs {
 	void removeProcessEventDelegate(id<NodeJSProcessEventDelegate> delegate);
 	#endif
 
-	#ifdef NODEJSEMBED_JNI_ENABLED
+	#ifdef JNIEXPORT
 	void addJavaProcessEventListener(JNIEnv* env, jobject listener);
 	void removeJavaProcessEventListener(JNIEnv* env, jobject listener);
 	#endif
