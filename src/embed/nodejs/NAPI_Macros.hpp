@@ -61,7 +61,7 @@
 	NAPI_CALL_BASE(env, the_call, else_action; return nullptr)
 
 // Ensures an napi_value is a certain type
-#define NAPI_ASSERT_TYPE(value, expectedType) { \
+#define NAPI_ASSERT_TYPE(env, value, expectedType) { \
 	napi_valuetype valueType; \
 	NAPI_CALL(env, napi_typeof(env, value, &valueType)); \
 	NAPI_ASSERT(env, valueType == expectedType, "Expected a " #expectedType " for value " #value); \
@@ -71,7 +71,7 @@
 	napi_property_descriptor{ name, 0, func, 0, 0, 0, napi_default, 0 }
 
 #define NAPI_GET_STRING_FROM_VALUE(env, stringObj, valueExpr) { \
-	NAPI_ASSERT_TYPE(valueExpr, napi_string); \
+	NAPI_ASSERT_TYPE(env, valueExpr, napi_string); \
 	napi_value value = (valueExpr); \
 	size_t stringLength = 0; \
 	NAPI_CALL(env, napi_get_value_string_utf8((env), value, nullptr, 0, &stringLength)); \

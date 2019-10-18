@@ -343,7 +343,7 @@ namespace embed::nodejs {
 		
 		// get receiver function
 		napi_value func = args[0];
-		NAPI_ASSERT_TYPE(func, napi_function);
+		NAPI_ASSERT_TYPE(env, func, napi_function);
 		napi_ref funcRef = nullptr;
 		NAPI_CALL(env, napi_create_reference(env, func, 1, &funcRef));
 		
@@ -375,7 +375,7 @@ namespace embed::nodejs {
 		
 		// get receiver function
 		napi_value func = args[0];
-		NAPI_ASSERT_TYPE(func, napi_function);
+		NAPI_ASSERT_TYPE(env, func, napi_function);
 		
 		// remove matching function for event
 		std::unique_lock<std::mutex> lock(functionsMutex);
@@ -399,7 +399,7 @@ namespace embed::nodejs {
 		
 		// save functions
 		napi_value funcs = args[0];
-		NAPI_ASSERT_TYPE(funcs, napi_object);
+		NAPI_ASSERT_TYPE(env, funcs, napi_object);
 		Napi::Object funcsObject(env, funcs);
 		auto propertyNames = funcsObject.GetPropertyNames();
 		std::unique_lock<std::mutex> lock(functionsMutex);
