@@ -18,10 +18,9 @@ fi
 cd "$base_dir/$build_path" || exit $?
 mkdir -p "include" || exit $?
 cd "include" || exit $?
-rm -rf "nodejs" "chakrashim" "chakracore" || exit $?
+rm -rf "nodejs" "v8" "uv" || exit $?
 cp -r "../node/src" "nodejs" \
-	&& cp -r "../node/deps/chakrashim/include" "chakrashim" \
-	&& cp -r "../node/deps/chakrashim/core/lib/Jsrt" "chakracore" \
+	&& cp -r "../node/deps/v8/include" "v8" \
 	&& cp -r "../node/deps/uv/include" "uv"
 
 # clone addon api

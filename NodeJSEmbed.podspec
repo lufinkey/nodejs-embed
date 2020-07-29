@@ -44,21 +44,21 @@ Pod::Spec.new do |s|
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
 	# }
 
-	s.public_header_files = 'src/embed/**/*.{h,hpp,inl,impl}'
-	s.private_header_files = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}'
-	s.ios.private_header_files = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/deps/**/*.{h,hpp,inl,impl}'
-	s.osx.private_header_files = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/deps/**/*.{h,hpp,inl,impl}'
-	s.preserve_paths = 'external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl,c,cpp,cc,m,mm}'
-	s.ios.preserve_paths = 'external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/mobile/node/src/**/*', 'external/nodejs/build/mobile/node/deps/**/*'
-	s.osx.preserve_paths = 'external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}', 'external/nodejs/build/desktop/node/src/**/*', 'external/nodejs/build/desktop/node/deps/**/*', "external/nodejs/build/desktop/#{BUILD_TYPE}/**/*"
-	s.header_mappings_dir = 'src/embed'
+	s.public_header_files = "src/embed/**/*.{h,hpp,inl,impl}"
+	s.private_header_files = "external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}"
+	s.ios.private_header_files = "external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/mobile/node/deps/**/*.{h,hpp,inl,impl}"
+	s.osx.private_header_files = "external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/desktop/node/deps/**/*.{h,hpp,inl,impl}"
+	s.preserve_paths = "external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl,c,cpp,cc,m,mm}"
+	s.ios.preserve_paths = "external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/mobile/node/src/**/*", "external/nodejs/build/mobile/node/deps/**/*"
+	s.osx.preserve_paths = "external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/desktop/node/src/**/*", "external/nodejs/build/desktop/node/deps/**/*", "external/nodejs/build/desktop/#{BUILD_TYPE}/**/*"
+	s.header_mappings_dir = "src/embed"
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/src", "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api" ],
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
 		'GCC_PREPROCESSOR_DEFINITIONS' => 'NODE_WANT_INTERNALS=1'
 	}
 	s.ios.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakrashim", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/chakracore", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv" ],
+		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv" ],
 		'FRAMEWORK_SEARCH_PATHS' => "${PODS_ROOT}/NodeMobile/out_ios/Release-universal"
 	}
 	s.osx.pod_target_xcconfig = {
