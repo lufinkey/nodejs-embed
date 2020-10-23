@@ -6,8 +6,6 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-BUILD_TYPE="Debug"
-
 Pod::Spec.new do |s|
 	s.name             = 'NodeJSEmbed'
 	s.version          = '0.1.0'
@@ -48,9 +46,7 @@ Pod::Spec.new do |s|
 	s.private_header_files = "external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl}"
 	s.ios.private_header_files = "external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/mobile/node/deps/**/*.{h,hpp,inl,impl}"
 	s.osx.private_header_files = "external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/desktop/node/deps/**/*.{h,hpp,inl,impl}"
-	s.preserve_paths = "external/nodejs/build/addon-api/**/*.{h,hpp,inl,impl,c,cpp,cc,m,mm}"
-	s.ios.preserve_paths = "external/nodejs/build/mobile/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/mobile/node/src/**/*", "external/nodejs/build/mobile/node/deps/**/*"
-	s.osx.preserve_paths = "external/nodejs/build/desktop/include/**/*.{h,hpp,inl,impl}", "external/nodejs/build/desktop/node/src/**/*", "external/nodejs/build/desktop/node/deps/**/*", "external/nodejs/build/desktop/#{BUILD_TYPE}/**/*"
+	s.preserve_paths = "src/embed/nodejs/js/**/*", "external/nodejs/**/*"
 	s.header_mappings_dir = "src/embed"
 	s.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/src", "$(PODS_ROOT)/NodeJSEmbed/src/embed/nodejs/js/build", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/addon-api" ],
@@ -68,7 +64,16 @@ Pod::Spec.new do |s|
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
 
 	# build NodeJS when project is prepared
-	s.ios.prepare_command = "./external/nodejs/build_mobile_headers.sh"
-	s.osx.prepare_command = "./external/nodejs/build_desktop.sh #{BUILD_TYPE}"
-	s.prepare_command = "./src/embed/nodejs/js/build.sh"
+	s.ios.script_phase = {
+		:name => "Prepare NodeJS Mobile Headers",
+		:script => "./external/nodejs/build_mobile_headers.sh",
+		:execution_position => :before_compile }
+	s.osx.script_phase = {
+		:name => "Build ${CONFIGURATION} NodeJS library for desktop",
+		:script => "./external/nodejs/build_desktop.sh ${CONFIGURATION}",
+		:execution_position => :before_compile }
+	s.script_phase = {
+		:name => "Build JS Module",
+		:script => "./src/embed/nodejs/js/build.sh",
+		:execution_position => :before_compile }
 end
