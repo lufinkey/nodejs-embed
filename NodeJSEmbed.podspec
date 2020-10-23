@@ -68,5 +68,7 @@ Pod::Spec.new do |s|
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
 
 	# build NodeJS when project is prepared
-	s.prepare_command = "./external/nodejs/build_desktop.sh #{BUILD_TYPE} && ./external/nodejs/build_mobile_headers.sh && ./src/embed/nodejs/js/build.sh"
+	s.ios.prepare_command = "./external/nodejs/build_mobile_headers.sh"
+	s.osx.prepare_command = "./external/nodejs/build_desktop.sh #{BUILD_TYPE}"
+	s.prepare_command = "./src/embed/nodejs/js/build.sh"
 end
