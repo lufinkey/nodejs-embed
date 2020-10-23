@@ -66,14 +66,14 @@ Pod::Spec.new do |s|
 	# build NodeJS when project is prepared
 	s.ios.script_phase = {
 		:name => "Prepare NodeJS Mobile Headers",
-		:script => "${PODS_TARGET_SRCROOT}/external/nodejs/build_mobile_headers.sh",
+		:script => "echo \"Preparing NodeJS Mobile Headers\"; ${PODS_TARGET_SRCROOT}/external/nodejs/build_mobile_headers.sh",
 		:execution_position => :before_compile }
 	s.osx.script_phase = {
-		:name => "Build $(CONFIGURATION) NodeJS library for desktop",
-		:script => "${PODS_TARGET_SRCROOT}/external/nodejs/build_desktop.sh ${CONFIGURATION}",
+		:name => "Build NodeJS library for desktop",
+		:script => "echo \"Building NodeJS for desktop\"; ${PODS_TARGET_SRCROOT}/external/nodejs/build_desktop.sh ${CONFIGURATION}",
 		:execution_position => :before_compile }
 	s.script_phase = {
 		:name => "Build JS Module",
-		:script => "${PODS_TARGET_SRCROOT}/src/embed/nodejs/js/build.sh",
+		:script => "echo \"Building NodeJSEmbed javascript module\"; ${PODS_TARGET_SRCROOT}/src/embed/nodejs/js/build.sh",
 		:execution_position => :before_compile }
 end
