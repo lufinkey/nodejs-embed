@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
 		:name => "Build NodeJS library for desktop",
 		:script => "echo \"Building NodeJS for desktop\"; ${PODS_TARGET_SRCROOT}/external/nodejs/build_desktop.sh ${CONFIGURATION}",
 		:execution_position => :before_compile }
-	s.prepare_command = {
+	s.script_phase = {
 		:name => "Build JS Module",
 		:script => "echo \"Building NodeJSEmbed javascript module\"; ${PODS_TARGET_SRCROOT}/src/embed/nodejs/js/build.sh",
 		:execution_position => :before_compile }
