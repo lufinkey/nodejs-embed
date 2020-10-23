@@ -34,9 +34,9 @@ Pod::Spec.new do |s|
 	s.static_framework = true
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
-	s.osx.source_files = "external/nodejs/build/desktop/${CONFIGURATION}/*.cc"
+	s.osx.source_files = "external/nodejs/build/desktop/$(CONFIGURATION)/*.cc"
 	s.ios.frameworks = 'NodeMobile'
-	s.osx.vendored_libraries = "external/nodejs/build/desktop/${CONFIGURATION}/*.a"
+	s.osx.vendored_libraries = "external/nodejs/build/desktop/$(CONFIGURATION)/*.a"
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
@@ -55,10 +55,10 @@ Pod::Spec.new do |s|
 	}
 	s.ios.pod_target_xcconfig = {
 		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/mobile/include/uv" ],
-		'FRAMEWORK_SEARCH_PATHS' => "${PODS_ROOT}/NodeMobile/out_ios/Release-universal"
+		'FRAMEWORK_SEARCH_PATHS' => "$(PODS_ROOT)/NodeMobile/out_ios/Release-universal"
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/node/deps/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/${CONFIGURATION}" ]
+		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/node/deps/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/$(CONFIGURATION)" ]
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
@@ -69,8 +69,8 @@ Pod::Spec.new do |s|
 		:script => "./external/nodejs/build_mobile_headers.sh",
 		:execution_position => :before_compile }
 	s.osx.script_phase = {
-		:name => "Build ${CONFIGURATION} NodeJS library for desktop",
-		:script => "./external/nodejs/build_desktop.sh ${CONFIGURATION}",
+		:name => "Build $(CONFIGURATION) NodeJS library for desktop",
+		:script => "./external/nodejs/build_desktop.sh $(CONFIGURATION)",
 		:execution_position => :before_compile }
 	s.script_phase = {
 		:name => "Build JS Module",
