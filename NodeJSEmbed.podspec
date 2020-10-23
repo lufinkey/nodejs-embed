@@ -34,9 +34,9 @@ Pod::Spec.new do |s|
 	s.static_framework = true
 
 	s.source_files = 'src/embed/**/*.{c,cpp,cc,m,mm,h,hpp,inl,impl}'
-	s.osx.source_files = "external/nodejs/build/desktop/#{BUILD_TYPE}/*.cc"
+	s.osx.source_files = "external/nodejs/build/desktop/${CONFIGURATION}/*.cc"
 	s.ios.frameworks = 'NodeMobile'
-	s.osx.vendored_libraries = "external/nodejs/build/desktop/#{BUILD_TYPE}/*.a"
+	s.osx.vendored_libraries = "external/nodejs/build/desktop/${CONFIGURATION}/*.a"
   
 	# s.resource_bundles = {
 	#   'NodeJSEmbed' => ['NodeJSEmbed/Assets/*.png']
