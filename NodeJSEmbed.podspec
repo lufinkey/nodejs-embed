@@ -58,7 +58,7 @@ Pod::Spec.new do |s|
 		'FRAMEWORK_SEARCH_PATHS' => "${PODS_ROOT}/NodeMobile/out_ios/Release-universal"
 	}
 	s.osx.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/node/deps/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/#{BUILD_TYPE}" ]
+		'HEADER_SEARCH_PATHS' => [ "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/nodejs", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/include/uv", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/node/deps/v8", "$(PODS_ROOT)/NodeJSEmbed/external/nodejs/build/desktop/${CONFIGURATION}" ]
 	}
 	# s.frameworks = 'UIKit', 'MapKit'
 	s.ios.dependency 'NodeMobile' #, :git => 'https://github.com/JaneaSystems/nodejs-mobile.git'
