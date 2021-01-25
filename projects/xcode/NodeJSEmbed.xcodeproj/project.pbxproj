@@ -1178,8 +1178,7 @@
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
@@ -1205,8 +1204,7 @@
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakrashim",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/chakracore",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
 				);
