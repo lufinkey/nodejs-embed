@@ -310,7 +310,7 @@ namespace embed::nodejs {
 	napi_value NativeModule_emit(napi_env env, napi_callback_info info) {
 		// get arguments
 		size_t argc = 2;
-		napi_value args[argc];
+		napi_value args[2];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 1 || argc == 2, "Wrong number of arguments");
 		
