@@ -333,7 +333,7 @@ namespace embed::nodejs {
 	napi_value NativeModule_addListener(napi_env env, napi_callback_info info) {
 		// get arguments
 		size_t argc = 2;
-		napi_value args[argc];
+		napi_value args[2];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
 		
@@ -342,7 +342,7 @@ namespace embed::nodejs {
 		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
 		
 		// get receiver function
-		napi_value func = args[0];
+		napi_value func = args[1];
 		NAPI_ASSERT_TYPE(env, func, napi_function);
 		napi_ref funcRef = nullptr;
 		NAPI_CALL(env, napi_create_reference(env, func, 1, &funcRef));
@@ -365,7 +365,7 @@ namespace embed::nodejs {
 	napi_value NativeModule_removeListener(napi_env env, napi_callback_info info) {
 		// get arguments
 		size_t argc = 2;
-		napi_value args[argc];
+		napi_value args[2];
 		NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 		NAPI_ASSERT(env, argc == 2, "Wrong number of arguments");
 		
@@ -374,7 +374,7 @@ namespace embed::nodejs {
 		NAPI_GET_STRING_FROM_VALUE(env, eventName, args[0]);
 		
 		// get receiver function
-		napi_value func = args[0];
+		napi_value func = args[1];
 		NAPI_ASSERT_TYPE(env, func, napi_function);
 		
 		// remove matching function for event
