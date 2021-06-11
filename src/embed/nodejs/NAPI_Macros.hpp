@@ -71,11 +71,11 @@
 	napi_property_descriptor{ name, 0, func, 0, 0, 0, napi_default, 0 }
 
 #define NAPI_GET_STRING_FROM_VALUE(env, stringObj, valueExpr) { \
-	NAPI_ASSERT_TYPE(env, valueExpr, napi_string); \
 	napi_value value = (valueExpr); \
+	NAPI_ASSERT_TYPE(env, value, napi_string); \
 	size_t stringLength = 0; \
 	NAPI_CALL(env, napi_get_value_string_utf8((env), value, nullptr, 0, &stringLength)); \
-	stringObj.reserve(stringLength); \
+	stringObj.resize(stringLength); \
 	size_t stringLengthCopied = 0; \
 	char* stringData = (char*)stringObj.data(); \
 	NAPI_CALL(env, napi_get_value_string_utf8((env), value, stringData, stringLength + 1, &stringLengthCopied)); \
