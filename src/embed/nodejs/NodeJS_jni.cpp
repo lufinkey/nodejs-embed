@@ -8,8 +8,7 @@
 
 #ifdef __ANDROID__
 
-#define NODEJSEMBED_JNI_ENABLED
-
+#include <jni.h>
 #include "NodeJS.hpp"
 #include "NodeJS_jni.hpp"
 #include "EventDispatch.hpp"
@@ -18,6 +17,7 @@
 #include <mutex>
 #include <stdexcept>
 #include <string>
+#include <android/log.h>
 
 namespace embed::nodejs {
 	ScopedJNIEnv::ScopedJNIEnv(JavaVM* vm): vm(vm), env(nullptr), attachedToThread(false) {
@@ -149,12 +149,11 @@ namespace embed::nodejs {
 
 
 
-extern "C" JNIEXPORT void JNICALL
-Java_com_lufinkey_embed_NodeJS_init(JNIEnv* env, jclass) {
-	auto vmResult = env->GetJavaVM(&embed::nodejs::mainJavaVM);
-	if(vmResult != 0 || embed::nodejs::mainJavaVM == nullptr) {
-		throw std::runtime_error("Could not get java VM");
-	}
+JNIEXPORT jint
+JNI_OnLoad(JavaVM* vm, void* reserved) {
+	__android_log_print(ANDROID_LOG_DEBUG, "NodeJSEmbed", "JNI module initialized");
+	embed::nodejs::mainJavaVM = vm;
+	return JNI_VERSION_1_6;
 }
 
 extern "C" JNIEXPORT void JNICALL

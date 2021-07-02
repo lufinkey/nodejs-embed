@@ -9,8 +9,3 @@ Java_com_lufinkey_nodejsembedtest_MainActivity_stringFromJNI(
 	std::string hello = "Hello from C++";
 	return env->NewStringUTF(hello.c_str());
 }
-
-extern "C" JNIEXPORT void JNICALL
-Java_com_lufinkey_nodejsembedtest_MainActivity_startNodeJS(JNIEnv* env, jobject) {
-	embed::nodejs::start();
-}

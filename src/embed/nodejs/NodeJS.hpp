@@ -16,9 +16,6 @@
 #ifdef __OBJC__
 #import "NodeJSProcessEventDelegate.h"
 #endif
-#if defined(NODEJSEMBED_JNI_ENABLED)
-#include <jni.h>
-#endif
 
 namespace embed::nodejs {
 	// Initialization / Status

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Luis Finke. All rights reserved.
 //
 
+#ifdef __OBJC__
 #import <Foundation/Foundation.h>
 #include "NAPI_Types.hpp"
 
@@ -24,3 +25,4 @@
 -(void)nodejsProcessDidEmitEvent:(NSString*)eventName data:(napi_value)data env:(napi_env)env;
 
 @end
+#endif

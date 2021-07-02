@@ -11,7 +11,8 @@ public class MainActivity extends AppCompatActivity implements NodeJS.ProcessEve
 
 	// Used to load the 'native-lib' library on application startup.
 	static {
-		System.loadLibrary("native-lib");
+		NodeJS.loadLibraries();
+		System.loadLibrary("TestApp");
 	}
 
 	@Override
@@ -26,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements NodeJS.ProcessEve
 		NodeJS.addProcessEventListener(this);
 		NodeJS.start();
 	}
-
-	private native void startNodeJS();
 
 	/**
 	 * A native method that is implemented by the 'native-lib' native library,

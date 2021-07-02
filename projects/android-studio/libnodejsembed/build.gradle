@@ -1,17 +1,29 @@
 apply plugin: 'com.android.library'
 
 android {
-	compileSdkVersion 29
-
+	compileSdkVersion 30
 
 	defaultConfig {
 		minSdkVersion 23
-		targetSdkVersion 29
+		targetSdkVersion 30
 		versionCode 1
 		versionName "1.0"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 		consumerProguardFiles 'consumer-rules.pro'
+
+		externalNativeBuild {
+			cmake {
+				targets "NodeJSEmbed"
+				arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_STL=c++_shared"
+			}
+		}
+	}
+
+	sourceSets {
+		main {
+			java.srcDirs += "../../../src/embed"
+		}
 	}
 
 	buildTypes {
@@ -35,13 +47,7 @@ android {
 	externalNativeBuild {
 		cmake {
 			path "src/main/cpp/CMakeLists.txt"
-			version "3.10.2"
-		}
-	}
-
-	sourceSets {
-		main {
-			jniLibs.srcDirs = [ './src/main/jniLibs' ]
+			version "3.18.1"
 		}
 	}
 }

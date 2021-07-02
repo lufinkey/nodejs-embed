@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 *.so
+
+# downloaded node library
+libnode

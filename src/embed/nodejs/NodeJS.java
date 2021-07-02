@@ -2,11 +2,13 @@ package com.lufinkey.embed;
 
 public class NodeJS {
 	static {
+		loadLibraries();
+	}
+
+	public static void loadLibraries() {
 		System.loadLibrary("node");
 		//System.loadLibrary("NodeJSEmbed");
-		init();
 	}
-	private native static void init();
 
 	public native static void start();
 
