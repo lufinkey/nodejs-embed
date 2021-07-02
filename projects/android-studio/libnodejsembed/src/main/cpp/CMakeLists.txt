@@ -21,7 +21,7 @@ target_include_directories(NodeJSEmbed PUBLIC
 target_include_directories(NodeJSEmbed PRIVATE
 		"${NODEJSEMBED_ROOT}/src/embed/nodejs/js/build"
 		"${NODEJSEMBED_ROOT}/external/nodejs/build/mobile/include"
-		"${NODEJSEMBED_ROOT}/external/nodejs/build/mobile/include/nodejs"
+		"${NODEJSEMBED_ROOT}/external/nodejs/build/mobile/include/node"
 		"${NODEJSEMBED_ROOT}/external/nodejs/build/mobile/include/v8"
 		"${NODEJSEMBED_ROOT}/external/nodejs/build/mobile/include/uv"
 		"${NODEJSEMBED_ROOT}/external/nodejs/build/addon-api")

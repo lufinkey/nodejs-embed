@@ -20,8 +20,8 @@
 #include <utility>
 #include <cstdlib>
 #include <cstring>
-#include <nodejs/node_api.h>
-#include <nodejs/node.h>
+#include <node/node_api.h>
+#include <node/node.h>
 #include <uv.h>
 #include <napi.h>
 #include "NAPI_Macros.hpp"

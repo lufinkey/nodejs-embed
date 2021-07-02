@@ -18,8 +18,8 @@ fi
 cd "$base_dir/$build_path" || exit $?
 mkdir -p "include" || exit $?
 cd "include" || exit $?
-rm -rf "nodejs" "v8" "uv" || exit $?
-cp -r "../node/src" "nodejs" \
+rm -rf "node" "v8" "uv" || exit $?
+cp -r "../node/src" "node" \
 	&& cp -r "../node/deps/v8/include" "v8" \
 	&& cp -r "../node/deps/uv/include" "uv"
 

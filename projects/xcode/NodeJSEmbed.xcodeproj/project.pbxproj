@@ -1018,7 +1018,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
-					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/node",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/node/deps/v8",
@@ -1048,7 +1048,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include",
-					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/node",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/desktop/node/deps/v8",
@@ -1122,7 +1122,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/node",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1149,7 +1149,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/node",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/test/main/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1177,7 +1177,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/node",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
@@ -1203,7 +1203,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../src/embed/nodejs/js/build",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include",
-					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/nodejs",
+					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/node",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/v8",
 					"$(PROJECT_DIR)/../../external/nodejs/build/mobile/include/uv",
 					"$(PROJECT_DIR)/../../external/nodejs/build/addon-api",
