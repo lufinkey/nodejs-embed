@@ -19,7 +19,7 @@ android {
 
 	sourceSets {
 		main {
-			java.srcDirs += "../../../src/embed"
+			java.srcDirs += "../../../src/embed/jni"
 		}
 	}
 
