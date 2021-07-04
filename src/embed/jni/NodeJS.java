@@ -7,7 +7,7 @@ public class NodeJS {
 
 	public static void loadLibraries() {
 		System.loadLibrary("node");
-		//System.loadLibrary("NodeJSEmbed");
+		System.loadLibrary("NodeJSEmbed");
 	}
 
 	public native static void start();
