@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 	s.source = { :git => 'https://github.com/lufinkey/nodejs-embed.git', :tag => s.version.to_s }
 	s.social_media_url = 'https://twitter.com/lufinkey'
 
-	s.ios.deployment_target = '9.0'
+	s.ios.deployment_target = '12.0'
 	s.osx.deployment_target = '10.14'
 
 	s.static_framework = true
